@@ -23,13 +23,21 @@ class AppNavigationController: UINavigationController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
+        return .lightContent
     }
     
 
     // MARK: - Private Methods
     
     private func setupNavigationBar() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithDefaultBackground()
+        appearance.backgroundColor = .mainBlue
+        appearance.titleTextAttributes = [.foregroundColor : UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor : UIColor.white]
+        navigationBar.standardAppearance = appearance
+        navigationBar.compactAppearance = appearance
+        navigationBar.scrollEdgeAppearance = appearance
         navigationBar.prefersLargeTitles = true
     }
 
