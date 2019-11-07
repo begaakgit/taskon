@@ -1,0 +1,7 @@
+target 'Taskon' do
+  use_frameworks!
+  
+  pod 'Alamofire'
+  pod 'SwiftValidator'
+
+end
