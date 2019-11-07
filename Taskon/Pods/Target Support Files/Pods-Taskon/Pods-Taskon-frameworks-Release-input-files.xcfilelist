@@ -1,4 +1,8 @@
 ${PODS_ROOT}/Target Support Files/Pods-Taskon/Pods-Taskon-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework
+${BUILT_PRODUCTS_DIR}/CodableAlamofire/CodableAlamofire.framework
+${BUILT_PRODUCTS_DIR}/PromisedFuture/PromisedFuture.framework
 ${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework
+${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
 ${BUILT_PRODUCTS_DIR}/SwiftValidator/SwiftValidator.framework

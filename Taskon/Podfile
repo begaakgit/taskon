@@ -2,7 +2,11 @@ target 'Taskon' do
   use_frameworks!
   
   pod 'Alamofire'
+  pod 'CodableAlamofire'
+  pod 'AlamofireNetworkActivityIndicator'
+  pod 'PromisedFuture'
   pod 'SkyFloatingLabelTextField'
   pod 'SwiftValidator'
+  pod 'SnapKit'
 
 end

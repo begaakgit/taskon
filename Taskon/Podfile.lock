@@ -1,24 +1,42 @@
 PODS:
   - Alamofire (4.9.1)
+  - AlamofireNetworkActivityIndicator (2.4.0):
+    - Alamofire (~> 4.8)
+  - CodableAlamofire (1.1.2):
+    - Alamofire (~> 4.0)
+  - PromisedFuture (1.0.1)
   - SkyFloatingLabelTextField (3.7.0)
+  - SnapKit (5.0.1)
   - SwiftValidator (3.0.3)
 
 DEPENDENCIES:
   - Alamofire
+  - AlamofireNetworkActivityIndicator
+  - CodableAlamofire
+  - PromisedFuture
   - SkyFloatingLabelTextField
+  - SnapKit
   - SwiftValidator
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AlamofireNetworkActivityIndicator
+    - CodableAlamofire
+    - PromisedFuture
     - SkyFloatingLabelTextField
+    - SnapKit
     - SwiftValidator
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireNetworkActivityIndicator: 9acc3de3ca6645bf0efed462396b0df13dd3e7b8
+  CodableAlamofire: b7adfb2e5e980392014b4b3f3b8b62c01b9de4aa
+  PromisedFuture: 3f863d17c047c3474c85045b254bb1c94743ed0f
   SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftValidator: 0b6a48bf10364411b0d64c97f78665ff87ca9f8b
 
-PODFILE CHECKSUM: 07948659f14b3153ac21f7303e8724b615ef558b
+PODFILE CHECKSUM: 13f25891ff63a95b567eb3a0050606380dd2f29b
 
 COCOAPODS: 1.8.4

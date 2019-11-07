@@ -7,9 +7,20 @@
 //
 
 import UIKit
+import SkyFloatingLabelTextField
+import SwiftValidator
 
 class LoginViewController: AppViewController {
 
+    
+    // MARK: - Class Properties
+    
+    @IBOutlet private weak var userTextField: SkyFloatingLabelTextField!
+    @IBOutlet private weak var passwordTextField: SkyFloatingLabelTextField!
+    @IBOutlet private weak var clientCodeTextField: SkyFloatingLabelTextField!
+    
+    private lazy var validator: Validator = Validator()
+    
     
     // MARK: - View Controller Life - Cycle
     
@@ -30,6 +41,54 @@ class LoginViewController: AppViewController {
     }
     
     private func setupViewController() {
+        validator.registerField(textField: userTextField, rules: [RequiredRule()])
+        validator.registerField(textField: passwordTextField, rules: [RequiredRule()])
+        validator.registerField(textField: clientCodeTextField, rules: [RequiredRule()])
+        validator.validate(delegate: self)
+    }
+    
+}
+
+
+// MARK: - Action Methods
+
+extension LoginViewController {
+    
+    @IBAction private func loginButtonTapped(_ sender: UIButton) {
+        let vc = Storyboard.home.instantiateInitialViewController()
+        UIApplication.shared.keyWindow?.rootViewController = vc
         
     }
+    
+}
+
+// MARK: - TextField Delegate
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let next = view.viewWithTag(textField.tag + 1) {
+            next.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        
+        return false
+    }
+    
+}
+
+
+// MARK: - ValidationDelegate Methods
+
+extension LoginViewController: ValidationDelegate {
+    
+    func validationSuccessful() {
+        
+    }
+    
+    func validationFailed(errors: [UITextField : ValidationError]) {
+        
+    }
+    
 }
