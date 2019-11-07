@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (4.9.1)
+  - SkyFloatingLabelTextField (3.7.0)
   - SwiftValidator (3.0.3)
 
 DEPENDENCIES:
   - Alamofire
+  - SkyFloatingLabelTextField
   - SwiftValidator
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - SkyFloatingLabelTextField
     - SwiftValidator
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
   SwiftValidator: 0b6a48bf10364411b0d64c97f78665ff87ca9f8b
 
-PODFILE CHECKSUM: 4e2c975e87d0654e3c1d855347b353ebf1870c5e
+PODFILE CHECKSUM: 07948659f14b3153ac21f7303e8724b615ef558b
 
 COCOAPODS: 1.8.4

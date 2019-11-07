@@ -2,6 +2,7 @@ target 'Taskon' do
   use_frameworks!
   
   pod 'Alamofire'
+  pod 'SkyFloatingLabelTextField'
   pod 'SwiftValidator'
 
 end
