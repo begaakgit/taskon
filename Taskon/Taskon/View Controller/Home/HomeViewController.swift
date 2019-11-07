@@ -14,8 +14,7 @@ class HomeViewController: AppViewController {
     // MARK: - Class Properties
     
     @IBOutlet private weak var menuButton: UIBarButtonItem!
-    
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     // MARK: - View Controller Life - Cycle
     
@@ -41,7 +40,7 @@ class HomeViewController: AppViewController {
     }
     
     private func setupViewController() {
-        
+        tableView.tableFooterView = UIView(frame: .zero)
     }
     
     private func addNewTask() -> VoidCompletion {
@@ -110,4 +109,23 @@ extension HomeViewController: UIPopoverPresentationControllerDelegate {
     func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
         return .none
     }
+}
+
+
+// MARK: - TableView Methods
+
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
 }
