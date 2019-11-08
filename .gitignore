@@ -68,3 +68,4 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 .DS_Store
 Taskon/Taskon.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Taskon/Taskon.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
