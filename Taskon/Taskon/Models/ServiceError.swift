@@ -13,8 +13,9 @@ struct ServiceError: Codable {
     
     // MARK: - Class Propeties
     
-    let code: String
+    let code: String?
     let message: String
+    var type: String?
     
     
     // MARK: - Coding Keys
@@ -22,5 +23,6 @@ struct ServiceError: Codable {
     enum CodingKeys: String, CodingKey {
         case code = "code"
         case message = "message"
+        case type = "type"
     }
 }

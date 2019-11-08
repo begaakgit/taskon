@@ -4,6 +4,7 @@ target 'Taskon' do
   pod 'Alamofire'
   pod 'CodableAlamofire'
   pod 'AlamofireNetworkActivityIndicator'
+  pod 'ReachabilitySwift'
   pod 'PromisedFuture'
   pod 'SkyFloatingLabelTextField'
   pod 'SwiftValidator'

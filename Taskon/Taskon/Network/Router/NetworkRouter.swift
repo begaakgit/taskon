@@ -13,8 +13,9 @@ protocol NetworkRouter: URLRequestConvertible {
     
     // MARK: - Class Properties
     
-    var method: HTTPMethod { get }
+    var baseUrl: String { get }
     var path: String { get }
+    var method: HTTPMethod { get }
     var parameters: Parameters? { get }
     
 }
@@ -25,7 +26,7 @@ protocol NetworkRouter: URLRequestConvertible {
 extension NetworkRouter {
     
     func asURLRequest() throws -> URLRequest {
-        let url = try NetworkConstants.k.production.baseURL.asURL()
+        let url = try baseUrl.asURL()
         var request = URLRequest(url: url.appendingPathComponent(path))
         
         // HTTP Method

@@ -18,6 +18,7 @@ class LoginViewController: AppViewController {
     @IBOutlet private weak var userTextField: SkyFloatingLabelTextField!
     @IBOutlet private weak var passwordTextField: SkyFloatingLabelTextField!
     @IBOutlet private weak var clientCodeTextField: SkyFloatingLabelTextField!
+    @IBOutlet private weak var loginButton: UIButton!
     
     private lazy var validator: Validator = Validator()
     
@@ -32,6 +33,10 @@ class LoginViewController: AppViewController {
         setupNavigationBar()
         setupViewController()
     }
+    
+    deinit {
+        debugPrint("DEINITsadasd")
+    }
 
     
     // MARK: - Private Methods
@@ -41,10 +46,40 @@ class LoginViewController: AppViewController {
     }
     
     private func setupViewController() {
+        userTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        clientCodeTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         validator.registerField(textField: userTextField, rules: [RequiredRule()])
         validator.registerField(textField: passwordTextField, rules: [RequiredRule()])
         validator.registerField(textField: clientCodeTextField, rules: [RequiredRule()])
         validator.validate(delegate: self)
+        loginButton.isEnabled = false
+    }
+    
+    private func performClientRequest(completion: VoidCompletion? = nil) {
+        guard let clientCode = clientCodeTextField.text else { return }
+        let request = APIClient.login(company: clientCode.normalize)
+        request.execute(errorHandler: errorHandler) { [weak self] client in
+            guard let _ = self else { return }
+            TOUserDefaults.client.set(value: client)
+            completion?()
+        }
+    }
+    
+    private func performLoginRequest() {
+        guard let username = userTextField.text,
+            let password = passwordTextField.text else { return }
+        let request = APIClient.login(username: username.normalize, password: password)
+        request.execute(errorHandler: errorHandler) { [weak self] user in
+            guard let self = self else { return }
+            debugPrint(user)
+            self.openHome()
+        }
+    }
+    
+    private func openHome() {
+        let navController = Storyboard.home.instantiateInitialViewController() as? AppNavigationController
+        view.window?.rootViewController = navController
     }
     
 }
@@ -55,14 +90,14 @@ class LoginViewController: AppViewController {
 extension LoginViewController {
     
     @IBAction private func loginButtonTapped(_ sender: UIButton) {
-        
-        let clientCode = clientCodeTextField.text!
-        let request = APIClient.login(company: clientCode)
-        request.execute(errorHandler: errorHandler) { [weak self] client in
+        performClientRequest { [weak self] in
             guard let self = self else { return }
-            TOUserDefaults.client.set(value: client)
+            self.performLoginRequest()
         }
-        
+    }
+    
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        validator.validate(delegate: self)
     }
     
 }
@@ -89,11 +124,11 @@ extension LoginViewController: UITextFieldDelegate {
 extension LoginViewController: ValidationDelegate {
     
     func validationSuccessful() {
-        
+        loginButton.isEnabled = true
     }
     
     func validationFailed(errors: [UITextField : ValidationError]) {
-        
+        loginButton.isEnabled = false
     }
     
 }

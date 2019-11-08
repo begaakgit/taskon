@@ -13,10 +13,10 @@ enum CompanyRouter: NetworkRouter {
     
     case login(code: String)
     
-    // Method
-    var method: HTTPMethod {
+    // Url
+    var baseUrl: String {
         switch self {
-        case .login: return .post
+        case .login: return NetworkConstants.k.production.baseURL
         }
     }
     
@@ -24,6 +24,13 @@ enum CompanyRouter: NetworkRouter {
     var path: String {
         switch self {
         case .login: return "saas/login/"
+        }
+    }
+    
+    // Method
+    var method: HTTPMethod {
+        switch self {
+        case .login: return .post
         }
     }
     
