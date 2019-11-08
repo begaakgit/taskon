@@ -10,3 +10,6 @@ import Foundation
 
 typealias VoidCompletion = () -> Void
 typealias FilterCompletion = (Filter) -> Void
+typealias ErrorCodeTuple = (code: Int, message: String)
+typealias ErrorCodeFilter = (ErrorCodeTuple) -> Bool
+typealias APIErrorHandlerCompletion = (Error, ErrorCodeFilter?) -> Void

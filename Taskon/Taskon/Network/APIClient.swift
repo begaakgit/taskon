@@ -11,17 +11,31 @@ import Alamofire
 import CodableAlamofire
 import PromisedFuture
 
-class cc: Codable {
-    
-}
-
 class APIClient {
     
     // MARK: - Public Class Methods
     
-    static func login(company code: String) -> Future<cc> {
+    static func login(company code: String) -> Future<TOClient> {
         let router = CompanyRouter.login(code: code)
-        return performRequest(router: router)
+        let responseFuture: Future<TOClientServiceResponse> = performRequest(router: router)
+        return Future(operation: { completion in
+            responseFuture.execute { result in
+                switch result {
+                case .success(let serviceResponse):
+                    if let result = serviceResponse.result {
+                        completion(.success(result))
+                    } else {
+                        if let serviceError = serviceResponse.error {
+                            let error = TOError.server(ErrorCodeTuple(code: Int(serviceError.code) ?? -1, message: serviceError.message))
+                            completion(.failure(error))
+                        }
+                    }
+                    
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        })
     }
     
     

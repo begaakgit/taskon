@@ -55,8 +55,13 @@ class LoginViewController: AppViewController {
 extension LoginViewController {
     
     @IBAction private func loginButtonTapped(_ sender: UIButton) {
-        let vc = Storyboard.home.instantiateInitialViewController()
-        UIApplication.shared.keyWindow?.rootViewController = vc
+        
+        let clientCode = clientCodeTextField.text!
+        let request = APIClient.login(company: clientCode)
+        request.execute(errorHandler: errorHandler) { [weak self] client in
+            guard let self = self else { return }
+            TOUserDefaults.client.set(value: client)
+        }
         
     }
     

@@ -31,6 +31,14 @@
 		CFE876B82374A7D90051FAA9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE876B72374A7D90051FAA9 /* HomeViewController.swift */; };
 		CFE876BA2374A8E80051FAA9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE876B92374A8E80051FAA9 /* Constants.swift */; };
 		D1B4700B349AA54B68EB9A65 /* Pods_Taskon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8EE73D8B5FC65238FC15B26 /* Pods_Taskon.framework */; };
+		D38D57A32375E38900CF1DDB /* TOUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57A22375E38900CF1DDB /* TOUserDefaults.swift */; };
+		D38D57A52375E62F00CF1DDB /* EmptyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57A42375E62F00CF1DDB /* EmptyCodable.swift */; };
+		D38D57A72375E75300CF1DDB /* TOClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57A62375E75300CF1DDB /* TOClient.swift */; };
+		D38D57A92375E8C500CF1DDB /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57A82375E8C500CF1DDB /* ServiceError.swift */; };
+		D38D57AB2375EE1200CF1DDB /* APIErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57AA2375EE1200CF1DDB /* APIErrorHandler.swift */; };
+		D38D57AD2375EEFF00CF1DDB /* TOError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57AC2375EEFF00CF1DDB /* TOError.swift */; };
+		D38D57AF2375F74900CF1DDB /* AppFuture+PromisedFuture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57AE2375F74900CF1DDB /* AppFuture+PromisedFuture.swift */; };
+		D38D57B12375F8AA00CF1DDB /* APICodeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57B02375F8AA00CF1DDB /* APICodeFilter.swift */; };
 		D3AEEFFF2375BEC90094F7B4 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEEFFE2375BEC90094F7B4 /* HomeCell.swift */; };
 		D3AEF0012375BF240094F7B4 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEF0002375BF240094F7B4 /* Utilities.swift */; };
 		D3AEF0032375BF5A0094F7B4 /* AppTableView+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEF0022375BF5A0094F7B4 /* AppTableView+UITableView.swift */; };
@@ -64,6 +72,14 @@
 		CFB33FD72374C27600DE0507 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		CFE876B72374A7D90051FAA9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CFE876B92374A8E80051FAA9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D38D57A22375E38900CF1DDB /* TOUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOUserDefaults.swift; sourceTree = "<group>"; };
+		D38D57A42375E62F00CF1DDB /* EmptyCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCodable.swift; sourceTree = "<group>"; };
+		D38D57A62375E75300CF1DDB /* TOClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOClient.swift; sourceTree = "<group>"; };
+		D38D57A82375E8C500CF1DDB /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		D38D57AA2375EE1200CF1DDB /* APIErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorHandler.swift; sourceTree = "<group>"; };
+		D38D57AC2375EEFF00CF1DDB /* TOError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOError.swift; sourceTree = "<group>"; };
+		D38D57AE2375F74900CF1DDB /* AppFuture+PromisedFuture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppFuture+PromisedFuture.swift"; sourceTree = "<group>"; };
+		D38D57B02375F8AA00CF1DDB /* APICodeFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICodeFilter.swift; sourceTree = "<group>"; };
 		D3AEEFFE2375BEC90094F7B4 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		D3AEF0002375BF240094F7B4 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		D3AEF0022375BF5A0094F7B4 /* AppTableView+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppTableView+UITableView.swift"; sourceTree = "<group>"; };
@@ -105,6 +121,7 @@
 				CF272B012374A04F00A05A9A /* Company */,
 				CF272AF823749A8A00A05A9A /* NetworkRouter.swift */,
 				CF272AFF23749F7E00A05A9A /* APIClient.swift */,
+				D38D57AA2375EE1200CF1DDB /* APIErrorHandler.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -160,6 +177,7 @@
 				CF6DBE1D2374774400EB968A /* Views */,
 				CFB33FD62374C26700DE0507 /* Helper */,
 				CFB33FD32374C1C500DE0507 /* Models */,
+				D38D57A02375E33B00CF1DDB /* Storage */,
 				CF272AFA23749AF800A05A9A /* Constants */,
 				CF272AF72374962500A05A9A /* Network */,
 				CF8462682372049A008C0314 /* Extentions */,
@@ -212,6 +230,7 @@
 				CF8462692372049A008C0314 /* AppString+String.swift */,
 				CF84626A2372049A008C0314 /* AppColor+UIColor.swift */,
 				D3AEF0022375BF5A0094F7B4 /* AppTableView+UITableView.swift */,
+				D38D57AE2375F74900CF1DDB /* AppFuture+PromisedFuture.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -257,6 +276,11 @@
 			isa = PBXGroup;
 			children = (
 				CFB33FD42374C1E300DE0507 /* Menu.swift */,
+				D38D57A42375E62F00CF1DDB /* EmptyCodable.swift */,
+				D38D57A62375E75300CF1DDB /* TOClient.swift */,
+				D38D57A82375E8C500CF1DDB /* ServiceError.swift */,
+				D38D57AC2375EEFF00CF1DDB /* TOError.swift */,
+				D38D57B02375F8AA00CF1DDB /* APICodeFilter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -277,6 +301,14 @@
 				CFE876B72374A7D90051FAA9 /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		D38D57A02375E33B00CF1DDB /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				D38D57A22375E38900CF1DDB /* TOUserDefaults.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		D3AEEFFD2375BEB90094F7B4 /* Cells */ = {
@@ -410,19 +442,27 @@
 				CF272AFE23749B7E00A05A9A /* NetworkConstants.swift in Sources */,
 				D3AEEFFF2375BEC90094F7B4 /* HomeCell.swift in Sources */,
 				CF8462822372049A008C0314 /* AppColor+UIColor.swift in Sources */,
+				D38D57AB2375EE1200CF1DDB /* APIErrorHandler.swift in Sources */,
 				CF272AF923749A8A00A05A9A /* NetworkRouter.swift in Sources */,
 				CFB33FCE2374B3DB00DE0507 /* MenuViewController.swift in Sources */,
+				D38D57AD2375EEFF00CF1DDB /* TOError.swift in Sources */,
 				CF272B0023749F7E00A05A9A /* APIClient.swift in Sources */,
 				CF8462832372049A008C0314 /* AppViewController.swift in Sources */,
 				CFB33FD02374B44100DE0507 /* Storyboard.swift in Sources */,
 				CF8462812372049A008C0314 /* AppString+String.swift in Sources */,
 				CF84627F2372049A008C0314 /* AppDelegate.swift in Sources */,
+				D38D57A52375E62F00CF1DDB /* EmptyCodable.swift in Sources */,
 				CFE876BA2374A8E80051FAA9 /* Constants.swift in Sources */,
 				CF272B032374A06400A05A9A /* CompanyRouter.swift in Sources */,
 				CF8462842372049A008C0314 /* AppNavigationController.swift in Sources */,
+				D38D57AF2375F74900CF1DDB /* AppFuture+PromisedFuture.swift in Sources */,
 				CF8462852372049A008C0314 /* LoginViewController.swift in Sources */,
+				D38D57B12375F8AA00CF1DDB /* APICodeFilter.swift in Sources */,
 				CF8462802372049A008C0314 /* SceneDelegate.swift in Sources */,
+				D38D57A32375E38900CF1DDB /* TOUserDefaults.swift in Sources */,
 				CFB33FD82374C27600DE0507 /* Types.swift in Sources */,
+				D38D57A92375E8C500CF1DDB /* ServiceError.swift in Sources */,
+				D38D57A72375E75300CF1DDB /* TOClient.swift in Sources */,
 				CFE876B82374A7D90051FAA9 /* HomeViewController.swift in Sources */,
 				D3AEF0012375BF240094F7B4 /* Utilities.swift in Sources */,
 				CFB33FD22374BC3A00DE0507 /* AppTableViewController.swift in Sources */,

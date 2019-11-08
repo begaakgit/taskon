@@ -29,3 +29,20 @@ enum HTTPHeaderField: String {
 enum ContentType: String {
     case json = "application/json"
 }
+
+enum ErrorCode: Int {
+    case badRequest = 400
+    case notAutorized = 401
+    case timeOut = 408
+    
+    var description: String {
+        switch self {
+        case .badRequest:
+            return "Bad Request"
+        case .notAutorized:
+            return "Your session has expired."
+        case .timeOut:
+            return "Request time out."
+        }
+    }
+}

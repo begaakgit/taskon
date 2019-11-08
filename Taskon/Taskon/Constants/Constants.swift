@@ -9,4 +9,9 @@
 import Foundation
 
 class Constants {
+    
+    // MARK: - Class Properties
+    
+    static let appTitle: String = "TaskOn"
+    
 }
