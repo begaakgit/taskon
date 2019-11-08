@@ -31,6 +31,9 @@
 		CFE876B82374A7D90051FAA9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE876B72374A7D90051FAA9 /* HomeViewController.swift */; };
 		CFE876BA2374A8E80051FAA9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE876B92374A8E80051FAA9 /* Constants.swift */; };
 		D1B4700B349AA54B68EB9A65 /* Pods_Taskon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8EE73D8B5FC65238FC15B26 /* Pods_Taskon.framework */; };
+		D3AEEFFF2375BEC90094F7B4 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEEFFE2375BEC90094F7B4 /* HomeCell.swift */; };
+		D3AEF0012375BF240094F7B4 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEF0002375BF240094F7B4 /* Utilities.swift */; };
+		D3AEF0032375BF5A0094F7B4 /* AppTableView+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEF0022375BF5A0094F7B4 /* AppTableView+UITableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +64,9 @@
 		CFB33FD72374C27600DE0507 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		CFE876B72374A7D90051FAA9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CFE876B92374A8E80051FAA9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D3AEEFFE2375BEC90094F7B4 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		D3AEF0002375BF240094F7B4 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		D3AEF0022375BF5A0094F7B4 /* AppTableView+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppTableView+UITableView.swift"; sourceTree = "<group>"; };
 		E8EE73D8B5FC65238FC15B26 /* Pods_Taskon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taskon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -91,13 +97,6 @@
 				E8EE73D8B5FC65238FC15B26 /* Pods_Taskon.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CF1911842374C6E300EAB5B1 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		CF272AF72374962500A05A9A /* Network */ = {
@@ -212,6 +211,7 @@
 			children = (
 				CF8462692372049A008C0314 /* AppString+String.swift */,
 				CF84626A2372049A008C0314 /* AppColor+UIColor.swift */,
+				D3AEF0022375BF5A0094F7B4 /* AppTableView+UITableView.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -265,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				CFB33FD72374C27600DE0507 /* Types.swift */,
+				D3AEF0002375BF240094F7B4 /* Utilities.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -272,10 +273,18 @@
 		CFE876B42374A79B0051FAA9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				CF1911842374C6E300EAB5B1 /* Cells */,
+				D3AEEFFD2375BEB90094F7B4 /* Cells */,
 				CFE876B72374A7D90051FAA9 /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		D3AEEFFD2375BEB90094F7B4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D3AEEFFE2375BEC90094F7B4 /* HomeCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,8 +405,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3AEF0032375BF5A0094F7B4 /* AppTableView+UITableView.swift in Sources */,
 				CFB33FD52374C1E300DE0507 /* Menu.swift in Sources */,
 				CF272AFE23749B7E00A05A9A /* NetworkConstants.swift in Sources */,
+				D3AEEFFF2375BEC90094F7B4 /* HomeCell.swift in Sources */,
 				CF8462822372049A008C0314 /* AppColor+UIColor.swift in Sources */,
 				CF272AF923749A8A00A05A9A /* NetworkRouter.swift in Sources */,
 				CFB33FCE2374B3DB00DE0507 /* MenuViewController.swift in Sources */,
@@ -413,6 +424,7 @@
 				CF8462802372049A008C0314 /* SceneDelegate.swift in Sources */,
 				CFB33FD82374C27600DE0507 /* Types.swift in Sources */,
 				CFE876B82374A7D90051FAA9 /* HomeViewController.swift in Sources */,
+				D3AEF0012375BF240094F7B4 /* Utilities.swift in Sources */,
 				CFB33FD22374BC3A00DE0507 /* AppTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

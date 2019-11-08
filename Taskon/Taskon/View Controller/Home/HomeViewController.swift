@@ -125,7 +125,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.getCell(type: HomeCell.self) else { return UITableViewCell() }
+        return cell
     }
     
 }

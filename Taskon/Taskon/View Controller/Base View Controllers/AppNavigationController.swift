@@ -35,6 +35,11 @@ class AppNavigationController: UINavigationController {
         appearance.backgroundColor = .mainBlue
         appearance.titleTextAttributes = [.foregroundColor : UIColor.white]
         appearance.largeTitleTextAttributes = [.foregroundColor : UIColor.white]
+        
+        let buttonAppearance = UIBarButtonItemAppearance()
+        buttonAppearance.normal.titleTextAttributes = [.foregroundColor : UIColor.white]
+        
+        appearance.backButtonAppearance = buttonAppearance
         navigationBar.standardAppearance = appearance
         navigationBar.compactAppearance = appearance
         navigationBar.scrollEdgeAppearance = appearance
