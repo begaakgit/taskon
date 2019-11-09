@@ -13,3 +13,5 @@ typealias FilterCompletion = (Filter) -> Void
 typealias ErrorCodeTuple = (code: Int, message: String)
 typealias ErrorCodeFilter = (ErrorCodeTuple) -> Bool
 typealias APIErrorHandlerCompletion = (Error, ErrorCodeFilter?) -> Void
+public typealias ServiceFailure = (Error) -> Void
+public typealias ServiceSuccess<T> = (T) -> Void

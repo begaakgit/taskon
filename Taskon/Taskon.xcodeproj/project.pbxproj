@@ -31,6 +31,7 @@
 		CFE876B82374A7D90051FAA9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE876B72374A7D90051FAA9 /* HomeViewController.swift */; };
 		CFE876BA2374A8E80051FAA9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE876B92374A8E80051FAA9 /* Constants.swift */; };
 		D1B4700B349AA54B68EB9A65 /* Pods_Taskon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8EE73D8B5FC65238FC15B26 /* Pods_Taskon.framework */; };
+		D32B224F2376D6D500282818 /* AppViewController+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B224E2376D6D500282818 /* AppViewController+UIViewController.swift */; };
 		D38D57A32375E38900CF1DDB /* TOUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57A22375E38900CF1DDB /* TOUserDefaults.swift */; };
 		D38D57A52375E62F00CF1DDB /* EmptyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57A42375E62F00CF1DDB /* EmptyCodable.swift */; };
 		D38D57A72375E75300CF1DDB /* TOClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57A62375E75300CF1DDB /* TOClient.swift */; };
@@ -43,6 +44,9 @@
 		D38D57B82376092500CF1DDB /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57B72376092500CF1DDB /* UserRouter.swift */; };
 		D38D57BA23760BF500CF1DDB /* APIClientServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57B923760BF500CF1DDB /* APIClientServices.swift */; };
 		D38D57BC23760F7600CF1DDB /* ServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57BB23760F7600CF1DDB /* ServiceResponse.swift */; };
+		D3A8C57D2376E36400CCA89B /* AppView+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A8C57C2376E36400CCA89B /* AppView+UIView.swift */; };
+		D3A96DCD2376C6BE00291D24 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A96DCC2376C6BE00291D24 /* NewTaskViewController.swift */; };
+		D3A96DCF2376C76900291D24 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A96DCE2376C76900291D24 /* User.swift */; };
 		D3AEEFFF2375BEC90094F7B4 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEEFFE2375BEC90094F7B4 /* HomeCell.swift */; };
 		D3AEF0012375BF240094F7B4 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEF0002375BF240094F7B4 /* Utilities.swift */; };
 		D3AEF0032375BF5A0094F7B4 /* AppTableView+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEF0022375BF5A0094F7B4 /* AppTableView+UITableView.swift */; };
@@ -76,6 +80,7 @@
 		CFB33FD72374C27600DE0507 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		CFE876B72374A7D90051FAA9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CFE876B92374A8E80051FAA9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D32B224E2376D6D500282818 /* AppViewController+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppViewController+UIViewController.swift"; sourceTree = "<group>"; };
 		D38D57A22375E38900CF1DDB /* TOUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOUserDefaults.swift; sourceTree = "<group>"; };
 		D38D57A42375E62F00CF1DDB /* EmptyCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCodable.swift; sourceTree = "<group>"; };
 		D38D57A62375E75300CF1DDB /* TOClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOClient.swift; sourceTree = "<group>"; };
@@ -88,6 +93,9 @@
 		D38D57B72376092500CF1DDB /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
 		D38D57B923760BF500CF1DDB /* APIClientServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientServices.swift; sourceTree = "<group>"; };
 		D38D57BB23760F7600CF1DDB /* ServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResponse.swift; sourceTree = "<group>"; };
+		D3A8C57C2376E36400CCA89B /* AppView+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppView+UIView.swift"; sourceTree = "<group>"; };
+		D3A96DCC2376C6BE00291D24 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
+		D3A96DCE2376C76900291D24 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D3AEEFFE2375BEC90094F7B4 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		D3AEF0002375BF240094F7B4 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		D3AEF0022375BF5A0094F7B4 /* AppTableView+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppTableView+UITableView.swift"; sourceTree = "<group>"; };
@@ -151,13 +159,6 @@
 			path = Company;
 			sourceTree = "<group>";
 		};
-		CF6DBE1D2374774400EB968A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		CF8462332372045C008C0314 = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +182,6 @@
 			children = (
 				CF84626523720499008C0314 /* Application */,
 				CF84626B2372049A008C0314 /* View Controller */,
-				CF6DBE1D2374774400EB968A /* Views */,
 				CFB33FD62374C26700DE0507 /* Helper */,
 				CFB33FD32374C1C500DE0507 /* Models */,
 				D38D57A02375E33B00CF1DDB /* Storage */,
@@ -238,6 +238,8 @@
 				CF84626A2372049A008C0314 /* AppColor+UIColor.swift */,
 				D3AEF0022375BF5A0094F7B4 /* AppTableView+UITableView.swift */,
 				D38D57AE2375F74900CF1DDB /* AppFuture+PromisedFuture.swift */,
+				D32B224E2376D6D500282818 /* AppViewController+UIViewController.swift */,
+				D3A8C57C2376E36400CCA89B /* AppView+UIView.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -289,6 +291,7 @@
 				D38D57AC2375EEFF00CF1DDB /* TOError.swift */,
 				D38D57B02375F8AA00CF1DDB /* APICodeFilter.swift */,
 				D38D57BB23760F7600CF1DDB /* ServiceResponse.swift */,
+				D3A96DCE2376C76900291D24 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			children = (
 				D3AEEFFD2375BEB90094F7B4 /* Cells */,
 				CFE876B72374A7D90051FAA9 /* HomeViewController.swift */,
+				D3A96DCC2376C6BE00291D24 /* NewTaskViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -481,10 +485,12 @@
 				D38D57AB2375EE1200CF1DDB /* APIErrorHandler.swift in Sources */,
 				CF272AF923749A8A00A05A9A /* NetworkRouter.swift in Sources */,
 				CFB33FCE2374B3DB00DE0507 /* MenuViewController.swift in Sources */,
+				D3A96DCD2376C6BE00291D24 /* NewTaskViewController.swift in Sources */,
 				D38D57AD2375EEFF00CF1DDB /* TOError.swift in Sources */,
 				CF272B0023749F7E00A05A9A /* APIClient.swift in Sources */,
 				CF8462832372049A008C0314 /* AppViewController.swift in Sources */,
 				CFB33FD02374B44100DE0507 /* Storyboard.swift in Sources */,
+				D3A96DCF2376C76900291D24 /* User.swift in Sources */,
 				CF8462812372049A008C0314 /* AppString+String.swift in Sources */,
 				CF84627F2372049A008C0314 /* AppDelegate.swift in Sources */,
 				D38D57A52375E62F00CF1DDB /* EmptyCodable.swift in Sources */,
@@ -498,7 +504,9 @@
 				D38D57B32376063E00CF1DDB /* Network.swift in Sources */,
 				D38D57B12375F8AA00CF1DDB /* APICodeFilter.swift in Sources */,
 				CF8462802372049A008C0314 /* SceneDelegate.swift in Sources */,
+				D32B224F2376D6D500282818 /* AppViewController+UIViewController.swift in Sources */,
 				D38D57A32375E38900CF1DDB /* TOUserDefaults.swift in Sources */,
+				D3A8C57D2376E36400CCA89B /* AppView+UIView.swift in Sources */,
 				CFB33FD82374C27600DE0507 /* Types.swift in Sources */,
 				D38D57A92375E8C500CF1DDB /* ServiceError.swift in Sources */,
 				D38D57A72375E75300CF1DDB /* TOClient.swift in Sources */,

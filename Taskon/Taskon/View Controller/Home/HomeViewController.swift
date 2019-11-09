@@ -45,7 +45,8 @@ class HomeViewController: AppViewController {
     
     private func addNewTask() -> VoidCompletion {
         let addNewTask = { [weak self] in
-            guard let _ = self else { return }
+            guard let self = self else { return }
+            self.createNewTask()
         }
         return addNewTask
     }
@@ -73,11 +74,27 @@ class HomeViewController: AppViewController {
     
     private func performLogout() -> VoidCompletion {
         let logout = { [weak self] in
-            guard let _ = self else { return }
+            guard let self = self else { return }
+            self.performLogoutRequest()
         }
         return logout
     }
 
+}
+
+
+// MARK: - Navigation Methods
+
+extension HomeViewController {
+    
+    private func createNewTask() {
+        let createVC: NewTaskViewController = instanceFromStoryboard(storyboard: Storyboard.home)
+        createVC.addTaskCompletion = { [weak self] in
+            guard let _ = self else { return }
+        }
+        let navController = AppNavigationController(rootViewController: createVC)
+        present(navController, animated: true, completion: nil)
+    }
 }
 
 
@@ -129,4 +146,19 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+}
+
+
+// MARK: - API Request
+
+extension HomeViewController {
+    
+    private func performLogoutRequest() {
+//        let request = APIClient.login(company: clientCode.normalize)
+//        request.execute(errorHandler: errorHandler) { [weak self] client in
+//            guard let _ = self else { return }
+//            TOUserDefaults.client.set(value: client)
+//            completion?()
+//        }
+    }
 }

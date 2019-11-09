@@ -9,6 +9,7 @@
 import UIKit
 import SkyFloatingLabelTextField
 import SwiftValidator
+import SSSpinnerButton
 
 class LoginViewController: AppViewController {
 
@@ -18,7 +19,7 @@ class LoginViewController: AppViewController {
     @IBOutlet private weak var userTextField: SkyFloatingLabelTextField!
     @IBOutlet private weak var passwordTextField: SkyFloatingLabelTextField!
     @IBOutlet private weak var clientCodeTextField: SkyFloatingLabelTextField!
-    @IBOutlet private weak var loginButton: UIButton!
+    @IBOutlet private weak var loginButton: SSSpinnerButton!
     
     private lazy var validator: Validator = Validator()
     
@@ -56,30 +57,17 @@ class LoginViewController: AppViewController {
         loginButton.isEnabled = false
     }
     
-    private func performClientRequest(completion: VoidCompletion? = nil) {
-        guard let clientCode = clientCodeTextField.text else { return }
-        let request = APIClient.login(company: clientCode.normalize)
-        request.execute(errorHandler: errorHandler) { [weak self] client in
-            guard let _ = self else { return }
-            TOUserDefaults.client.set(value: client)
-            completion?()
-        }
-    }
-    
-    private func performLoginRequest() {
-        guard let username = userTextField.text,
-            let password = passwordTextField.text else { return }
-        let request = APIClient.login(username: username.normalize, password: password)
-        request.execute(errorHandler: errorHandler) { [weak self] user in
-            guard let self = self else { return }
-            debugPrint(user)
-            self.openHome()
-        }
-    }
-    
     private func openHome() {
         let navController = Storyboard.home.instantiateInitialViewController() as? AppNavigationController
         view.window?.rootViewController = navController
+    }
+    
+    private func startLoginSpin(completion: VoidCompletion? = nil) {
+        loginButton.startAnimate(spinnerType: .ballRotateChase, spinnercolor: .white, complete: completion)
+    }
+    
+    private func stopLoginSpin(type: CompletionType, completion: VoidCompletion? = nil) {
+        loginButton.stopAnimationWithCompletionTypeAndBackToDefaults(completionType: type, backToDefaults: true, complete: completion)
     }
     
 }
@@ -90,9 +78,12 @@ class LoginViewController: AppViewController {
 extension LoginViewController {
     
     @IBAction private func loginButtonTapped(_ sender: UIButton) {
-        performClientRequest { [weak self] in
+        loginButton.startAnimate(spinnerType: .ballRotateChase, spinnercolor: .white) { [weak self] in
             guard let self = self else { return }
-            self.performLoginRequest()
+            self.performClientRequest { [weak self] in
+                guard let self = self else { return }
+                self.performLoginRequest()
+            }
         }
     }
     
@@ -131,4 +122,53 @@ extension LoginViewController: ValidationDelegate {
         loginButton.isEnabled = false
     }
     
+}
+
+
+// MARK: - API Request
+
+extension LoginViewController {
+    
+    private func performClientRequest(completion: VoidCompletion? = nil) {
+        guard let clientCode = clientCodeTextField.text else { return }
+        let request = APIClient.login(company: clientCode.normalize)
+        
+        let success: ServiceSuccess<TOClient> = { [weak self] client in
+            guard let self = self else { return }
+            self.stopLoginSpin(type: .success) { [weak self] in
+                guard let _ = self else { return }
+                TOUserDefaults.client.set(value: client)
+                completion?()
+            }
+        }
+        
+        let failure: ServiceFailure = { [weak self] _ in
+            guard let self = self else { return }
+            self.stopLoginSpin(type: .none)
+        }
+        
+        request.execute(errorHandler: errorHandler, onFailure: failure, onSuccess: success)
+    }
+    
+    private func performLoginRequest() {
+        guard let username = userTextField.text,
+            let password = passwordTextField.text else { return }
+        let request = APIClient.login(username: username.normalize, password: password)
+        
+        let success: ServiceSuccess<User> = { [weak self] user in
+            guard let self = self else { return }
+            self.stopLoginSpin(type: .success) { [weak self] in
+                guard let self = self else { return }
+                debugPrint(user)
+                self.openHome()
+            }
+        }
+        
+        let failure: ServiceFailure = { [weak self] _ in
+            guard let self = self else { return }
+            self.stopLoginSpin(type: .none)
+        }
+        
+        request.execute(errorHandler: errorHandler, onFailure: failure, onSuccess: success)
+    }
 }

@@ -93,29 +93,36 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WS6-AU-BmE">
-                                <rect key="frame" x="20" y="810" width="374" height="52"/>
+                                <rect key="frame" x="20" y="794" width="374" height="48"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fK-5r-xhA">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fK-5r-xhA">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="2"/>
                                         <color key="backgroundColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="IMq-iK-dje"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0q-Wt-vZa">
-                                        <rect key="frame" x="0.0" y="2" width="374" height="48"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0q-Wt-vZa" customClass="SSSpinnerButton" customModule="SSSpinnerButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                        <color key="backgroundColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="Uhu-F8-Nh0"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="LOGIN">
-                                            <color key="titleColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornrRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VR2-nx-NWv"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93l-4C-Xgr">
-                                        <rect key="frame" x="0.0" y="50" width="374" height="2"/>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93l-4C-Xgr">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="2"/>
                                         <color key="backgroundColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
@@ -127,7 +134,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UjV-yk-YMe" secondAttribute="trailing" constant="20" id="0c6-OA-mRW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WS6-AU-BmE" secondAttribute="bottom" id="4IJ-Nj-fBd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WS6-AU-BmE" secondAttribute="bottom" constant="20" id="4IJ-Nj-fBd"/>
                             <constraint firstItem="UjV-yk-YMe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8GB-9H-0Hd"/>
                             <constraint firstItem="WS6-AU-BmE" firstAttribute="leading" secondItem="UjV-yk-YMe" secondAttribute="leading" id="KTY-9F-S07"/>
                             <constraint firstItem="UjV-yk-YMe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Q57-XY-e2m"/>

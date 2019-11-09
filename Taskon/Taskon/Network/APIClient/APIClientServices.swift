@@ -13,18 +13,29 @@ extension APIClient {
     
     // MARK: - Public Class Methods
     
+    // MARK: Client Methods
+    
     static func login(company code: String) -> Future<TOClient> {
         let router = CompanyRouter.login(code: code)
         let responseFuture: Future<TOClientServiceResponse> = performRequest(router: router)
         return resolve(clientResponse: responseFuture)
     }
     
-    static func login(username: String, password: String) -> Future<EmptyCodable> {
-        let apiKey = TOUserDefaults.client.get()?.apiKey ?? ""
-        let router = UserRouter.login(username: username, password: password, apiKey: apiKey)
-        let responseFuture: Future<EmptyCodable> = performRequest(router: router)
-        return responseFuture
+    
+    // MARK: User Methods
+    
+    static func login(username: String, password: String) -> Future<User> {
+        let router = UserRouter.login(username: username, password: password)
+        let responseFuture: Future<ServiceResponse<User>> = performRequest(router: router)
+        return resolve(response: responseFuture)
     }
+    
+//    static func logout() -> Future<EmptyCodable> {
+//        let userId = "7"
+//        let router = UserRouter.logout(userId: userId)
+//        let responseFuture: Future<ServiceResponse<EmptyCodable>> = performRequest(router: router)
+//        return responseFuture
+//    }
     
     
     // MARK: - Private Methods
@@ -39,6 +50,32 @@ extension APIClient {
                     } else {
                         if let serviceError = serviceResponse.error {
                             let error = TOError.server(ErrorCodeTuple(code: Int(serviceError.code ?? "-1") ?? -1, message: serviceError.message))
+                            completion(.failure(error))
+                        }
+                    }
+                    
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        })
+    }
+    
+    private static func resolve<T: Decodable>(response: Future<ServiceResponse<T>>) -> Future<T> {
+        return Future(operation: { completion in
+            response.execute { result in
+                switch result {
+                case .success(let serviceResponse):
+                    if let result = serviceResponse.data {
+                        if let value = result.value {
+                            completion(.success(value))
+                        } else {
+//                            let error = TOError.server(ErrorCodeTuple())
+//                            completion(.failure(<#T##Error#>))
+                        }
+                    } else {
+                        if let serviceError = serviceResponse.data {
+                            let error = TOError.server(ErrorCodeTuple(code: -1, message: "ERROR"))
                             completion(.failure(error))
                         }
                     }

@@ -34,6 +34,16 @@ enum CompanyRouter: NetworkRouter {
         }
     }
     
+    // Token
+    var token: Bool {
+        return false
+    }
+    
+    // API Key
+    var apiKey: Bool {
+        return false
+    }
+    
     // Parameters
     var parameters: Parameters? {
         switch self {

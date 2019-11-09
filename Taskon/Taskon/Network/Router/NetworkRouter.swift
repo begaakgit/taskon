@@ -16,6 +16,8 @@ protocol NetworkRouter: URLRequestConvertible {
     var baseUrl: String { get }
     var path: String { get }
     var method: HTTPMethod { get }
+    var token: Bool { get }
+    var apiKey: Bool { get }
     var parameters: Parameters? { get }
     
 }
@@ -37,7 +39,18 @@ extension NetworkRouter {
         request.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
         
         // Parameters
-        if let parameters = parameters {
+        if var parameters = parameters {
+            
+            // Add API Token
+            if token {
+            }
+            
+            // Add API Key
+            if apiKey {
+                let apiKey = TOUserDefaults.client.get()?.apiKey ?? ""
+                parameters["api_key"] = apiKey
+            }
+            
             do {
                 request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed)
             } catch {

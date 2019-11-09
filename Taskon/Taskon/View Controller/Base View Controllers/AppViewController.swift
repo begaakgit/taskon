@@ -52,6 +52,10 @@ extension AppViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    public func logoutUser() {
+        TOUserDefaults.clearDefaults()
+    }
+    
 }
 
 
