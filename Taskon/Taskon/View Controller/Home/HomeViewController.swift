@@ -60,7 +60,12 @@ class HomeViewController: AppViewController {
     
     private func applyFilter() -> FilterCompletion {
         let applyFilter: FilterCompletion = { [weak self] filter in
-            guard let _ = self else { return }
+            guard let self = self else { return }
+            switch filter {
+            case .distance: break
+            case .deadLine: break
+            case .date: self.selectDate()
+            }
         }
         return applyFilter
     }
@@ -93,6 +98,16 @@ extension HomeViewController {
             guard let _ = self else { return }
         }
         let navController = AppNavigationController(rootViewController: createVC)
+        present(navController, animated: true, completion: nil)
+    }
+    
+    private func selectDate() {
+        let datePickerVC: DatePickerViewController = instanceFromStoryboard(storyboard: Storyboard.home)
+        datePickerVC.datePickerCompletion = { [weak self] date in
+            guard let _ = self else { return }
+            debugPrint(date)
+        }
+        let navController = AppNavigationController(rootViewController: datePickerVC)
         present(navController, animated: true, completion: nil)
     }
 }

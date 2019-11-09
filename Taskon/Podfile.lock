@@ -4,6 +4,7 @@ PODS:
     - Alamofire (~> 4.8)
   - CodableAlamofire (1.1.2):
     - Alamofire (~> 4.0)
+  - JBDatePicker (1.2.5)
   - NextGrowingTextView (1.5.0)
   - PromisedFuture (1.0.1)
   - ReachabilitySwift (5.0.0)
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireNetworkActivityIndicator
   - CodableAlamofire
+  - JBDatePicker
   - NextGrowingTextView
   - PromisedFuture
   - ReachabilitySwift
@@ -29,6 +31,7 @@ SPEC REPOS:
     - Alamofire
     - AlamofireNetworkActivityIndicator
     - CodableAlamofire
+    - JBDatePicker
     - NextGrowingTextView
     - PromisedFuture
     - ReachabilitySwift
@@ -41,6 +44,7 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireNetworkActivityIndicator: 9acc3de3ca6645bf0efed462396b0df13dd3e7b8
   CodableAlamofire: b7adfb2e5e980392014b4b3f3b8b62c01b9de4aa
+  JBDatePicker: 0e791c8a79c49b0d37decea28ba147515bf5cfca
   NextGrowingTextView: 0e267e80bc203e813dc637fd1b011111ad572d57
   PromisedFuture: 3f863d17c047c3474c85045b254bb1c94743ed0f
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
@@ -49,6 +53,6 @@ SPEC CHECKSUMS:
   SSSpinnerButton: ba9ec6858f2f6fa902a5131d3aec5282588241f8
   SwiftValidator: 0b6a48bf10364411b0d64c97f78665ff87ca9f8b
 
-PODFILE CHECKSUM: fa54598c1b348c97f0cef75d66b698f9b49c8a96
+PODFILE CHECKSUM: a7f014a468c4117e71706ba90f76542c93c98530
 
 COCOAPODS: 1.8.4

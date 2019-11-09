@@ -288,5 +288,113 @@
             </objects>
             <point key="canvasLocation" x="1614" y="104"/>
         </scene>
+        <!--Date Picker View Controller-->
+        <scene sceneID="031-S3-JWt">
+            <objects>
+                <viewController storyboardIdentifier="DatePickerViewController" id="R42-qa-E3s" customClass="DatePickerViewController" customModule="Taskon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gXQ-25-Fkp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CaL-Mq-yhC">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvq-jc-IEQ">
+                                        <rect key="frame" x="20" y="14" width="374" height="30"/>
+                                        <color key="backgroundColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="gvq-jc-IEQ" secondAttribute="bottom" id="GtX-jQ-tP5"/>
+                                    <constraint firstItem="gvq-jc-IEQ" firstAttribute="leading" secondItem="CaL-Mq-yhC" secondAttribute="leading" constant="20" id="adu-O1-jpb"/>
+                                    <constraint firstAttribute="trailing" secondItem="gvq-jc-IEQ" secondAttribute="trailing" constant="20" id="aoe-Fw-dgH"/>
+                                    <constraint firstAttribute="height" constant="44" id="xvU-eU-ODj"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ygs-aB-xnN" customClass="JBDatePickerView" customModule="JBDatePicker">
+                                <rect key="frame" x="0.0" y="88" width="414" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="vNL-Tr-KFO"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ip5-zK-OI2">
+                                <rect key="frame" x="41.5" y="408" width="331" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="t8g-nm-QC7">
+                                <rect key="frame" x="20" y="794" width="374" height="48"/>
+                                <subviews>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYw-gC-STe">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="2"/>
+                                        <color key="backgroundColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="0Qt-Tp-iGb"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqf-Pr-02H">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                        <color key="backgroundColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="vef-q0-OdH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="CONTINUE">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="continueButtonTapped:" destination="R42-qa-E3s" eventType="touchUpInside" id="oj1-dz-evJ"/>
+                                            <action selector="saveButtonTapped:" destination="aBv-CG-wPE" eventType="touchUpInside" id="GtU-xm-0ZC"/>
+                                        </connections>
+                                    </button>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a30-J1-eUn">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="2"/>
+                                        <color key="backgroundColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="a30-J1-eUn" firstAttribute="height" secondItem="JYw-gC-STe" secondAttribute="height" id="6Qu-Xp-XJC"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="CaL-Mq-yhC" firstAttribute="leading" secondItem="gXQ-25-Fkp" secondAttribute="leading" id="2DI-wh-rxr"/>
+                            <constraint firstItem="ygs-aB-xnN" firstAttribute="top" secondItem="CaL-Mq-yhC" secondAttribute="bottom" id="4Wn-Ax-d7d"/>
+                            <constraint firstItem="Ip5-zK-OI2" firstAttribute="width" secondItem="4no-rv-oyg" secondAttribute="width" multiplier="0.8" id="5ME-rV-wB8"/>
+                            <constraint firstItem="4no-rv-oyg" firstAttribute="trailing" secondItem="ygs-aB-xnN" secondAttribute="trailing" id="6mc-4f-Ywv"/>
+                            <constraint firstItem="Ip5-zK-OI2" firstAttribute="top" secondItem="ygs-aB-xnN" secondAttribute="bottom" constant="20" id="Ahz-JF-gXH"/>
+                            <constraint firstItem="t8g-nm-QC7" firstAttribute="leading" secondItem="4no-rv-oyg" secondAttribute="leading" constant="20" id="FNQ-Tz-zgb"/>
+                            <constraint firstAttribute="trailing" secondItem="CaL-Mq-yhC" secondAttribute="trailing" id="SVW-JR-06O"/>
+                            <constraint firstItem="ygs-aB-xnN" firstAttribute="leading" secondItem="4no-rv-oyg" secondAttribute="leading" id="Vnh-y1-fAu"/>
+                            <constraint firstAttribute="trailing" secondItem="t8g-nm-QC7" secondAttribute="trailing" constant="20" id="at9-7w-JBo"/>
+                            <constraint firstItem="CaL-Mq-yhC" firstAttribute="top" secondItem="4no-rv-oyg" secondAttribute="top" id="haT-7k-OYx"/>
+                            <constraint firstItem="Ip5-zK-OI2" firstAttribute="centerX" secondItem="gXQ-25-Fkp" secondAttribute="centerX" id="klq-O1-Dru"/>
+                            <constraint firstItem="4no-rv-oyg" firstAttribute="bottom" secondItem="t8g-nm-QC7" secondAttribute="bottom" constant="20" id="kn0-2t-los"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4no-rv-oyg"/>
+                    </view>
+                    <connections>
+                        <outlet property="continueButton" destination="fqf-Pr-02H" id="UQi-3c-S1F"/>
+                        <outlet property="dateLabel" destination="Ip5-zK-OI2" id="Zuq-4P-e49"/>
+                        <outlet property="datePickerView" destination="ygs-aB-xnN" id="bFQ-a6-ql5"/>
+                        <outlet property="titleLabel" destination="gvq-jc-IEQ" id="oyk-VM-TWE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ktq-da-BSq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2413.04347826087" y="103.79464285714285"/>
+        </scene>
     </scenes>
 </document>

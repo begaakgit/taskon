@@ -16,4 +16,8 @@ extension String {
         return trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
+    func toDate(format: DateFormatType, ignoreTimeZone: Bool = false) -> Date? {
+        return format.getFormatter(ignoreTimeZone: ignoreTimeZone).date(from: self)
+    }
+    
 }
