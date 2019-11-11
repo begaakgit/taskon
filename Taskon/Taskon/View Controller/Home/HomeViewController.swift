@@ -72,7 +72,8 @@ class HomeViewController: AppViewController {
     
     private func openSettings() -> VoidCompletion {
         let settings = { [weak self] in
-            guard let _ = self else { return }
+            guard let self = self else { return }
+            self.showSettings()
         }
         return settings
     }
@@ -108,6 +109,12 @@ extension HomeViewController {
             debugPrint(date)
         }
         let navController = AppNavigationController(rootViewController: datePickerVC)
+        present(navController, animated: true, completion: nil)
+    }
+    
+    private func showSettings() {
+        let settingsVC: SettingsViewController = instanceFromStoryboard(storyboard: Storyboard.home)
+        let navController = AppNavigationController(rootViewController: settingsVC)
         present(navController, animated: true, completion: nil)
     }
 }

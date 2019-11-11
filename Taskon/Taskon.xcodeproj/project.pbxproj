@@ -33,6 +33,7 @@
 		D1B4700B349AA54B68EB9A65 /* Pods_Taskon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8EE73D8B5FC65238FC15B26 /* Pods_Taskon.framework */; };
 		D32B224F2376D6D500282818 /* AppViewController+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B224E2376D6D500282818 /* AppViewController+UIViewController.swift */; };
 		D3333F852377330F0007A124 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333F842377330F0007A124 /* DatePickerViewController.swift */; };
+		D336C3F923780AF6007DC885 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D336C3F823780AF6007DC885 /* SettingsViewController.swift */; };
 		D357714923773CD20038C7EE /* AppDate+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357714823773CD20038C7EE /* AppDate+Date.swift */; };
 		D38D57A32375E38900CF1DDB /* TOUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57A22375E38900CF1DDB /* TOUserDefaults.swift */; };
 		D38D57A52375E62F00CF1DDB /* EmptyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57A42375E62F00CF1DDB /* EmptyCodable.swift */; };
@@ -84,6 +85,7 @@
 		CFE876B92374A8E80051FAA9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D32B224E2376D6D500282818 /* AppViewController+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppViewController+UIViewController.swift"; sourceTree = "<group>"; };
 		D3333F842377330F0007A124 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		D336C3F823780AF6007DC885 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D357714823773CD20038C7EE /* AppDate+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDate+Date.swift"; sourceTree = "<group>"; };
 		D38D57A22375E38900CF1DDB /* TOUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOUserDefaults.swift; sourceTree = "<group>"; };
 		D38D57A42375E62F00CF1DDB /* EmptyCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCodable.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				CFE876B72374A7D90051FAA9 /* HomeViewController.swift */,
 				D3A96DCC2376C6BE00291D24 /* NewTaskViewController.swift */,
 				D3333F842377330F0007A124 /* DatePickerViewController.swift */,
+				D336C3F823780AF6007DC885 /* SettingsViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				CF272B032374A06400A05A9A /* CompanyRouter.swift in Sources */,
 				CF8462842372049A008C0314 /* AppNavigationController.swift in Sources */,
 				D38D57AF2375F74900CF1DDB /* AppFuture+PromisedFuture.swift in Sources */,
+				D336C3F923780AF6007DC885 /* SettingsViewController.swift in Sources */,
 				CF8462852372049A008C0314 /* LoginViewController.swift in Sources */,
 				D38D57BC23760F7600CF1DDB /* ServiceResponse.swift in Sources */,
 				D3333F852377330F0007A124 /* DatePickerViewController.swift in Sources */,
