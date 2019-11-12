@@ -17,6 +17,12 @@ class NetworkConstants {
         }
     }
     
+    // Parsing Error
+    struct ParsingError {
+        static let jasonSerializationFailed = -2000
+        static let serviceError = -3000
+    }
+    
 }
 
 enum HTTPHeaderField: String {

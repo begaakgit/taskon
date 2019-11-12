@@ -176,11 +176,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 extension HomeViewController {
     
     private func performLogoutRequest() {
-//        let request = APIClient.login(company: clientCode.normalize)
-//        request.execute(errorHandler: errorHandler) { [weak self] client in
-//            guard let _ = self else { return }
-//            TOUserDefaults.client.set(value: client)
-//            completion?()
-//        }
+        let request = APIClient.logout()
+        request.execute { [weak self] _ in
+            guard let self = self else { return }
+            self.logoutUser()
+        }
     }
 }

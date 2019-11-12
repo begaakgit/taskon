@@ -54,6 +54,8 @@ extension AppViewController {
     
     public func logoutUser() {
         TOUserDefaults.clearDefaults()
+        let loginNavController = Storyboard.main.instantiateInitialViewController()
+        view.window?.rootViewController = loginNavController
     }
     
 }

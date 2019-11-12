@@ -63,10 +63,13 @@ class LoginViewController: AppViewController {
     }
     
     private func startLoginSpin(completion: VoidCompletion? = nil) {
+        view.endEditing(true)
+        view.isUserInteractionEnabled = false
         loginButton.startAnimate(spinnerType: .ballRotateChase, spinnercolor: .white, complete: completion)
     }
     
     private func stopLoginSpin(type: CompletionType, completion: VoidCompletion? = nil) {
+        view.isUserInteractionEnabled = true
         loginButton.stopAnimationWithCompletionTypeAndBackToDefaults(completionType: type, backToDefaults: true, complete: completion)
     }
     
@@ -78,7 +81,7 @@ class LoginViewController: AppViewController {
 extension LoginViewController {
     
     @IBAction private func loginButtonTapped(_ sender: UIButton) {
-        loginButton.startAnimate(spinnerType: .ballRotateChase, spinnercolor: .white) { [weak self] in
+        startLoginSpin { [weak self] in
             guard let self = self else { return }
             self.performClientRequest { [weak self] in
                 guard let self = self else { return }
@@ -134,12 +137,9 @@ extension LoginViewController {
         let request = APIClient.login(company: clientCode.normalize)
         
         let success: ServiceSuccess<TOClient> = { [weak self] client in
-            guard let self = self else { return }
-            self.stopLoginSpin(type: .success) { [weak self] in
-                guard let _ = self else { return }
-                TOUserDefaults.client.set(value: client)
-                completion?()
-            }
+            guard let _ = self else { return }
+            TOUserDefaults.client.set(value: client)
+            completion?()
         }
         
         let failure: ServiceFailure = { [weak self] _ in
@@ -159,7 +159,7 @@ extension LoginViewController {
             guard let self = self else { return }
             self.stopLoginSpin(type: .success) { [weak self] in
                 guard let self = self else { return }
-                debugPrint(user)
+                TOUserDefaults.user.set(value: user)
                 self.openHome()
             }
         }

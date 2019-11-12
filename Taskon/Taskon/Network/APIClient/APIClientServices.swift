@@ -17,7 +17,7 @@ extension APIClient {
     
     static func login(company code: String) -> Future<TOClient> {
         let router = CompanyRouter.login(code: code)
-        let responseFuture: Future<TOClientServiceResponse> = performRequest(router: router)
+        let responseFuture: Future<TOClientServiceResponse> = performClientRequest(router: router)
         return resolve(clientResponse: responseFuture)
     }
     
@@ -30,12 +30,12 @@ extension APIClient {
         return resolve(response: responseFuture)
     }
     
-//    static func logout() -> Future<EmptyCodable> {
-//        let userId = "7"
-//        let router = UserRouter.logout(userId: userId)
-//        let responseFuture: Future<ServiceResponse<EmptyCodable>> = performRequest(router: router)
-//        return responseFuture
-//    }
+    static func logout() -> Future<EmptyCodable> {
+        let userId = TOUserDefaults.user.get()?.id ?? -1
+        let router = UserRouter.logout(userId: userId)
+        let responseFuture: Future<ServiceResponse<EmptyCodable>> = performRequest(router: router)
+        return resolve(response: responseFuture)
+    }
     
     
     // MARK: - Private Methods
@@ -65,21 +65,8 @@ extension APIClient {
         return Future(operation: { completion in
             response.execute { result in
                 switch result {
-                case .success(let serviceResponse):
-                    if let result = serviceResponse.data {
-                        if let value = result.value {
-                            completion(.success(value))
-                        } else {
-//                            let error = TOError.server(ErrorCodeTuple())
-//                            completion(.failure(<#T##Error#>))
-                        }
-                    } else {
-                        if let serviceError = serviceResponse.data {
-                            let error = TOError.server(ErrorCodeTuple(code: -1, message: "ERROR"))
-                            completion(.failure(error))
-                        }
-                    }
-                    
+                case .success(let value):
+                    completion(.success(value.data))
                 case .failure(let error):
                     completion(.failure(error))
                 }

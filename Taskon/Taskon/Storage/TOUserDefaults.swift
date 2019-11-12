@@ -11,9 +11,11 @@ import Foundation
 
 struct TOUserDefaults {
     static var client = UserDefaultObject<TOClient>(key: "Client")
+    static var user = UserDefaultObject<User>(key: "User")
     
     static func clearDefaults() {
         client.clear()
+        user.clear()
     }
 }
 

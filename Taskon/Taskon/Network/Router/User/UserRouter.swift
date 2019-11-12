@@ -12,7 +12,7 @@ import Alamofire
 enum UserRouter: NetworkRouter {
     
     case login(username: String, password: String)
-    case logout(userId: String)
+    case logout(userId: Int)
     
     // Path
     var baseUrl: String {

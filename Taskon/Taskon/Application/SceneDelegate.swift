@@ -60,8 +60,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 extension SceneDelegate {
     
     private func setupRootViewController() {
-        let navController = Storyboard.home.instantiateInitialViewController()
-        window?.rootViewController = navController
+        if let _ = TOUserDefaults.user.get() {
+            let navController = Storyboard.home.instantiateInitialViewController()
+            window?.rootViewController = navController
+        } else {
+            let navController = Storyboard.main.instantiateInitialViewController()
+            window?.rootViewController = navController
+        }
+        
         window?.makeKeyAndVisible()
     }
     
