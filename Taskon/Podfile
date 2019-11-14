@@ -12,5 +12,6 @@ target 'Taskon' do
   pod 'SnapKit'
   pod 'SSSpinnerButton'
   pod 'JBDatePicker'
+  pod 'SkeletonView'
 
 end
