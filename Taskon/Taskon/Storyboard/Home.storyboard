@@ -138,7 +138,7 @@
         <scene sceneID="7KY-xH-GBl">
             <objects>
                 <tableViewController storyboardIdentifier="SettingsViewController" id="TZ7-SP-ko7" customClass="SettingsViewController" customModule="Taskon" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" id="jSZ-hL-Pbg">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" id="jSZ-hL-Pbg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -354,6 +354,9 @@
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="postal-code"/>
+                                                                    <connections>
+                                                                        <outlet property="delegate" destination="TZ7-SP-ko7" id="D8K-7i-tNl"/>
+                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -411,6 +414,9 @@
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="postal-code"/>
+                                                                    <connections>
+                                                                        <outlet property="delegate" destination="TZ7-SP-ko7" id="Dz1-G5-hhF"/>
+                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -468,6 +474,9 @@
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="postal-code"/>
+                                                                    <connections>
+                                                                        <outlet property="delegate" destination="TZ7-SP-ko7" id="lsz-WP-xMU"/>
+                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -627,6 +636,9 @@
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="postal-code"/>
+                                                                    <connections>
+                                                                        <outlet property="delegate" destination="TZ7-SP-ko7" id="8Zw-Ra-Bv6"/>
+                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -684,6 +696,9 @@
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="postal-code"/>
+                                                                    <connections>
+                                                                        <outlet property="delegate" destination="TZ7-SP-ko7" id="KIe-Vg-AyM"/>
+                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

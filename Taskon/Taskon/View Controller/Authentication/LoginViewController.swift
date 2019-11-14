@@ -160,6 +160,7 @@ extension LoginViewController {
             self.stopLoginSpin(type: .success) { [weak self] in
                 guard let self = self else { return }
                 TOUserDefaults.user.set(value: user)
+                TOUserDefaults.settings.set(value: Settings())
                 self.openHome()
             }
         }

@@ -53,6 +53,7 @@
 		D3AEEFFF2375BEC90094F7B4 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEEFFE2375BEC90094F7B4 /* HomeCell.swift */; };
 		D3AEF0012375BF240094F7B4 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEF0002375BF240094F7B4 /* Utilities.swift */; };
 		D3AEF0032375BF5A0094F7B4 /* AppTableView+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEF0022375BF5A0094F7B4 /* AppTableView+UITableView.swift */; };
+		D3C574F8237D3C4300EBB2F8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C574F7237D3C4300EBB2F8 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +106,7 @@
 		D3AEEFFE2375BEC90094F7B4 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		D3AEF0002375BF240094F7B4 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		D3AEF0022375BF5A0094F7B4 /* AppTableView+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppTableView+UITableView.swift"; sourceTree = "<group>"; };
+		D3C574F7237D3C4300EBB2F8 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E8EE73D8B5FC65238FC15B26 /* Pods_Taskon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taskon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -299,6 +301,7 @@
 				D38D57B02375F8AA00CF1DDB /* APICodeFilter.swift */,
 				D38D57BB23760F7600CF1DDB /* ServiceResponse.swift */,
 				D3A96DCE2376C76900291D24 /* User.swift */,
+				D3C574F7237D3C4300EBB2F8 /* Settings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				CF84627F2372049A008C0314 /* AppDelegate.swift in Sources */,
 				D38D57A52375E62F00CF1DDB /* EmptyCodable.swift in Sources */,
 				D38D57BA23760BF500CF1DDB /* APIClientServices.swift in Sources */,
+				D3C574F8237D3C4300EBB2F8 /* Settings.swift in Sources */,
 				CFE876BA2374A8E80051FAA9 /* Constants.swift in Sources */,
 				CF272B032374A06400A05A9A /* CompanyRouter.swift in Sources */,
 				CF8462842372049A008C0314 /* AppNavigationController.swift in Sources */,

@@ -36,6 +36,7 @@ class SettingsViewController: AppTableViewController {
     @IBOutlet private weak var reminderIntervalTextField: UITextField!
     @IBOutlet private weak var reminderReitrationTextField: UITextField!
     @IBOutlet private weak var gadgetLabel: UILabel!
+    private var settings: Settings = TOUserDefaults.settings.get() ?? Settings()
     
     
     // MARK: - View Controller Life Cycle
@@ -61,15 +62,47 @@ extension SettingsViewController {
     }
     
     private func setupViewController() {
-        
+        appInfoLabel.text = settings.appInfo
+        locationIntervalTextField.text = "\(settings.locationCheckInterval)"
+        locationAccuracyTextField.text = "\(settings.locationAccuracy)"
+        autoSynIntervalTextField.text = "\(settings.autoSyncInterval)"
+        reminderIntervalTextField.text = "\(settings.reminderInterval)"
+        reminderReitrationTextField.text = "\(settings.reminderReitrationTime)"
+        gadgetLabel.text = settings.gadgetId
+    }
+    
+    private func updateSettings() {
+        TOUserDefaults.settings.set(value: settings)
     }
     
 }
 
 
-// MARK: - Action Methods
+// MARK: - TextField Methods
     
-extension SettingsViewController {
+extension SettingsViewController: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let text = textField.text
+        
+        if textField == locationIntervalTextField {
+            settings.locationCheckInterval = Int(text ?? "") ?? settings.locationCheckInterval
+            
+        } else if textField == locationAccuracyTextField {
+            settings.locationAccuracy = Int(text ?? "") ?? settings.locationAccuracy
+            
+        } else if textField == autoSynIntervalTextField {
+            settings.autoSyncInterval = Int(text ?? "") ?? settings.autoSyncInterval
+            
+        } else if textField == reminderIntervalTextField {
+            settings.reminderInterval = Int(text ?? "") ?? settings.reminderInterval
+            
+        } else if textField == reminderReitrationTextField {
+            settings.reminderReitrationTime = Int(text ?? "") ?? settings.reminderReitrationTime
+        }
+        
+        updateSettings()
+    }
     
 }
 
