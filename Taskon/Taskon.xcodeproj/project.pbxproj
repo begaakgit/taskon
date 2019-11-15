@@ -50,6 +50,11 @@
 		D3A8C57D2376E36400CCA89B /* AppView+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A8C57C2376E36400CCA89B /* AppView+UIView.swift */; };
 		D3A96DCD2376C6BE00291D24 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A96DCC2376C6BE00291D24 /* NewTaskViewController.swift */; };
 		D3A96DCF2376C76900291D24 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A96DCE2376C76900291D24 /* User.swift */; };
+		D3ADAE22237EB55E00FD7F70 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ADAE21237EB55E00FD7F70 /* Customer.swift */; };
+		D3ADAE25237EB64400FD7F70 /* TaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ADAE24237EB64400FD7F70 /* TaskRouter.swift */; };
+		D3ADAE27237EC27300FD7F70 /* CustomersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ADAE26237EC27300FD7F70 /* CustomersViewController.swift */; };
+		D3ADAE29237EC64000FD7F70 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ADAE28237EC64000FD7F70 /* AppButton.swift */; };
+		D3ADAE2C237ECC3D00FD7F70 /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ADAE2B237ECC3D00FD7F70 /* LoadingButton.swift */; };
 		D3AEEFFF2375BEC90094F7B4 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEEFFE2375BEC90094F7B4 /* HomeCell.swift */; };
 		D3AEF0012375BF240094F7B4 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEF0002375BF240094F7B4 /* Utilities.swift */; };
 		D3AEF0032375BF5A0094F7B4 /* AppTableView+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEF0022375BF5A0094F7B4 /* AppTableView+UITableView.swift */; };
@@ -103,6 +108,11 @@
 		D3A8C57C2376E36400CCA89B /* AppView+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppView+UIView.swift"; sourceTree = "<group>"; };
 		D3A96DCC2376C6BE00291D24 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		D3A96DCE2376C76900291D24 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D3ADAE21237EB55E00FD7F70 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		D3ADAE24237EB64400FD7F70 /* TaskRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRouter.swift; sourceTree = "<group>"; };
+		D3ADAE26237EC27300FD7F70 /* CustomersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersViewController.swift; sourceTree = "<group>"; };
+		D3ADAE28237EC64000FD7F70 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
+		D3ADAE2B237ECC3D00FD7F70 /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
 		D3AEEFFE2375BEC90094F7B4 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		D3AEF0002375BF240094F7B4 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		D3AEF0022375BF5A0094F7B4 /* AppTableView+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppTableView+UITableView.swift"; sourceTree = "<group>"; };
@@ -194,6 +204,7 @@
 				CFB33FD32374C1C500DE0507 /* Models */,
 				D38D57A02375E33B00CF1DDB /* Storage */,
 				CF272AFA23749AF800A05A9A /* Constants */,
+				D3ADAE2A237ECC2B00FD7F70 /* View */,
 				CF272AF72374962500A05A9A /* Network */,
 				CF8462682372049A008C0314 /* Extentions */,
 				CF84625423720499008C0314 /* Resources */,
@@ -249,6 +260,7 @@
 				D32B224E2376D6D500282818 /* AppViewController+UIViewController.swift */,
 				D3A8C57C2376E36400CCA89B /* AppView+UIView.swift */,
 				D357714823773CD20038C7EE /* AppDate+Date.swift */,
+				D3ADAE28237EC64000FD7F70 /* AppButton.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -302,6 +314,7 @@
 				D38D57BB23760F7600CF1DDB /* ServiceResponse.swift */,
 				D3A96DCE2376C76900291D24 /* User.swift */,
 				D3C574F7237D3C4300EBB2F8 /* Settings.swift */,
+				D3ADAE21237EB55E00FD7F70 /* Customer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -323,6 +336,7 @@
 				D3A96DCC2376C6BE00291D24 /* NewTaskViewController.swift */,
 				D3333F842377330F0007A124 /* DatePickerViewController.swift */,
 				D336C3F823780AF6007DC885 /* SettingsViewController.swift */,
+				D3ADAE26237EC27300FD7F70 /* CustomersViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -338,6 +352,7 @@
 		D38D57B4237608C000CF1DDB /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				D3ADAE23237EB63700FD7F70 /* Task */,
 				D38D57B62376090400CF1DDB /* User */,
 				CF272B012374A04F00A05A9A /* Company */,
 				CF272AF823749A8A00A05A9A /* NetworkRouter.swift */,
@@ -361,6 +376,22 @@
 				D38D57B72376092500CF1DDB /* UserRouter.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		D3ADAE23237EB63700FD7F70 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				D3ADAE24237EB64400FD7F70 /* TaskRouter.swift */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		D3ADAE2A237ECC2B00FD7F70 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3ADAE2B237ECC3D00FD7F70 /* LoadingButton.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D3AEEFFD2375BEB90094F7B4 /* Cells */ = {
@@ -501,9 +532,13 @@
 				D38D57AD2375EEFF00CF1DDB /* TOError.swift in Sources */,
 				CF272B0023749F7E00A05A9A /* APIClient.swift in Sources */,
 				CF8462832372049A008C0314 /* AppViewController.swift in Sources */,
+				D3ADAE2C237ECC3D00FD7F70 /* LoadingButton.swift in Sources */,
+				D3ADAE27237EC27300FD7F70 /* CustomersViewController.swift in Sources */,
 				CFB33FD02374B44100DE0507 /* Storyboard.swift in Sources */,
 				D3A96DCF2376C76900291D24 /* User.swift in Sources */,
+				D3ADAE25237EB64400FD7F70 /* TaskRouter.swift in Sources */,
 				D357714923773CD20038C7EE /* AppDate+Date.swift in Sources */,
+				D3ADAE22237EB55E00FD7F70 /* Customer.swift in Sources */,
 				CF8462812372049A008C0314 /* AppString+String.swift in Sources */,
 				CF84627F2372049A008C0314 /* AppDelegate.swift in Sources */,
 				D38D57A52375E62F00CF1DDB /* EmptyCodable.swift in Sources */,
@@ -525,6 +560,7 @@
 				D3A8C57D2376E36400CCA89B /* AppView+UIView.swift in Sources */,
 				CFB33FD82374C27600DE0507 /* Types.swift in Sources */,
 				D38D57A92375E8C500CF1DDB /* ServiceError.swift in Sources */,
+				D3ADAE29237EC64000FD7F70 /* AppButton.swift in Sources */,
 				D38D57A72375E75300CF1DDB /* TOClient.swift in Sources */,
 				CFE876B82374A7D90051FAA9 /* HomeViewController.swift in Sources */,
 				D3AEF0012375BF240094F7B4 /* Utilities.swift in Sources */,

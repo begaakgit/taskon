@@ -74,6 +74,7 @@ extension AppViewController: APIErrorHandler {
             if let toError = error as? TOError {
                 
                 var message = ""
+                var logoutUser = false
                 
                 switch toError {
                 case .noInternet:
@@ -82,6 +83,7 @@ extension AppViewController: APIErrorHandler {
                 case .server(let codedError):
                     if codedError.code == ErrorCode.notAutorized.rawValue {
                         message = ErrorCode.notAutorized.description
+                        logoutUser = true
                     } else if filter?(codedError) == false {
                         message = codedError.message
                     } else {
@@ -98,9 +100,16 @@ extension AppViewController: APIErrorHandler {
                 }
                 
                 if !message.normalize.isEmpty {
-                    self.showAlert(message: message)
+                    self.showAlert(message: message) { [weak self] in
+                        guard let self = self else { return }
+                        if logoutUser {
+                            self.logoutUser()
+                        }
+                    }
                 }
                 
+            } else {
+                self.showAlert(message: error.localizedDescription)
             }
             
         }

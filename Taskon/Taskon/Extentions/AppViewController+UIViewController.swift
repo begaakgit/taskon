@@ -15,4 +15,12 @@ extension UIViewController {
         return viewController
     }
     
+    func push(viewController controller: UIViewController, animated: Bool) {
+        navigationController?.pushViewController(controller, animated: animated)
+    }
+    
+    func pop(animated: Bool) {
+        navigationController?.popViewController(animated: animated)
+    }
+    
 }

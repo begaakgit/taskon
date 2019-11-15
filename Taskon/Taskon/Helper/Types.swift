@@ -16,3 +16,4 @@ typealias APIErrorHandlerCompletion = (Error, ErrorCodeFilter?) -> Void
 typealias ServiceFailure = (Error) -> Void
 typealias ServiceSuccess<T> = (T) -> Void
 typealias DateCompletion = (Date) -> Void
+typealias CustomerCompletion = (Customer) -> Void

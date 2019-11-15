@@ -18,12 +18,15 @@ class NewTaskViewController: AppViewController {
     @IBOutlet private weak var companyTextField: SkyFloatingLabelTextField!
     @IBOutlet private weak var tastTextField: SkyFloatingLabelTextField!
     @IBOutlet private weak var descriptiontextField: SkyFloatingLabelTextField!
+    @IBOutlet private weak var lookupButton: LoadingButton!
     @IBOutlet private weak var saveButton: UIButton!
     
     private lazy var validator: Validator = Validator()
     
     public var addTaskCompletion: VoidCompletion? = nil
     
+    private var customers: [Customer] = []
+    private var selectedCustomer: Customer? = nil
     
     // MARK: - View Controller Life Cycle
     
@@ -56,7 +59,22 @@ extension NewTaskViewController {
         validator.registerField(textField: tastTextField, rules: [RequiredRule()])
         validator.registerField(textField: descriptiontextField, rules: [RequiredRule()])
         validator.validate(delegate: self)
-        saveButton.isEnabled = false
+        saveButton.enable = false
+    }
+    
+    private func openCustomers() {
+        if !customers.isEmpty {
+            let customersVC: CustomersViewController = instanceFromStoryboard(storyboard: Storyboard.home)
+            customersVC.customers = customers
+            
+            customersVC.selectionBlock = { [weak self] customer in
+                guard let self = self else { return }
+                self.selectedCustomer = customer
+                self.companyTextField.text = customer.name
+            }
+            
+            push(viewController: customersVC, animated: true)
+        }
     }
 }
 
@@ -76,6 +94,18 @@ extension NewTaskViewController {
     
     @objc private func textFieldDidChange(_ textField: UITextField) {
         validator.validate(delegate: self)
+    }
+    
+    @IBAction private func lookupButtonTapped(_ sender: UIButton) {
+        lookupButton.startLoading()
+        view.endEditing(true)
+        view.isUserInteractionEnabled = false
+        performGetCustomerRequest { [weak self] in
+            guard let self = self else { return }
+            self.lookupButton.endLoading()
+            self.view.isUserInteractionEnabled = true
+            self.openCustomers()
+        }
     }
     
 }
@@ -103,11 +133,11 @@ extension NewTaskViewController: UITextFieldDelegate {
 extension NewTaskViewController: ValidationDelegate {
     
     func validationSuccessful() {
-        saveButton.isEnabled = true
+        saveButton.enable = true
     }
     
     func validationFailed(errors: [UITextField : ValidationError]) {
-        saveButton.isEnabled = false
+        saveButton.enable = false
     }
     
 }
@@ -118,10 +148,38 @@ extension NewTaskViewController: ValidationDelegate {
 extension NewTaskViewController {
     
     private func performNewTaskRequest(completion: VoidCompletion? = nil) {
-        guard let company = companyTextField.text,
-            let task = tastTextField.text,
+        guard let task = tastTextField.text,
             let description = descriptiontextField.text else { return }
-        completion?()
+        
+        let customerName = selectedCustomer?.name ?? companyTextField.text ?? ""
+        let customerId = selectedCustomer?.id
+        let request = APIClient.newTask(title: task, description: description, customerId: customerId, customerName: customerName)
+        
+        let success: ServiceSuccess<EmptyCodable> = { [weak self] _ in
+            guard let self = self else { return }
+            completion?()
+        }
+        
+        request.execute(errorHandler: errorHandler, onSuccess: success)
+    }
+    
+    private func performGetCustomerRequest(completion: VoidCompletion? = nil) {
+        let searchText = companyTextField.text ?? ""
+        let request = APIClient.customers(search: searchText)
+        
+        let success: ServiceSuccess<CustomerResponse> = { [weak self] response in
+            guard let self = self else { return }
+            self.customers.removeAll()
+            self.customers = response.customers
+            completion?()
+        }
+        
+        let failure: ServiceFailure = { [weak self] _ in
+            guard let self = self else { return }
+            self.lookupButton.endLoading()
+        }
+        
+        request.execute(errorHandler: errorHandler, onFailure: failure, onSuccess: success)
     }
     
 }

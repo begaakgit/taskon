@@ -43,6 +43,8 @@ extension NetworkRouter {
             
             // Add API Token
             if token {
+                let token = TOUserDefaults.user.get()?.token ?? ""
+                parameters["token"] = token
             }
             
             // Add API Key

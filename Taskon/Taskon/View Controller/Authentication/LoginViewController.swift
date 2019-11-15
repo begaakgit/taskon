@@ -54,7 +54,7 @@ class LoginViewController: AppViewController {
         validator.registerField(textField: passwordTextField, rules: [RequiredRule()])
         validator.registerField(textField: clientCodeTextField, rules: [RequiredRule()])
         validator.validate(delegate: self)
-        loginButton.isEnabled = false
+        loginButton.enable = false
     }
     
     private func openHome() {
@@ -118,11 +118,11 @@ extension LoginViewController: UITextFieldDelegate {
 extension LoginViewController: ValidationDelegate {
     
     func validationSuccessful() {
-        loginButton.isEnabled = true
+        loginButton.enable = true
     }
     
     func validationFailed(errors: [UITextField : ValidationError]) {
-        loginButton.isEnabled = false
+        loginButton.enable = false
     }
     
 }

@@ -38,6 +38,23 @@ extension APIClient {
     }
     
     
+    // MARK: Task Methods
+    
+    static func customers(search: String) -> Future<CustomerResponse> {
+        let userId = TOUserDefaults.user.get()?.id ?? -1
+        let router = TaskRouter.customers(userId: userId, search: search)
+        let responseFuture: Future<ServiceResponse<CustomerResponse>> = performRequest(router: router)
+        return resolve(response: responseFuture)
+    }
+    
+    static func newTask(title: String, description: String, customerId: Int?, customerName: String) -> Future<EmptyCodable> {
+        let userId = TOUserDefaults.user.get()?.id ?? -1
+        let router = TaskRouter.new(userId: userId, customerId: customerId, customerName: customerName, description: description, title: title)
+        let responseFuture: Future<ServiceResponse<EmptyCodable>> = performRequest(router: router)
+        return resolve(response: responseFuture)
+    }
+    
+    
     // MARK: - Private Methods
     
     private static func resolve(clientResponse: Future<TOClientServiceResponse>) -> Future<TOClient> {

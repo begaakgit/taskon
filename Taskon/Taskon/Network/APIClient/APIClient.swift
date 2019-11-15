@@ -29,8 +29,10 @@ class APIClient {
                         parse(date: date, decoder: decoder, success: {
                             dataRequest.responseDecodableObject { (actualResponse: DataResponse<T>) in
                                 switch actualResponse.result {
-                                case .success(let value): completion(.success(value))
-                                case .failure(let error): completion(.failure(error))
+                                case .success(let value):
+                                    completion(.success(value))
+                                case .failure(let error):
+                                    completion(.failure(error))
                                 }
                             }
                         }) { (error) in
@@ -82,9 +84,15 @@ class APIClient {
                 // Json
                 if let jsonData = json["d"] as? [String : Any] {
                     
-                    if let errorMessage = jsonData["message"] as? String {
+                    if let errorMessage = jsonData["message"] as? String, let type = jsonData["type"] as? String {
                         // Error in API
-                        failure(TOError.unknown(message: errorMessage))
+                        
+                        if type == "AUTHORIZATION" {
+                            failure(TOError.server(ErrorCodeTuple(code: 401, message: errorMessage)))
+                        } else {
+                            failure(TOError.unknown(message: errorMessage))
+                        }
+                        
                     } else {
                         // Success API Call
                         success()
