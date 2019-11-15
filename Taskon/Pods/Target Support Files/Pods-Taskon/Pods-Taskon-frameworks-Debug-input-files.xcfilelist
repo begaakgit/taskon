@@ -7,6 +7,7 @@ ${BUILT_PRODUCTS_DIR}/NextGrowingTextView/NextGrowingTextView.framework
 ${BUILT_PRODUCTS_DIR}/PromisedFuture/PromisedFuture.framework
 ${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework
 ${BUILT_PRODUCTS_DIR}/SSSpinnerButton/SSSpinnerButton.framework
+${BUILT_PRODUCTS_DIR}/SimpleCheckbox/SimpleCheckbox.framework
 ${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework
 ${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework

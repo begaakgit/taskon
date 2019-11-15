@@ -8,6 +8,7 @@ PODS:
   - NextGrowingTextView (1.5.0)
   - PromisedFuture (1.0.1)
   - ReachabilitySwift (5.0.0)
+  - SimpleCheckbox (2.1.0)
   - SkeletonView (1.8.2)
   - SkyFloatingLabelTextField (3.7.0)
   - SnapKit (5.0.1)
@@ -22,6 +23,7 @@ DEPENDENCIES:
   - NextGrowingTextView
   - PromisedFuture
   - ReachabilitySwift
+  - SimpleCheckbox
   - SkeletonView
   - SkyFloatingLabelTextField
   - SnapKit
@@ -37,6 +39,7 @@ SPEC REPOS:
     - NextGrowingTextView
     - PromisedFuture
     - ReachabilitySwift
+    - SimpleCheckbox
     - SkeletonView
     - SkyFloatingLabelTextField
     - SnapKit
@@ -51,12 +54,13 @@ SPEC CHECKSUMS:
   NextGrowingTextView: 0e267e80bc203e813dc637fd1b011111ad572d57
   PromisedFuture: 3f863d17c047c3474c85045b254bb1c94743ed0f
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  SimpleCheckbox: ddcd433ab8c3a8f57300bebda13151a8f302c7f9
   SkeletonView: bb27c39857e5492136f02ee8a3aa78de55d12ecd
   SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SSSpinnerButton: ba9ec6858f2f6fa902a5131d3aec5282588241f8
   SwiftValidator: 0b6a48bf10364411b0d64c97f78665ff87ca9f8b
 
-PODFILE CHECKSUM: 6a9a9a76ff45db1d232a178daa96c318206dd81d
+PODFILE CHECKSUM: e3e7b1fbeb18cad60d5d9fb4826cf3bac8407a04
 
 COCOAPODS: 1.8.4

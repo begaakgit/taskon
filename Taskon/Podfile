@@ -13,5 +13,6 @@ target 'Taskon' do
   pod 'SSSpinnerButton'
   pod 'JBDatePicker'
   pod 'SkeletonView'
+  pod 'SimpleCheckbox'
 
 end

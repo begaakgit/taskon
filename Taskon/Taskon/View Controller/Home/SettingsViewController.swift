@@ -8,7 +8,7 @@
 
 import UIKit
 import SnapKit
-
+import SimpleCheckbox
 
 // Rows
 enum SettingRow: Int, CaseIterable {
@@ -36,6 +36,9 @@ class SettingsViewController: AppTableViewController {
     @IBOutlet private weak var reminderIntervalTextField: UITextField!
     @IBOutlet private weak var reminderReitrationTextField: UITextField!
     @IBOutlet private weak var gadgetLabel: UILabel!
+    @IBOutlet private weak var vgaCheckBox: Checkbox!
+    @IBOutlet private weak var hdCheckBox: Checkbox!
+    @IBOutlet private weak var twoKCheckBox: Checkbox!
     @IBOutlet private weak var syncSwitch: UISwitch!
     @IBOutlet private weak var reminderSwitch: UISwitch!
     private var settings: Settings = TOUserDefaults.settings.get() ?? Settings()
@@ -65,6 +68,40 @@ extension SettingsViewController {
     
     private func setupViewController() {
         appInfoLabel.text = settings.appInfo
+        
+        vgaCheckBox.borderCornerRadius = 3.0
+        vgaCheckBox.borderLineWidth = 2.0
+        vgaCheckBox.borderStyle = .square
+        vgaCheckBox.checkmarkStyle = .tick
+        vgaCheckBox.checkmarkColor = .mainBlue
+        vgaCheckBox.checkmarkSize = 0.75
+        vgaCheckBox.isChecked = false
+        vgaCheckBox.addTarget(self, action: #selector(checkBoxSelected(_:)), for: .valueChanged)
+        
+        hdCheckBox.borderCornerRadius = 3.0
+        hdCheckBox.borderLineWidth = 2.0
+        hdCheckBox.borderStyle = .square
+        hdCheckBox.checkmarkStyle = .tick
+        hdCheckBox.checkmarkColor = .mainBlue
+        hdCheckBox.checkmarkSize = 0.75
+        hdCheckBox.isChecked = false
+        hdCheckBox.addTarget(self, action: #selector(checkBoxSelected(_:)), for: .valueChanged)
+        
+        twoKCheckBox.borderCornerRadius = 3.0
+        twoKCheckBox.borderLineWidth = 2.0
+        twoKCheckBox.borderStyle = .square
+        twoKCheckBox.checkmarkStyle = .tick
+        twoKCheckBox.checkmarkColor = .mainBlue
+        twoKCheckBox.checkmarkSize = 0.75
+        twoKCheckBox.isChecked = false
+        twoKCheckBox.addTarget(self, action: #selector(checkBoxSelected(_:)), for: .valueChanged)
+        
+        switch settings.size {
+        case .vga: vgaCheckBox.isChecked = true
+        case .hd: hdCheckBox.isChecked = true
+        case .twoK: twoKCheckBox.isChecked = true
+        }
+        
         locationIntervalTextField.text = "\(settings.locationCheckInterval)"
         locationAccuracyTextField.text = "\(settings.locationAccuracy)"
         autoSynIntervalTextField.text = "\(settings.autoSyncInterval)"
@@ -92,6 +129,26 @@ extension SettingsViewController {
             
         } else if sender == reminderSwitch {
             settings.reminder = sender.isOn
+        }
+        
+        updateSettings()
+    }
+    
+    @objc private func checkBoxSelected(_ sender: Checkbox) {
+        if sender == vgaCheckBox {
+            hdCheckBox.isChecked = false
+            twoKCheckBox.isChecked = false
+            settings.size = .vga
+            
+        } else if sender == hdCheckBox {
+            vgaCheckBox.isChecked = false
+            twoKCheckBox.isChecked = false
+            settings.size = .hd
+            
+        } else if sender == twoKCheckBox {
+            hdCheckBox.isChecked = false
+            vgaCheckBox.isChecked = false
+            settings.size = .twoK
         }
         
         updateSettings()
