@@ -36,6 +36,8 @@ class SettingsViewController: AppTableViewController {
     @IBOutlet private weak var reminderIntervalTextField: UITextField!
     @IBOutlet private weak var reminderReitrationTextField: UITextField!
     @IBOutlet private weak var gadgetLabel: UILabel!
+    @IBOutlet private weak var syncSwitch: UISwitch!
+    @IBOutlet private weak var reminderSwitch: UISwitch!
     private var settings: Settings = TOUserDefaults.settings.get() ?? Settings()
     
     
@@ -66,7 +68,9 @@ extension SettingsViewController {
         locationIntervalTextField.text = "\(settings.locationCheckInterval)"
         locationAccuracyTextField.text = "\(settings.locationAccuracy)"
         autoSynIntervalTextField.text = "\(settings.autoSyncInterval)"
+        syncSwitch.isOn = settings.autoSync
         reminderIntervalTextField.text = "\(settings.reminderInterval)"
+        reminderSwitch.isOn = settings.reminder
         reminderReitrationTextField.text = "\(settings.reminderReitrationTime)"
         gadgetLabel.text = settings.gadgetId
     }
@@ -75,6 +79,23 @@ extension SettingsViewController {
         TOUserDefaults.settings.set(value: settings)
     }
     
+}
+
+
+// MARK: - Action Methods
+
+extension SettingsViewController {
+    
+    @IBAction private func switchValueChanged(_ sender: UISwitch) {
+        if sender == syncSwitch {
+            settings.autoSync = sender.isOn
+            
+        } else if sender == reminderSwitch {
+            settings.reminder = sender.isOn
+        }
+        
+        updateSettings()
+    }
 }
 
 
