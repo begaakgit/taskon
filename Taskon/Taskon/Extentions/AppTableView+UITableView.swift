@@ -25,7 +25,7 @@ extension UITableView {
         let emptyLabel = UILabel(frame: frame)
         emptyLabel.text = text
         emptyLabel.textAlignment = .center
-        emptyLabel.font = UIFont.systemFont(ofSize: 20.0)
+        emptyLabel.font = UIFont.toFront(ofSize: 20)
         emptyLabel.textColor = .darkGray
         emptyLabel.numberOfLines = 0
         emptyLabel.sizeToFit()

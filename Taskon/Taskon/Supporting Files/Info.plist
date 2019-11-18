@@ -65,5 +65,22 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>MyriadPro-Light.otf</string>
+        <string>MyriadPro-BlackCond.otf</string>
+        <string>MyriadPro-BoldCondlt.otf</string>
+        <string>MyriadPro-Lightlt.otf</string>
+        <string>MyriadPro-Semiboldlt.otf</string>
+        <string>MyriadPro-Semibold.otf</string>
+        <string>MyriadPro-Regular.otf</string>
+        <string>MyriadPro-lt.otf</string>
+        <string>MyriadPro-Bold.otf</string>
+        <string>MyriadPro-Condlt.otf</string>
+        <string>MyriadPro-Black.otf</string>
+        <string>MyriadPro-Boldlt.otf</string>
+        <string>MyriadPro-BoldCond.otf</string>
+        <string>MyriadPro-Cond.otf</string>
+	</array>
 </dict>
 </plist>

@@ -35,6 +35,9 @@ class HomeViewController: AppViewController {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.tintColor = .white
         searchController.searchBar.barTintColor = .white
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        definesPresentationContext = true
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = true
     }
@@ -85,6 +88,10 @@ class HomeViewController: AppViewController {
         }
         return logout
     }
+    
+    private func filter(searchText: String?) {
+        
+    }
 
 }
 
@@ -120,6 +127,18 @@ extension HomeViewController {
 }
 
 
+// MARK: - Search Controller Methods
+
+extension HomeViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        let text = searchController.searchBar.text
+        filter(searchText: text)
+    }
+    
+}
+
+
 // MARK: - Action Methods
 
 extension HomeViewController {
@@ -132,7 +151,7 @@ extension HomeViewController {
         menuVC.settings = openSettings()
         menuVC.logout = performLogout()
         menuVC.modalPresentationStyle = .popover
-        menuVC.preferredContentSize = CGSize(width: 250, height: 430)
+        menuVC.preferredContentSize = CGSize(width: 250, height: 325)
         guard let popOver = menuVC.popoverPresentationController else { return }
         popOver.delegate = self
         popOver.barButtonItem = sender

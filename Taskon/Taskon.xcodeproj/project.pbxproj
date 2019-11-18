@@ -34,6 +34,21 @@
 		D32B224F2376D6D500282818 /* AppViewController+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B224E2376D6D500282818 /* AppViewController+UIViewController.swift */; };
 		D3333F852377330F0007A124 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333F842377330F0007A124 /* DatePickerViewController.swift */; };
 		D336C3F923780AF6007DC885 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D336C3F823780AF6007DC885 /* SettingsViewController.swift */; };
+		D34D8B5C2382EF9A00F18ECF /* MyriadPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D34D8B4E2382EF9A00F18ECF /* MyriadPro-Light.otf */; };
+		D34D8B5D2382EF9A00F18ECF /* MyriadPro-BlackCond.otf in Resources */ = {isa = PBXBuildFile; fileRef = D34D8B4F2382EF9A00F18ECF /* MyriadPro-BlackCond.otf */; };
+		D34D8B5E2382EF9A00F18ECF /* MyriadPro-BoldCondIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = D34D8B502382EF9A00F18ECF /* MyriadPro-BoldCondIt.otf */; };
+		D34D8B5F2382EF9A00F18ECF /* MyriadPro-LightIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = D34D8B512382EF9A00F18ECF /* MyriadPro-LightIt.otf */; };
+		D34D8B602382EF9A00F18ECF /* MyriadPro-SemiboldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = D34D8B522382EF9A00F18ECF /* MyriadPro-SemiboldIt.otf */; };
+		D34D8B612382EF9A00F18ECF /* MyriadPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D34D8B532382EF9A00F18ECF /* MyriadPro-Semibold.otf */; };
+		D34D8B622382EF9A00F18ECF /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D34D8B542382EF9A00F18ECF /* MyriadPro-Regular.otf */; };
+		D34D8B632382EF9A00F18ECF /* MyriadPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = D34D8B552382EF9A00F18ECF /* MyriadPro-It.otf */; };
+		D34D8B642382EF9A00F18ECF /* MyriadPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D34D8B562382EF9A00F18ECF /* MyriadPro-Bold.otf */; };
+		D34D8B652382EF9A00F18ECF /* MyriadPro-CondIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = D34D8B572382EF9A00F18ECF /* MyriadPro-CondIt.otf */; };
+		D34D8B662382EF9A00F18ECF /* MyriadPro-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = D34D8B582382EF9A00F18ECF /* MyriadPro-Black.otf */; };
+		D34D8B672382EF9A00F18ECF /* MyriadPro-BoldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = D34D8B592382EF9A00F18ECF /* MyriadPro-BoldIt.otf */; };
+		D34D8B682382EF9A00F18ECF /* MyriadPro-BoldCond.otf in Resources */ = {isa = PBXBuildFile; fileRef = D34D8B5A2382EF9A00F18ECF /* MyriadPro-BoldCond.otf */; };
+		D34D8B692382EF9A00F18ECF /* MyriadPro-Cond.otf in Resources */ = {isa = PBXBuildFile; fileRef = D34D8B5B2382EF9A00F18ECF /* MyriadPro-Cond.otf */; };
+		D34D8B6B2382F57300F18ECF /* AppFont+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34D8B6A2382F57300F18ECF /* AppFont+UIFont.swift */; };
 		D357714923773CD20038C7EE /* AppDate+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357714823773CD20038C7EE /* AppDate+Date.swift */; };
 		D38D57A32375E38900CF1DDB /* TOUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57A22375E38900CF1DDB /* TOUserDefaults.swift */; };
 		D38D57A52375E62F00CF1DDB /* EmptyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57A42375E62F00CF1DDB /* EmptyCodable.swift */; };
@@ -92,6 +107,21 @@
 		D32B224E2376D6D500282818 /* AppViewController+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppViewController+UIViewController.swift"; sourceTree = "<group>"; };
 		D3333F842377330F0007A124 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		D336C3F823780AF6007DC885 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D34D8B4E2382EF9A00F18ECF /* MyriadPro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Light.otf"; sourceTree = "<group>"; };
+		D34D8B4F2382EF9A00F18ECF /* MyriadPro-BlackCond.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-BlackCond.otf"; sourceTree = "<group>"; };
+		D34D8B502382EF9A00F18ECF /* MyriadPro-BoldCondIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-BoldCondIt.otf"; sourceTree = "<group>"; };
+		D34D8B512382EF9A00F18ECF /* MyriadPro-LightIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-LightIt.otf"; sourceTree = "<group>"; };
+		D34D8B522382EF9A00F18ECF /* MyriadPro-SemiboldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-SemiboldIt.otf"; sourceTree = "<group>"; };
+		D34D8B532382EF9A00F18ECF /* MyriadPro-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Semibold.otf"; sourceTree = "<group>"; };
+		D34D8B542382EF9A00F18ECF /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Regular.otf"; sourceTree = "<group>"; };
+		D34D8B552382EF9A00F18ECF /* MyriadPro-It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-It.otf"; sourceTree = "<group>"; };
+		D34D8B562382EF9A00F18ECF /* MyriadPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Bold.otf"; sourceTree = "<group>"; };
+		D34D8B572382EF9A00F18ECF /* MyriadPro-CondIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-CondIt.otf"; sourceTree = "<group>"; };
+		D34D8B582382EF9A00F18ECF /* MyriadPro-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Black.otf"; sourceTree = "<group>"; };
+		D34D8B592382EF9A00F18ECF /* MyriadPro-BoldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-BoldIt.otf"; sourceTree = "<group>"; };
+		D34D8B5A2382EF9A00F18ECF /* MyriadPro-BoldCond.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-BoldCond.otf"; sourceTree = "<group>"; };
+		D34D8B5B2382EF9A00F18ECF /* MyriadPro-Cond.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Cond.otf"; sourceTree = "<group>"; };
+		D34D8B6A2382F57300F18ECF /* AppFont+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppFont+UIFont.swift"; sourceTree = "<group>"; };
 		D357714823773CD20038C7EE /* AppDate+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDate+Date.swift"; sourceTree = "<group>"; };
 		D38D57A22375E38900CF1DDB /* TOUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOUserDefaults.swift; sourceTree = "<group>"; };
 		D38D57A42375E62F00CF1DDB /* EmptyCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCodable.swift; sourceTree = "<group>"; };
@@ -218,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				CF84625523720499008C0314 /* Assets.xcassets */,
+				D34D8B4D2382EF9A00F18ECF /* Fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -261,6 +292,7 @@
 				D3A8C57C2376E36400CCA89B /* AppView+UIView.swift */,
 				D357714823773CD20038C7EE /* AppDate+Date.swift */,
 				D3ADAE28237EC64000FD7F70 /* AppButton.swift */,
+				D34D8B6A2382F57300F18ECF /* AppFont+UIFont.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -339,6 +371,27 @@
 				D3ADAE26237EC27300FD7F70 /* CustomersViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		D34D8B4D2382EF9A00F18ECF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D34D8B4E2382EF9A00F18ECF /* MyriadPro-Light.otf */,
+				D34D8B4F2382EF9A00F18ECF /* MyriadPro-BlackCond.otf */,
+				D34D8B502382EF9A00F18ECF /* MyriadPro-BoldCondIt.otf */,
+				D34D8B512382EF9A00F18ECF /* MyriadPro-LightIt.otf */,
+				D34D8B522382EF9A00F18ECF /* MyriadPro-SemiboldIt.otf */,
+				D34D8B532382EF9A00F18ECF /* MyriadPro-Semibold.otf */,
+				D34D8B542382EF9A00F18ECF /* MyriadPro-Regular.otf */,
+				D34D8B552382EF9A00F18ECF /* MyriadPro-It.otf */,
+				D34D8B562382EF9A00F18ECF /* MyriadPro-Bold.otf */,
+				D34D8B572382EF9A00F18ECF /* MyriadPro-CondIt.otf */,
+				D34D8B582382EF9A00F18ECF /* MyriadPro-Black.otf */,
+				D34D8B592382EF9A00F18ECF /* MyriadPro-BoldIt.otf */,
+				D34D8B5A2382EF9A00F18ECF /* MyriadPro-BoldCond.otf */,
+				D34D8B5B2382EF9A00F18ECF /* MyriadPro-Cond.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		D38D57A02375E33B00CF1DDB /* Storage */ = {
@@ -464,8 +517,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFB33FCB2374B30A00DE0507 /* Menu.storyboard in Resources */,
+				D34D8B672382EF9A00F18ECF /* MyriadPro-BoldIt.otf in Resources */,
+				D34D8B602382EF9A00F18ECF /* MyriadPro-SemiboldIt.otf in Resources */,
+				D34D8B642382EF9A00F18ECF /* MyriadPro-Bold.otf in Resources */,
+				D34D8B682382EF9A00F18ECF /* MyriadPro-BoldCond.otf in Resources */,
+				D34D8B692382EF9A00F18ECF /* MyriadPro-Cond.otf in Resources */,
+				D34D8B5F2382EF9A00F18ECF /* MyriadPro-LightIt.otf in Resources */,
 				CF8462782372049A008C0314 /* Main.storyboard in Resources */,
+				D34D8B5C2382EF9A00F18ECF /* MyriadPro-Light.otf in Resources */,
+				D34D8B612382EF9A00F18ECF /* MyriadPro-Semibold.otf in Resources */,
+				D34D8B652382EF9A00F18ECF /* MyriadPro-CondIt.otf in Resources */,
+				D34D8B622382EF9A00F18ECF /* MyriadPro-Regular.otf in Resources */,
 				CF8462752372049A008C0314 /* Assets.xcassets in Resources */,
+				D34D8B5D2382EF9A00F18ECF /* MyriadPro-BlackCond.otf in Resources */,
+				D34D8B662382EF9A00F18ECF /* MyriadPro-Black.otf in Resources */,
+				D34D8B632382EF9A00F18ECF /* MyriadPro-It.otf in Resources */,
+				D34D8B5E2382EF9A00F18ECF /* MyriadPro-BoldCondIt.otf in Resources */,
 				CF8462772372049A008C0314 /* LaunchScreen.storyboard in Resources */,
 				CF87748E2374AA1D00F3E8B3 /* Home.storyboard in Resources */,
 			);
@@ -544,6 +611,7 @@
 				D38D57A52375E62F00CF1DDB /* EmptyCodable.swift in Sources */,
 				D38D57BA23760BF500CF1DDB /* APIClientServices.swift in Sources */,
 				D3C574F8237D3C4300EBB2F8 /* Settings.swift in Sources */,
+				D34D8B6B2382F57300F18ECF /* AppFont+UIFont.swift in Sources */,
 				CFE876BA2374A8E80051FAA9 /* Constants.swift in Sources */,
 				CF272B032374A06400A05A9A /* CompanyRouter.swift in Sources */,
 				CF8462842372049A008C0314 /* AppNavigationController.swift in Sources */,
