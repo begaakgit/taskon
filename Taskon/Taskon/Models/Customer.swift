@@ -8,8 +8,6 @@
 
 import Foundation
 
-// MARK: - User Options
-
 struct Customer: Codable {
     
     // MARK: - Class Propeties

@@ -32,6 +32,7 @@ class APIClient {
                                 case .success(let value):
                                     completion(.success(value))
                                 case .failure(let error):
+                                    debugPrint("Parsing Error : \(error)")
                                     completion(.failure(error))
                                 }
                             }

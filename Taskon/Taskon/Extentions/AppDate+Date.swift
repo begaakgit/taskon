@@ -39,6 +39,7 @@ enum DateFormatType {
     case monthYear
     case dateTimeShort
     case normal
+    case short
     
     func getFormat() -> String {
         switch self {
@@ -52,6 +53,7 @@ enum DateFormatType {
         case .monthYear: return "MM/yyyy"
         case .dateTimeShort: return "MMMM d, hh:mm a"
         case .normal: return "MMMM d, yyyy"
+        case .short: return "yyyy-MM-dd"
 
         }
     }

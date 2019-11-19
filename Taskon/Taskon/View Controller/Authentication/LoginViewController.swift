@@ -34,10 +34,6 @@ class LoginViewController: AppViewController {
         setupNavigationBar()
         setupViewController()
     }
-    
-    deinit {
-        debugPrint("DEINITsadasd")
-    }
 
     
     // MARK: - Private Methods

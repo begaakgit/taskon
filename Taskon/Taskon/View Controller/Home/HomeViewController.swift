@@ -15,6 +15,10 @@ class HomeViewController: AppViewController {
     
     @IBOutlet private weak var menuButton: UIBarButtonItem!
     @IBOutlet private weak var tableView: UITableView!
+    private var coreData: CoreData? = nil
+    private var tasks: [Task] = []
+    private var searchText: String? = nil
+    private var seletedDate: Date? = nil
     
     // MARK: - View Controller Life - Cycle
     
@@ -25,6 +29,11 @@ class HomeViewController: AppViewController {
         
         setupNavigationBar()
         setupViewController()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        performCoreDataRequest()
     }
     
 
@@ -44,6 +53,35 @@ class HomeViewController: AppViewController {
     
     private func setupViewController() {
         tableView.tableFooterView = UIView(frame: .zero)
+    }
+    
+    private func updateUi() {
+        if let coreData = coreData {
+            if coreData.tasks.isEmpty {
+                tasks.removeAll()
+                tableView.setEmpty(text: Constants.Messages.noResult)
+                
+            } else {
+                tasks = coreData.tasks
+                applyFilterOperation()
+                tableView.resetEmptyText()
+                tableView.reloadData()
+            }
+            
+        } else {
+            tableView.setEmpty(text: Constants.Messages.noResult)
+        }
+    }
+    
+    private func applyFilterOperation() {
+        if let seletedDate = seletedDate {
+            tasks = tasks.filter { $0.search(date: seletedDate) }
+        }
+        
+        if let searchText = searchText,
+            !searchText.isEmpty {
+            tasks = tasks.filter { $0.search(text: searchText) }
+        }
     }
     
     private func addNewTask() -> VoidCompletion {
@@ -90,7 +128,8 @@ class HomeViewController: AppViewController {
     }
     
     private func filter(searchText: String?) {
-        
+        self.searchText = searchText
+        updateUi()
     }
 
 }
@@ -112,8 +151,9 @@ extension HomeViewController {
     private func selectDate() {
         let datePickerVC: DatePickerViewController = instanceFromStoryboard(storyboard: Storyboard.home)
         datePickerVC.datePickerCompletion = { [weak self] date in
-            guard let _ = self else { return }
-            debugPrint(date)
+            guard let self = self else { return }
+            self.seletedDate = date
+            self.updateUi()
         }
         let navController = AppNavigationController(rootViewController: datePickerVC)
         present(navController, animated: true, completion: nil)
@@ -179,12 +219,32 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return tasks.count > 0 ? tasks.count : 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.getCell(type: HomeCell.self) else { return UITableViewCell() }
+        
+        if tasks.isEmpty {
+            cell.configure(task: nil)
+        } else {
+            let task = tasks[indexPath.row]
+            cell.configure(task: task)
+        }
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.selectionStyle = .none
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
 }
@@ -193,6 +253,24 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 // MARK: - API Request
 
 extension HomeViewController {
+    
+    private func performCoreDataRequest() {
+        let request = APIClient.coreData()
+        
+        let success: ServiceSuccess<CoreData> = { [weak self] coreData in
+            guard let self = self else { return }
+            self.coreData = coreData
+            self.updateUi()
+        }
+        
+        let failure: ServiceFailure = { [weak self] _ in
+            guard let self = self else { return }
+            self.coreData = nil
+            self.updateUi()
+        }
+        
+        request.execute(errorHandler: errorHandler, onFailure: failure, onSuccess: success)
+    }
     
     private func performLogoutRequest() {
         let request = APIClient.logout()

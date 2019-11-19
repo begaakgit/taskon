@@ -27,7 +27,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="moB-Xe-gJa">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="moB-Xe-gJa">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -41,58 +41,157 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="CZb-Rh-uqB">
                                                     <rect key="frame" x="16" y="10" width="382" height="88"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YpZ-0y-YMe">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jxA-Z8-RmS">
                                                             <rect key="frame" x="0.0" y="0.0" width="382" height="29.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Er7-aC-89y">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="323.5" height="29.5"/>
+                                                                    <rect key="frame" x="0.0" y="6.5" width="244" height="16"/>
                                                                     <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                                                            <integer key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3f-TF-QQQ">
-                                                                    <rect key="frame" x="343.5" y="0.0" width="38.5" height="29.5"/>
+                                                                    <rect key="frame" x="252" y="6" width="130" height="17"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="130" id="PpJ-ND-xb5"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                                                            <integer key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </label>
                                                             </subviews>
-                                                        </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IIH-qD-vi5">
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <constraints>
+                                                                <constraint firstItem="c3f-TF-QQQ" firstAttribute="leading" secondItem="Er7-aC-89y" secondAttribute="trailing" constant="8" symbolic="YES" id="Rb4-jQ-FLn"/>
+                                                                <constraint firstItem="Er7-aC-89y" firstAttribute="centerY" secondItem="jxA-Z8-RmS" secondAttribute="centerY" id="U4y-qC-WbJ"/>
+                                                                <constraint firstItem="c3f-TF-QQQ" firstAttribute="centerY" secondItem="jxA-Z8-RmS" secondAttribute="centerY" id="Wt1-hx-30P"/>
+                                                                <constraint firstAttribute="trailing" secondItem="c3f-TF-QQQ" secondAttribute="trailing" id="a5m-jn-FWQ"/>
+                                                                <constraint firstItem="Er7-aC-89y" firstAttribute="leading" secondItem="jxA-Z8-RmS" secondAttribute="leading" id="b3q-4N-kLn"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHs-eq-hb2">
                                                             <rect key="frame" x="0.0" y="29.5" width="382" height="29"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6U-x4-gPe">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="323.5" height="29"/>
+                                                                    <rect key="frame" x="0.0" y="6" width="244" height="17"/>
                                                                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                                                            <integer key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1C-L5-1UJ">
-                                                                    <rect key="frame" x="343.5" y="0.0" width="38.5" height="29"/>
+                                                                    <rect key="frame" x="252" y="6" width="130" height="17"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="130" id="Ohg-Bh-wrH"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                                                     <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                                                            <integer key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </label>
                                                             </subviews>
-                                                        </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vLc-in-uIo">
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <constraints>
+                                                                <constraint firstItem="c1C-L5-1UJ" firstAttribute="centerY" secondItem="qHs-eq-hb2" secondAttribute="centerY" id="7pN-HX-rwo"/>
+                                                                <constraint firstItem="e6U-x4-gPe" firstAttribute="leading" secondItem="qHs-eq-hb2" secondAttribute="leading" id="H9f-B2-Hrf"/>
+                                                                <constraint firstAttribute="trailing" secondItem="c1C-L5-1UJ" secondAttribute="trailing" id="bTn-bv-vGc"/>
+                                                                <constraint firstItem="c1C-L5-1UJ" firstAttribute="leading" secondItem="e6U-x4-gPe" secondAttribute="trailing" constant="8" symbolic="YES" id="pTe-sz-pIY"/>
+                                                                <constraint firstItem="e6U-x4-gPe" firstAttribute="centerY" secondItem="qHs-eq-hb2" secondAttribute="centerY" id="yhC-FN-JuY"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpZ-o6-qt1">
                                                             <rect key="frame" x="0.0" y="58.5" width="382" height="29.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8X5-Hr-gKm">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="326.5" height="29.5"/>
+                                                                    <rect key="frame" x="0.0" y="6.5" width="244" height="17"/>
                                                                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                                                            <integer key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sh5-73-rIr">
-                                                                    <rect key="frame" x="346.5" y="0.0" width="35.5" height="29.5"/>
+                                                                    <rect key="frame" x="252" y="7.5" width="130" height="15"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="130" id="zIK-nc-hQG"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                                                            <integer key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </label>
                                                             </subviews>
-                                                        </stackView>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <constraints>
+                                                                <constraint firstItem="8X5-Hr-gKm" firstAttribute="centerY" secondItem="HpZ-o6-qt1" secondAttribute="centerY" id="1Og-ob-ZN6"/>
+                                                                <constraint firstItem="Sh5-73-rIr" firstAttribute="centerY" secondItem="HpZ-o6-qt1" secondAttribute="centerY" id="47x-r6-s1s"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Sh5-73-rIr" secondAttribute="trailing" id="LMX-El-INu"/>
+                                                                <constraint firstItem="Sh5-73-rIr" firstAttribute="leading" secondItem="8X5-Hr-gKm" secondAttribute="trailing" constant="8" symbolic="YES" id="eYd-qz-v36"/>
+                                                                <constraint firstItem="8X5-Hr-gKm" firstAttribute="leading" secondItem="HpZ-o6-qt1" secondAttribute="leading" id="w7a-lw-b06"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
                                                     </subviews>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfp-H0-3oC">
                                                     <rect key="frame" x="16" y="98" width="382" height="2"/>
@@ -111,7 +210,21 @@
                                                 <constraint firstAttribute="bottom" secondItem="xfp-H0-3oC" secondAttribute="bottom" id="KLm-WX-pT6"/>
                                                 <constraint firstItem="CZb-Rh-uqB" firstAttribute="top" secondItem="V1f-tv-MoM" secondAttribute="top" constant="10" id="s8Z-lw-d4R"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="c1C-L5-1UJ" id="cOw-h4-pwd"/>
+                                            <outlet property="descriptionLabel" destination="e6U-x4-gPe" id="Ang-5P-41e"/>
+                                            <outlet property="distanceLabel" destination="c3f-TF-QQQ" id="cVC-Bj-cza"/>
+                                            <outlet property="statusLabel" destination="Sh5-73-rIr" id="tsA-ff-Gpk"/>
+                                            <outlet property="subDescriptionLabel" destination="8X5-Hr-gKm" id="cWV-0u-sa6"/>
+                                            <outlet property="titleLabel" destination="Er7-aC-89y" id="eUT-Wl-WhS"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

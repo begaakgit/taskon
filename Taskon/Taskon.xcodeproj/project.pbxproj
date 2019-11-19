@@ -49,6 +49,8 @@
 		D34D8B682382EF9A00F18ECF /* MyriadPro-BoldCond.otf in Resources */ = {isa = PBXBuildFile; fileRef = D34D8B5A2382EF9A00F18ECF /* MyriadPro-BoldCond.otf */; };
 		D34D8B692382EF9A00F18ECF /* MyriadPro-Cond.otf in Resources */ = {isa = PBXBuildFile; fileRef = D34D8B5B2382EF9A00F18ECF /* MyriadPro-Cond.otf */; };
 		D34D8B6B2382F57300F18ECF /* AppFont+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34D8B6A2382F57300F18ECF /* AppFont+UIFont.swift */; };
+		D34D8B6D2383114B00F18ECF /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34D8B6C2383114B00F18ECF /* Task.swift */; };
+		D34D8B6F2383117D00F18ECF /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34D8B6E2383117D00F18ECF /* Contact.swift */; };
 		D357714923773CD20038C7EE /* AppDate+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357714823773CD20038C7EE /* AppDate+Date.swift */; };
 		D38D57A32375E38900CF1DDB /* TOUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57A22375E38900CF1DDB /* TOUserDefaults.swift */; };
 		D38D57A52375E62F00CF1DDB /* EmptyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57A42375E62F00CF1DDB /* EmptyCodable.swift */; };
@@ -62,6 +64,7 @@
 		D38D57B82376092500CF1DDB /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57B72376092500CF1DDB /* UserRouter.swift */; };
 		D38D57BA23760BF500CF1DDB /* APIClientServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57B923760BF500CF1DDB /* APIClientServices.swift */; };
 		D38D57BC23760F7600CF1DDB /* ServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57BB23760F7600CF1DDB /* ServiceResponse.swift */; };
+		D39FFC302383F17300E1C879 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FFC2F2383F17300E1C879 /* CoreData.swift */; };
 		D3A8C57D2376E36400CCA89B /* AppView+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A8C57C2376E36400CCA89B /* AppView+UIView.swift */; };
 		D3A96DCD2376C6BE00291D24 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A96DCC2376C6BE00291D24 /* NewTaskViewController.swift */; };
 		D3A96DCF2376C76900291D24 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A96DCE2376C76900291D24 /* User.swift */; };
@@ -122,6 +125,8 @@
 		D34D8B5A2382EF9A00F18ECF /* MyriadPro-BoldCond.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-BoldCond.otf"; sourceTree = "<group>"; };
 		D34D8B5B2382EF9A00F18ECF /* MyriadPro-Cond.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Cond.otf"; sourceTree = "<group>"; };
 		D34D8B6A2382F57300F18ECF /* AppFont+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppFont+UIFont.swift"; sourceTree = "<group>"; };
+		D34D8B6C2383114B00F18ECF /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		D34D8B6E2383117D00F18ECF /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		D357714823773CD20038C7EE /* AppDate+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDate+Date.swift"; sourceTree = "<group>"; };
 		D38D57A22375E38900CF1DDB /* TOUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOUserDefaults.swift; sourceTree = "<group>"; };
 		D38D57A42375E62F00CF1DDB /* EmptyCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCodable.swift; sourceTree = "<group>"; };
@@ -135,6 +140,7 @@
 		D38D57B72376092500CF1DDB /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
 		D38D57B923760BF500CF1DDB /* APIClientServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientServices.swift; sourceTree = "<group>"; };
 		D38D57BB23760F7600CF1DDB /* ServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResponse.swift; sourceTree = "<group>"; };
+		D39FFC2F2383F17300E1C879 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		D3A8C57C2376E36400CCA89B /* AppView+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppView+UIView.swift"; sourceTree = "<group>"; };
 		D3A96DCC2376C6BE00291D24 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		D3A96DCE2376C76900291D24 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -347,6 +353,9 @@
 				D3A96DCE2376C76900291D24 /* User.swift */,
 				D3C574F7237D3C4300EBB2F8 /* Settings.swift */,
 				D3ADAE21237EB55E00FD7F70 /* Customer.swift */,
+				D34D8B6C2383114B00F18ECF /* Task.swift */,
+				D34D8B6E2383117D00F18ECF /* Contact.swift */,
+				D39FFC2F2383F17300E1C879 /* CoreData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -611,6 +620,7 @@
 				D38D57A52375E62F00CF1DDB /* EmptyCodable.swift in Sources */,
 				D38D57BA23760BF500CF1DDB /* APIClientServices.swift in Sources */,
 				D3C574F8237D3C4300EBB2F8 /* Settings.swift in Sources */,
+				D39FFC302383F17300E1C879 /* CoreData.swift in Sources */,
 				D34D8B6B2382F57300F18ECF /* AppFont+UIFont.swift in Sources */,
 				CFE876BA2374A8E80051FAA9 /* Constants.swift in Sources */,
 				CF272B032374A06400A05A9A /* CompanyRouter.swift in Sources */,
@@ -627,6 +637,7 @@
 				D38D57A32375E38900CF1DDB /* TOUserDefaults.swift in Sources */,
 				D3A8C57D2376E36400CCA89B /* AppView+UIView.swift in Sources */,
 				CFB33FD82374C27600DE0507 /* Types.swift in Sources */,
+				D34D8B6D2383114B00F18ECF /* Task.swift in Sources */,
 				D38D57A92375E8C500CF1DDB /* ServiceError.swift in Sources */,
 				D3ADAE29237EC64000FD7F70 /* AppButton.swift in Sources */,
 				D38D57A72375E75300CF1DDB /* TOClient.swift in Sources */,
@@ -634,6 +645,7 @@
 				D3AEF0012375BF240094F7B4 /* Utilities.swift in Sources */,
 				D38D57B82376092500CF1DDB /* UserRouter.swift in Sources */,
 				CFB33FD22374BC3A00DE0507 /* AppTableViewController.swift in Sources */,
+				D34D8B6F2383117D00F18ECF /* Contact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

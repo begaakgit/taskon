@@ -13,6 +13,8 @@ enum TaskRouter: NetworkRouter {
     
     case customers(userId: Int, search: String)
     case new(userId: Int, customerId: Int?, customerName: String, description: String, title: String)
+    case coreData(userId: Int)
+    
     
     // Path
     var baseUrl: String {
@@ -27,27 +29,28 @@ enum TaskRouter: NetworkRouter {
         switch self {
         case .customers: return "get_customers_data"
         case .new: return "sync_new_task"
+        case .coreData: return "get_core_data"
         }
     }
     
     // Method
     var method: HTTPMethod {
         switch self {
-        case .customers, .new: return .post
+        case .customers, .new, .coreData: return .post
         }
     }
     
     // Token
     var token: Bool {
         switch self {
-        case .customers, .new: return true
+        case .customers, .new, .coreData: return true
         }
     }
     
     // API Key
     var apiKey: Bool {
         switch self {
-        case .customers, .new: return true
+        case .customers, .new, .coreData: return true
         }
     }
     
@@ -69,6 +72,9 @@ enum TaskRouter: NetworkRouter {
             }
             
             return params
+            
+        case .coreData(let userId):
+            return ["user_id" : userId]
         }
     }
 }

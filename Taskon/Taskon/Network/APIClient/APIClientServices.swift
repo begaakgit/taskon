@@ -54,6 +54,13 @@ extension APIClient {
         return resolve(response: responseFuture)
     }
     
+    static func coreData() -> Future<CoreData> {
+        let userId = TOUserDefaults.user.get()?.id ?? -1
+        let router = TaskRouter.coreData(userId: userId)
+        let responseFuture: Future<ServiceResponse<CoreData>> = performRequest(router: router)
+        return resolve(response: responseFuture)
+    }
+    
     
     // MARK: - Private Methods
     

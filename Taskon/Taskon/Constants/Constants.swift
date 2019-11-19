@@ -14,4 +14,9 @@ class Constants {
     
     static let appTitle: String = "TaskOn"
     
+    
+    struct Messages {
+        static let noResult: String = "No Result!"
+    }
+    
 }
