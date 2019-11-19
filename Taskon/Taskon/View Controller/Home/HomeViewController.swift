@@ -20,6 +20,7 @@ class HomeViewController: AppViewController {
     private var searchText: String? = nil
     private var seletedDate: Date? = nil
     private var deadlineFilter: Bool = false
+    private var animate: Bool = true
     
     // MARK: - View Controller Life - Cycle
     
@@ -45,6 +46,7 @@ class HomeViewController: AppViewController {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.tintColor = .white
         searchController.searchBar.barTintColor = .white
+        searchController.searchBar.barStyle = .black
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         definesPresentationContext = true
@@ -65,8 +67,13 @@ class HomeViewController: AppViewController {
             } else {
                 tasks = coreData.tasks
                 applyFilterOperation()
-                tableView.resetEmptyText()
                 tableView.reloadData()
+                
+                if tasks.count > 0 {
+                    tableView.resetEmptyText()
+                } else {
+                    tableView.setEmpty(text: Constants.Messages.noResult)
+                }
             }
             
         } else {
@@ -228,7 +235,14 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count > 0 ? tasks.count : 3
+        var rows = tasks.count
+        
+        if animate {
+            rows = rows > 0 ? rows : 3
+        }
+        
+        return rows
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -266,12 +280,14 @@ extension HomeViewController {
             guard let self = self else { return }
             self.coreData = coreData
             self.updateUi()
+            self.animate = false
         }
         
         let failure: ServiceFailure = { [weak self] _ in
             guard let self = self else { return }
             self.coreData = nil
             self.updateUi()
+            self.animate = false
         }
         
         request.execute(errorHandler: errorHandler, onFailure: failure, onSuccess: success)
