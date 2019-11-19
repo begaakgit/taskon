@@ -19,6 +19,7 @@ class HomeViewController: AppViewController {
     private var tasks: [Task] = []
     private var searchText: String? = nil
     private var seletedDate: Date? = nil
+    private var deadlineFilter: Bool = false
     
     // MARK: - View Controller Life - Cycle
     
@@ -74,6 +75,12 @@ class HomeViewController: AppViewController {
     }
     
     private func applyFilterOperation() {
+        if deadlineFilter {
+            tasks = tasks.sorted {
+                $0.dueTimestamp.toDate(format: .short) ?? Date() < $1.dueTimestamp.toDate(format: .short) ?? Date()
+            }
+        }
+        
         if let seletedDate = seletedDate {
             tasks = tasks.filter { $0.search(date: seletedDate) }
         }
@@ -104,7 +111,9 @@ class HomeViewController: AppViewController {
             guard let self = self else { return }
             switch filter {
             case .distance: break
-            case .deadLine: break
+            case .deadLine:
+                self.deadlineFilter = true
+                self.updateUi()
             case .date: self.selectDate()
             }
         }
@@ -219,18 +228,14 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count > 0 ? tasks.count : 5
+        return tasks.count > 0 ? tasks.count : 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.getCell(type: HomeCell.self) else { return UITableViewCell() }
         
-        if tasks.isEmpty {
-            cell.configure(task: nil)
-        } else {
-            let task = tasks[indexPath.row]
-            cell.configure(task: task)
-        }
+        let task = tasks[safe: indexPath.row]
+        cell.configure(task: task)
         
         return cell
     }
