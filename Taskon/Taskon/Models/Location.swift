@@ -1,5 +1,5 @@
 //
-//  CoreData.swift
+//  Location.swift
 //  Taskon
 //
 //  Created by Khaliq ur Rehman on 19/11/2019.
@@ -8,20 +8,22 @@
 
 import Foundation
 
-struct CoreData: Codable {
+struct Location: Codable {
     
     // MARK: - Class Propeties
     
-    let time: Int
-    let locations: [Location]
-    let tasks: [Task]
+    let id: Int
+    let title: String
+    let latitude: String
+    let longitude: String
     
     
     // MARK: - Coding Keys
     
     enum CodingKeys: String, CodingKey {
-        case time = "data_timestamp"
-        case locations = "locations"
-        case tasks = "tasks"
+        case id = "id"
+        case title = "title"
+        case latitude = "latitude"
+        case longitude = "longitude"
     }
 }

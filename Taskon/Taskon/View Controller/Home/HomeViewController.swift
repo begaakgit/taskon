@@ -17,9 +17,11 @@ class HomeViewController: AppViewController {
     @IBOutlet private weak var tableView: UITableView!
     private var coreData: CoreData? = nil
     private var tasks: [Task] = []
+    private var locations: [Location] = []
     private var searchText: String? = nil
-    private var seletedDate: Date? = nil
+    private var distanceFilter: Bool = false
     private var deadlineFilter: Bool = false
+    private var seletedDate: Date? = nil
     private var animate: Bool = true
     
     // MARK: - View Controller Life - Cycle
@@ -31,11 +33,6 @@ class HomeViewController: AppViewController {
         
         setupNavigationBar()
         setupViewController()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        performCoreDataRequest()
     }
     
 
@@ -56,16 +53,19 @@ class HomeViewController: AppViewController {
     
     private func setupViewController() {
         tableView.tableFooterView = UIView(frame: .zero)
+        performCoreDataRequest()
     }
     
     private func updateUi() {
         if let coreData = coreData {
             if coreData.tasks.isEmpty {
                 tasks.removeAll()
+                locations.removeAll()
                 tableView.setEmpty(text: Constants.Messages.noResult)
                 
             } else {
                 tasks = coreData.tasks
+                locations = coreData.locations
                 applyFilterOperation()
                 tableView.reloadData()
                 
@@ -82,6 +82,10 @@ class HomeViewController: AppViewController {
     }
     
     private func applyFilterOperation() {
+        if distanceFilter {
+            tasks = tasks.sorted { $0.distance(with: locations) < $1.distance(with: locations) }
+        }
+        
         if deadlineFilter {
             tasks = tasks.sorted {
                 $0.dueTimestamp.toDate(format: .short) ?? Date() < $1.dueTimestamp.toDate(format: .short) ?? Date()
@@ -117,11 +121,17 @@ class HomeViewController: AppViewController {
         let applyFilter: FilterCompletion = { [weak self] filter in
             guard let self = self else { return }
             switch filter {
-            case .distance: break
+                
+            case .distance:
+                self.distanceFilter = true
+                self.updateUi()
+                
             case .deadLine:
                 self.deadlineFilter = true
                 self.updateUi()
-            case .date: self.selectDate()
+                
+            case .date:
+                self.selectDate()
             }
         }
         return applyFilter
@@ -249,7 +259,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.getCell(type: HomeCell.self) else { return UITableViewCell() }
         
         let task = tasks[safe: indexPath.row]
-        cell.configure(task: task)
+        cell.configure(task: task, with: locations)
         
         return cell
     }

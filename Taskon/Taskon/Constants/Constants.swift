@@ -13,6 +13,8 @@ class Constants {
     // MARK: - Class Properties
     
     static let appTitle: String = "TaskOn"
+    static let DEG_TO_RAD = 0.017453292519943295769236907684886
+    static let EARTH_RADIUS_IN_METERS = 6372797.560856
     
     
     struct Messages {

@@ -156,7 +156,7 @@ extension NewTaskViewController {
         let request = APIClient.newTask(title: task, description: description, customerId: customerId, customerName: customerName)
         
         let success: ServiceSuccess<EmptyCodable> = { [weak self] _ in
-            guard let self = self else { return }
+            guard let _ = self else { return }
             completion?()
         }
         

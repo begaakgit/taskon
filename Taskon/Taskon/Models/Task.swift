@@ -102,6 +102,14 @@ struct Task: Codable {
         guard let taskDate = dueTimestamp.toDate(format: .short) else { return false }
         return Calendar.current.isDate(date, inSameDayAs: taskDate)
     }
+    
+    public func distance(with locations: [Location]) -> Int {
+        if let location = locations.first(where: { $0.id == locationID }) {
+            return LocationManager.default.distance(from: location) ?? 0
+        }
+        
+        return 0
+    }
 }
 
 

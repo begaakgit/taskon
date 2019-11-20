@@ -38,14 +38,19 @@ class HomeCell: UITableViewCell, Registerable {
     
     // MARK: - Public Methods
     
-    public func configure(task: Task?) {
+    public func configure(task: Task?, with locations: [Location]) {
         guard let task = task else {
             showAnimatedSkeleton()
             return
         }
         hideSkeletonAnimation()
         titleLabel.text = task.customerNamePrint
-        distanceLabel.text = ""
+        if let location = locations.first(where: { $0.id == task.locationID }),
+            let distance = LocationManager.default.distance(from: location) {
+            distanceLabel.text = "\(distance) KM"
+        } else {
+            distanceLabel.text = ""
+        }
         descriptionLabel.text = task.title
         dateLabel.text = task.dueTimestamp
         subDescriptionLabel.text = "\(task.nr), \(task.description)"

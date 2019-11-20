@@ -47,6 +47,8 @@ extension AppDelegate {
         NetworkActivityIndicatorManager.shared.startDelay = 1.0
         NetworkActivityIndicatorManager.shared.startDelay = 0.2
         NetworkActivityIndicatorManager.shared.isEnabled = true
+        // To Start Location Manager
+        let _ = LocationManager.default
     }
     
 }

@@ -76,8 +76,10 @@
 		D3AEEFFF2375BEC90094F7B4 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEEFFE2375BEC90094F7B4 /* HomeCell.swift */; };
 		D3AEF0012375BF240094F7B4 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEF0002375BF240094F7B4 /* Utilities.swift */; };
 		D3AEF0032375BF5A0094F7B4 /* AppTableView+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEF0022375BF5A0094F7B4 /* AppTableView+UITableView.swift */; };
+		D3B1F9112384F69700C449A6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B1F9102384F69700C449A6 /* LocationManager.swift */; };
 		D3C574F8237D3C4300EBB2F8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C574F7237D3C4300EBB2F8 /* Settings.swift */; };
 		D3D4A4672384147000E6401F /* AppCollection+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4A4662384147000E6401F /* AppCollection+Collection.swift */; };
+		D3D4A46923841B1700E6401F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4A46823841B1700E6401F /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,8 +155,10 @@
 		D3AEEFFE2375BEC90094F7B4 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		D3AEF0002375BF240094F7B4 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		D3AEF0022375BF5A0094F7B4 /* AppTableView+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppTableView+UITableView.swift"; sourceTree = "<group>"; };
+		D3B1F9102384F69700C449A6 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		D3C574F7237D3C4300EBB2F8 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		D3D4A4662384147000E6401F /* AppCollection+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCollection+Collection.swift"; sourceTree = "<group>"; };
+		D3D4A46823841B1700E6401F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		E8EE73D8B5FC65238FC15B26 /* Pods_Taskon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taskon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -241,6 +245,7 @@
 				CFB33FD62374C26700DE0507 /* Helper */,
 				CFB33FD32374C1C500DE0507 /* Models */,
 				D38D57A02375E33B00CF1DDB /* Storage */,
+				D3B1F90F2384F67C00C449A6 /* Managers */,
 				CF272AFA23749AF800A05A9A /* Constants */,
 				D3ADAE2A237ECC2B00FD7F70 /* View */,
 				CF272AF72374962500A05A9A /* Network */,
@@ -359,6 +364,7 @@
 				D34D8B6C2383114B00F18ECF /* Task.swift */,
 				D34D8B6E2383117D00F18ECF /* Contact.swift */,
 				D39FFC2F2383F17300E1C879 /* CoreData.swift */,
+				D3D4A46823841B1700E6401F /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -465,6 +471,14 @@
 				D3AEEFFE2375BEC90094F7B4 /* HomeCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		D3B1F90F2384F67C00C449A6 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D3B1F9102384F69700C449A6 /* LocationManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -605,6 +619,7 @@
 				D3AEEFFF2375BEC90094F7B4 /* HomeCell.swift in Sources */,
 				CF8462822372049A008C0314 /* AppColor+UIColor.swift in Sources */,
 				D38D57AB2375EE1200CF1DDB /* APIErrorHandler.swift in Sources */,
+				D3D4A46923841B1700E6401F /* Location.swift in Sources */,
 				CF272AF923749A8A00A05A9A /* NetworkRouter.swift in Sources */,
 				CFB33FCE2374B3DB00DE0507 /* MenuViewController.swift in Sources */,
 				D3A96DCD2376C6BE00291D24 /* NewTaskViewController.swift in Sources */,
@@ -632,6 +647,7 @@
 				D336C3F923780AF6007DC885 /* SettingsViewController.swift in Sources */,
 				CF8462852372049A008C0314 /* LoginViewController.swift in Sources */,
 				D38D57BC23760F7600CF1DDB /* ServiceResponse.swift in Sources */,
+				D3B1F9112384F69700C449A6 /* LocationManager.swift in Sources */,
 				D3333F852377330F0007A124 /* DatePickerViewController.swift in Sources */,
 				D38D57B32376063E00CF1DDB /* Network.swift in Sources */,
 				D38D57B12375F8AA00CF1DDB /* APICodeFilter.swift in Sources */,
@@ -725,7 +741,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -779,7 +795,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -795,9 +811,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Taskon/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -817,9 +835,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Taskon/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
