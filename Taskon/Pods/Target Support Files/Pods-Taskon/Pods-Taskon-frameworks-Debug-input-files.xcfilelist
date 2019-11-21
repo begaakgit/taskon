@@ -3,7 +3,8 @@ ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework
 ${BUILT_PRODUCTS_DIR}/CodableAlamofire/CodableAlamofire.framework
 ${BUILT_PRODUCTS_DIR}/JBDatePicker/JBDatePicker.framework
-${BUILT_PRODUCTS_DIR}/NextGrowingTextView/NextGrowingTextView.framework
+${BUILT_PRODUCTS_DIR}/Keyboard+LayoutGuide/KeyboardLayoutGuide.framework
+${BUILT_PRODUCTS_DIR}/Loaf/Loaf.framework
 ${BUILT_PRODUCTS_DIR}/PromisedFuture/PromisedFuture.framework
 ${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework
 ${BUILT_PRODUCTS_DIR}/SSSpinnerButton/SSSpinnerButton.framework

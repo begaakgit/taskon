@@ -37,4 +37,8 @@ extension UITableView {
         backgroundView = UIView(frame: .zero)
     }
     
+    func scrollToBottom() {
+        setContentOffset(CGPoint(x: 0, y: CGFloat.greatestFiniteMagnitude), animated: true)
+    }
+    
 }

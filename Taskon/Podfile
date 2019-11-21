@@ -7,12 +7,13 @@ target 'Taskon' do
   pod 'ReachabilitySwift'
   pod 'PromisedFuture'
   pod 'SkyFloatingLabelTextField'
-  pod 'NextGrowingTextView'
   pod 'SwiftValidator'
   pod 'SnapKit'
   pod 'SSSpinnerButton'
   pod 'JBDatePicker'
   pod 'SkeletonView'
   pod 'SimpleCheckbox'
+  pod 'Loaf'
+  pod 'Keyboard+LayoutGuide'
 
 end

@@ -112,7 +112,10 @@ class HomeViewController: AppViewController {
     
     private func syncData() -> VoidCompletion {
         let syncNewData = { [weak self] in
-            guard let _ = self else { return }
+            guard let self = self else { return }
+            self.animate = true
+            self.updateUi()
+            self.performCoreDataRequest()
         }
         return syncNewData
     }
@@ -168,7 +171,10 @@ extension HomeViewController {
     private func createNewTask() {
         let createVC: NewTaskViewController = instanceFromStoryboard(storyboard: Storyboard.home)
         createVC.addTaskCompletion = { [weak self] in
-            guard let _ = self else { return }
+            guard let self = self else { return }
+            self.animate = true
+            self.updateUi()
+            self.performCoreDataRequest()
         }
         let navController = AppNavigationController(rootViewController: createVC)
         present(navController, animated: true, completion: nil)
@@ -189,6 +195,12 @@ extension HomeViewController {
         let settingsVC: SettingsViewController = instanceFromStoryboard(storyboard: Storyboard.home)
         let navController = AppNavigationController(rootViewController: settingsVC)
         present(navController, animated: true, completion: nil)
+    }
+    
+    private func openDetails(for task: Task) {
+        let taskDetailVC: TaskDetailViewController = instanceFromStoryboard(storyboard: Storyboard.home)
+        taskDetailVC.task = task
+        push(viewController: taskDetailVC, animated: true)
     }
 }
 
@@ -258,10 +270,16 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.getCell(type: HomeCell.self) else { return UITableViewCell() }
         
-        let task = tasks[safe: indexPath.row]
+        let task = animate ? nil : tasks[safe: indexPath.row]
         cell.configure(task: task, with: locations)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let task = tasks[safe: indexPath.row], !animate else { return }
+        openDetails(for: task)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -289,15 +307,15 @@ extension HomeViewController {
         let success: ServiceSuccess<CoreData> = { [weak self] coreData in
             guard let self = self else { return }
             self.coreData = coreData
-            self.updateUi()
             self.animate = false
+            self.updateUi()
         }
         
         let failure: ServiceFailure = { [weak self] _ in
             guard let self = self else { return }
             self.coreData = nil
-            self.updateUi()
             self.animate = false
+            self.updateUi()
         }
         
         request.execute(errorHandler: errorHandler, onFailure: failure, onSuccess: success)

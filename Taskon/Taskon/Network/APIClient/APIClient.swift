@@ -99,6 +99,10 @@ class APIClient {
                         success()
                     }
                     
+                } else if let jsonData = json["d"] as? [Any], jsonData.isEmpty {
+                    // Success API Call
+                    success()
+                    
                 } else {
                     // Error in API
                     let message = "Unknown error code \(NetworkConstants.ParsingError.serviceError)"

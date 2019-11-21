@@ -5,7 +5,8 @@ PODS:
   - CodableAlamofire (1.1.2):
     - Alamofire (~> 4.0)
   - JBDatePicker (1.2.5)
-  - NextGrowingTextView (1.5.0)
+  - "Keyboard+LayoutGuide (1.5.0)"
+  - Loaf (0.5.0)
   - PromisedFuture (1.0.1)
   - ReachabilitySwift (5.0.0)
   - SimpleCheckbox (2.1.0)
@@ -20,7 +21,8 @@ DEPENDENCIES:
   - AlamofireNetworkActivityIndicator
   - CodableAlamofire
   - JBDatePicker
-  - NextGrowingTextView
+  - "Keyboard+LayoutGuide"
+  - Loaf
   - PromisedFuture
   - ReachabilitySwift
   - SimpleCheckbox
@@ -36,7 +38,8 @@ SPEC REPOS:
     - AlamofireNetworkActivityIndicator
     - CodableAlamofire
     - JBDatePicker
-    - NextGrowingTextView
+    - "Keyboard+LayoutGuide"
+    - Loaf
     - PromisedFuture
     - ReachabilitySwift
     - SimpleCheckbox
@@ -51,7 +54,8 @@ SPEC CHECKSUMS:
   AlamofireNetworkActivityIndicator: 9acc3de3ca6645bf0efed462396b0df13dd3e7b8
   CodableAlamofire: b7adfb2e5e980392014b4b3f3b8b62c01b9de4aa
   JBDatePicker: 0e791c8a79c49b0d37decea28ba147515bf5cfca
-  NextGrowingTextView: 0e267e80bc203e813dc637fd1b011111ad572d57
+  "Keyboard+LayoutGuide": 8419e1a75285895bc9a6fc032b63fff24f2ef02c
+  Loaf: 0800b444431366bc395d54267975d4ad4ad5c99c
   PromisedFuture: 3f863d17c047c3474c85045b254bb1c94743ed0f
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SimpleCheckbox: ddcd433ab8c3a8f57300bebda13151a8f302c7f9
@@ -61,6 +65,6 @@ SPEC CHECKSUMS:
   SSSpinnerButton: ba9ec6858f2f6fa902a5131d3aec5282588241f8
   SwiftValidator: 0b6a48bf10364411b0d64c97f78665ff87ca9f8b
 
-PODFILE CHECKSUM: e3e7b1fbeb18cad60d5d9fb4826cf3bac8407a04
+PODFILE CHECKSUM: f6d533d79d5cb857e7fe43b61e2301d7d1e03953
 
 COCOAPODS: 1.8.4

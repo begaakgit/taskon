@@ -61,7 +61,7 @@ class HomeCell: UITableViewCell, Registerable {
     // MARK: - Private  Methods
     
     public func showSkeletonAnimation() {
-        let gradient = SkeletonGradient(baseColor: UIColor.asbestos)
+        let gradient = SkeletonGradient(baseColor: UIColor.silver)
         showGradientSkeleton(usingGradient: gradient, transition: .crossDissolve(0.0))
     }
     

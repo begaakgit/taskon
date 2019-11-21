@@ -58,6 +58,13 @@ extension AppViewController {
         view.window?.rootViewController = loginNavController
     }
     
+    public func performAnimation(_ animation: @escaping VoidCompletion) {
+        UIView.animate(withDuration: 0.03, animations: animation) { [weak self] _ in
+            guard let self = self else { return }
+            self.view.layoutIfNeeded()
+        }
+    }
+    
 }
 
 

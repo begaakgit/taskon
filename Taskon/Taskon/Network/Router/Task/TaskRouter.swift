@@ -14,6 +14,8 @@ enum TaskRouter: NetworkRouter {
     case customers(userId: Int, search: String)
     case new(userId: Int, customerId: Int?, customerName: String, description: String, title: String)
     case coreData(userId: Int)
+    case comments(userId: Int, taskId: Int)
+    case comment(userId: Int, taskId: Int, comment: String)
     
     
     // Path
@@ -30,27 +32,29 @@ enum TaskRouter: NetworkRouter {
         case .customers: return "get_customers_data"
         case .new: return "sync_new_task"
         case .coreData: return "get_core_data"
+        case .comments: return "get_comments_data"
+        case .comment: return "sync_comments_data"
         }
     }
     
     // Method
     var method: HTTPMethod {
         switch self {
-        case .customers, .new, .coreData: return .post
+        case .customers, .new, .coreData, .comments, .comment: return .post
         }
     }
     
     // Token
     var token: Bool {
         switch self {
-        case .customers, .new, .coreData: return true
+        case .customers, .new, .coreData, .comments, .comment: return true
         }
     }
     
     // API Key
     var apiKey: Bool {
         switch self {
-        case .customers, .new, .coreData: return true
+        case .customers, .new, .coreData, .comments, .comment: return true
         }
     }
     
@@ -75,6 +79,16 @@ enum TaskRouter: NetworkRouter {
             
         case .coreData(let userId):
             return ["user_id" : userId]
+            
+        case .comments(let userId, let taskId):
+            return ["user_id" : userId,
+                    "task_id" : taskId]
+            
+        case .comment(let userId, let taskId, let comment):
+            return ["user_id" : userId,
+                    "task_id" : taskId,
+                    "task_comment" : comment]
+            
         }
     }
 }

@@ -119,12 +119,18 @@ enum TaskStatus: String, Codable {
     case open = "Open"
     case complete = "Complete"
     case registered = "Registered"
+    case onHold = "On Hold"
+    case inProgress = "In Progress"
+    case accepted = "Accepted"
     
     func getText() -> String {
         switch self {
         case .open: return "Open"
         case .complete: return "Complete"
         case .registered: return "Registered"
+        case .onHold: return "On Hold"
+        case .inProgress: return "In Progress"
+        case .accepted: return "Accepted"
         }
     }
 }

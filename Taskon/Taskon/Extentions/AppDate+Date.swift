@@ -40,6 +40,7 @@ enum DateFormatType {
     case dateTimeShort
     case normal
     case short
+    case timestamp
     
     func getFormat() -> String {
         switch self {
@@ -54,6 +55,7 @@ enum DateFormatType {
         case .dateTimeShort: return "MMMM d, hh:mm a"
         case .normal: return "MMMM d, yyyy"
         case .short: return "yyyy-MM-dd"
+        case .timestamp: return "yyyy-MM-dd HH:mm:ss"
 
         }
     }

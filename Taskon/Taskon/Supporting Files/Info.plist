@@ -86,5 +86,7 @@
 	<string>This app uses location to fetch data while in use.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>This app uses location to fetch data in background.</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>

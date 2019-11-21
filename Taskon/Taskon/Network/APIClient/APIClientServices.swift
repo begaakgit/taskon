@@ -61,6 +61,20 @@ extension APIClient {
         return resolve(response: responseFuture)
     }
     
+    static func comments(taskId: Int) -> Future<TaskComment> {
+        let userId = TOUserDefaults.user.get()?.id ?? -1
+        let router = TaskRouter.comments(userId: userId, taskId: taskId)
+        let responseFuture: Future<ServiceResponse<TaskComment>> = performRequest(router: router)
+        return resolve(response: responseFuture)
+    }
+    
+    static func comment(taskId: Int, comment: String) -> Future<EmptyCodable> {
+        let userId = TOUserDefaults.user.get()?.id ?? -1
+        let router = TaskRouter.comment(userId: userId, taskId: taskId, comment: comment)
+        let responseFuture: Future<ServiceResponse<EmptyCodable>> = performRequest(router: router)
+        return resolve(response: responseFuture)
+    }
+    
     
     // MARK: - Private Methods
     

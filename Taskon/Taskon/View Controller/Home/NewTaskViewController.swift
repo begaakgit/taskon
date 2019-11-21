@@ -9,6 +9,7 @@
 import UIKit
 import SkyFloatingLabelTextField
 import SwiftValidator
+import Loaf
 
 class NewTaskViewController: AppViewController {
     
@@ -97,6 +98,11 @@ extension NewTaskViewController {
     }
     
     @IBAction private func lookupButtonTapped(_ sender: UIButton) {
+        guard let searchText = companyTextField.text, searchText.count > 2 else {
+            let loaf = Loaf("You need more than 2 symbols to lookup a customer.", state: .custom(.init(backgroundColor: .mainBlue)), presentingDirection: .vertical, dismissingDirection: .vertical, sender: self)
+            loaf.show()
+            return
+        }
         lookupButton.startLoading()
         view.endEditing(true)
         view.isUserInteractionEnabled = false
