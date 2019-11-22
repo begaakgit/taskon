@@ -52,7 +52,6 @@ extension MapViewController {
         mapview.showsCompass = true
         
         drawRoute()
-        
     }
     
     private func drawRoute() {
@@ -123,7 +122,11 @@ extension MapViewController {
         guard let url = URL(string: directionsURL) else {
             return
         }
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            showAlert(message: "Apple Maps not available.")
+        }
     }
 }
 

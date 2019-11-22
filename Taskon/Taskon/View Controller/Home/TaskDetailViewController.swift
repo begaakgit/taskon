@@ -37,7 +37,7 @@ class TaskDetailViewController: AppViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        openMap(for: location)
+        openContacts()
     }
 }
 
@@ -71,6 +71,15 @@ extension TaskDetailViewController {
         let mapVC: MapViewController = instanceFromStoryboard(storyboard: Storyboard.home)
         mapVC.location = location
         push(viewController: mapVC, animated: true)
+    }
+    
+    private func openContacts() {
+        if let contacts = task.contacts,
+            !contacts.isEmpty {
+            let contactsVC: ContactsViewController = instanceFromStoryboard(storyboard: Storyboard.home)
+            contactsVC.contacts = contacts
+            push(viewController: contactsVC, animated: true)
+        }
     }
     
 }

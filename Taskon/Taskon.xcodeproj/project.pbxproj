@@ -94,6 +94,8 @@
 		D3C574F8237D3C4300EBB2F8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C574F7237D3C4300EBB2F8 /* Settings.swift */; };
 		D3D4A4672384147000E6401F /* AppCollection+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4A4662384147000E6401F /* AppCollection+Collection.swift */; };
 		D3D4A46923841B1700E6401F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4A46823841B1700E6401F /* Location.swift */; };
+		D3D90D6D2387EDE000DD0E9D /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D90D6C2387EDE000DD0E9D /* ContactsViewController.swift */; };
+		D3D90D6F2387F12F00DD0E9D /* CallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D90D6E2387F12F00DD0E9D /* CallCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -187,6 +189,8 @@
 		D3C574F7237D3C4300EBB2F8 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		D3D4A4662384147000E6401F /* AppCollection+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCollection+Collection.swift"; sourceTree = "<group>"; };
 		D3D4A46823841B1700E6401F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		D3D90D6C2387EDE000DD0E9D /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		D3D90D6E2387F12F00DD0E9D /* CallCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallCell.swift; sourceTree = "<group>"; };
 		E8EE73D8B5FC65238FC15B26 /* Pods_Taskon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taskon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -423,6 +427,7 @@
 				D3ADAE26237EC27300FD7F70 /* CustomersViewController.swift */,
 				D3AF8BE52386508A0099A893 /* CommentsViewController.swift */,
 				D34DCFC323871BAA0052A8CF /* MapViewController.swift */,
+				D3D90D6C2387EDE000DD0E9D /* ContactsViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -527,6 +532,7 @@
 				D3BC8ED22385BD5900CCB88E /* ContactCell.swift */,
 				D3BC8ED42385BDE100CCB88E /* NormalCell.swift */,
 				D3A8009823869C0800224D25 /* CommentCell.swift */,
+				D3D90D6E2387F12F00DD0E9D /* CallCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -692,6 +698,7 @@
 				D3AF8BE423864D130099A893 /* Questionnaires.swift in Sources */,
 				D3ADAE25237EB64400FD7F70 /* TaskRouter.swift in Sources */,
 				D357714923773CD20038C7EE /* AppDate+Date.swift in Sources */,
+				D3D90D6D2387EDE000DD0E9D /* ContactsViewController.swift in Sources */,
 				D3ADAE22237EB55E00FD7F70 /* Customer.swift in Sources */,
 				CF8462812372049A008C0314 /* AppString+String.swift in Sources */,
 				CF84627F2372049A008C0314 /* AppDelegate.swift in Sources */,
@@ -704,6 +711,7 @@
 				D39FFC302383F17300E1C879 /* CoreData.swift in Sources */,
 				D34D8B6B2382F57300F18ECF /* AppFont+UIFont.swift in Sources */,
 				CFE876BA2374A8E80051FAA9 /* Constants.swift in Sources */,
+				D3D90D6F2387F12F00DD0E9D /* CallCell.swift in Sources */,
 				CF272B032374A06400A05A9A /* CompanyRouter.swift in Sources */,
 				CF8462842372049A008C0314 /* AppNavigationController.swift in Sources */,
 				D38D57AF2375F74900CF1DDB /* AppFuture+PromisedFuture.swift in Sources */,
