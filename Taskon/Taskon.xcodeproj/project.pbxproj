@@ -96,6 +96,7 @@
 		D3D4A46923841B1700E6401F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4A46823841B1700E6401F /* Location.swift */; };
 		D3D90D6D2387EDE000DD0E9D /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D90D6C2387EDE000DD0E9D /* ContactsViewController.swift */; };
 		D3D90D6F2387F12F00DD0E9D /* CallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D90D6E2387F12F00DD0E9D /* CallCell.swift */; };
+		D3D90D712387F88700DD0E9D /* PhotosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D90D702387F88700DD0E9D /* PhotosManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -191,6 +192,7 @@
 		D3D4A46823841B1700E6401F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		D3D90D6C2387EDE000DD0E9D /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		D3D90D6E2387F12F00DD0E9D /* CallCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallCell.swift; sourceTree = "<group>"; };
+		D3D90D702387F88700DD0E9D /* PhotosManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosManager.swift; sourceTree = "<group>"; };
 		E8EE73D8B5FC65238FC15B26 /* Pods_Taskon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taskon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -541,6 +543,7 @@
 			isa = PBXGroup;
 			children = (
 				D3B1F9102384F69700C449A6 /* LocationManager.swift */,
+				D3D90D702387F88700DD0E9D /* PhotosManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -683,6 +686,7 @@
 				CF272AFE23749B7E00A05A9A /* NetworkConstants.swift in Sources */,
 				D3AEEFFF2375BEC90094F7B4 /* HomeCell.swift in Sources */,
 				CF8462822372049A008C0314 /* AppColor+UIColor.swift in Sources */,
+				D3D90D712387F88700DD0E9D /* PhotosManager.swift in Sources */,
 				D38D57AB2375EE1200CF1DDB /* APIErrorHandler.swift in Sources */,
 				D3D4A46923841B1700E6401F /* Location.swift in Sources */,
 				CF272AF923749A8A00A05A9A /* NetworkRouter.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 typealias VoidCompletion = () -> Void
 typealias FilterCompletion = (Filter) -> Void
@@ -17,3 +18,4 @@ typealias ServiceFailure = (Error) -> Void
 typealias ServiceSuccess<T> = (T) -> Void
 typealias DateCompletion = (Date) -> Void
 typealias CustomerCompletion = (Customer) -> Void
+typealias ImagePickerCompletion = (UIImage) -> Void

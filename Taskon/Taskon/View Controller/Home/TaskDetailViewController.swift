@@ -23,6 +23,7 @@ class TaskDetailViewController: AppViewController {
     public var task: Task!
     public var location: Location!
     private var state: TaskDetailState = .registered
+    private var photosManager: PhotosManager!
     
     
     // MARK: - View Controller Life Cycle
@@ -35,10 +36,7 @@ class TaskDetailViewController: AppViewController {
         setupNavigationBar()
         setupViewController()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        openContacts()
-    }
+
 }
 
 
@@ -53,6 +51,11 @@ extension TaskDetailViewController {
     
     private func setupViewController() {
         tableView.tableFooterView = UIView(frame: .zero)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        openPhotos()
     }
 }
 
@@ -80,6 +83,15 @@ extension TaskDetailViewController {
             contactsVC.contacts = contacts
             push(viewController: contactsVC, animated: true)
         }
+    }
+    
+    private func openPhotos() {
+        photosManager = PhotosManager(viewController: self)
+        photosManager.selectedImage = { [weak self] image in
+            guard let _ = self else { return }
+            debugPrint(image)
+        }
+        photosManager.start()
     }
     
 }

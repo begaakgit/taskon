@@ -88,5 +88,9 @@
 	<string>This app uses location to fetch data in background.</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app uses Camera to capture images.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app uses Photo Library to select images.</string>
 </dict>
 </plist>
