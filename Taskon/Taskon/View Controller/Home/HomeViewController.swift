@@ -198,8 +198,10 @@ extension HomeViewController {
     }
     
     private func openDetails(for task: Task) {
+        guard let location = locations.first(where: { $0.id == task.locationID }) else { return }
         let taskDetailVC: TaskDetailViewController = instanceFromStoryboard(storyboard: Storyboard.home)
         taskDetailVC.task = task
+        taskDetailVC.location = location
         push(viewController: taskDetailVC, animated: true)
     }
 }

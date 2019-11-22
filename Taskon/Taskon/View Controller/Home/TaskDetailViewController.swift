@@ -21,6 +21,7 @@ class TaskDetailViewController: AppViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     public var task: Task!
+    public var location: Location!
     private var state: TaskDetailState = .registered
     
     
@@ -36,7 +37,7 @@ class TaskDetailViewController: AppViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        openComments(for: task.id)
+        openMap(for: location)
     }
 }
 
@@ -64,6 +65,12 @@ extension TaskDetailViewController {
         let commentsVC: CommentsViewController = instanceFromStoryboard(storyboard: Storyboard.home)
         commentsVC.taskId = taskId
         push(viewController: commentsVC, animated: true)
+    }
+    
+    private func openMap(for location: Location) {
+        let mapVC: MapViewController = instanceFromStoryboard(storyboard: Storyboard.home)
+        mapVC.location = location
+        push(viewController: mapVC, animated: true)
     }
     
 }

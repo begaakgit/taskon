@@ -51,6 +51,7 @@
 		D34D8B6B2382F57300F18ECF /* AppFont+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34D8B6A2382F57300F18ECF /* AppFont+UIFont.swift */; };
 		D34D8B6D2383114B00F18ECF /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34D8B6C2383114B00F18ECF /* Task.swift */; };
 		D34D8B6F2383117D00F18ECF /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34D8B6E2383117D00F18ECF /* Contact.swift */; };
+		D34DCFC423871BAA0052A8CF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34DCFC323871BAA0052A8CF /* MapViewController.swift */; };
 		D357714923773CD20038C7EE /* AppDate+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357714823773CD20038C7EE /* AppDate+Date.swift */; };
 		D36D8484238707C9007A8F41 /* SBMessageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D8483238707C9007A8F41 /* SBMessageInputView.swift */; };
 		D36D999F23856DDC00A2A527 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D999E23856DDC00A2A527 /* TaskDetailViewController.swift */; };
@@ -143,6 +144,7 @@
 		D34D8B6A2382F57300F18ECF /* AppFont+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppFont+UIFont.swift"; sourceTree = "<group>"; };
 		D34D8B6C2383114B00F18ECF /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		D34D8B6E2383117D00F18ECF /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		D34DCFC323871BAA0052A8CF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D357714823773CD20038C7EE /* AppDate+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDate+Date.swift"; sourceTree = "<group>"; };
 		D36D8483238707C9007A8F41 /* SBMessageInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBMessageInputView.swift; sourceTree = "<group>"; };
 		D36D999E23856DDC00A2A527 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 				D336C3F823780AF6007DC885 /* SettingsViewController.swift */,
 				D3ADAE26237EC27300FD7F70 /* CustomersViewController.swift */,
 				D3AF8BE52386508A0099A893 /* CommentsViewController.swift */,
+				D34DCFC323871BAA0052A8CF /* MapViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -719,6 +722,7 @@
 				D3BC8ECF2385BB7200CCB88E /* ActionCell.swift in Sources */,
 				D3D4A4672384147000E6401F /* AppCollection+Collection.swift in Sources */,
 				D32B224F2376D6D500282818 /* AppViewController+UIViewController.swift in Sources */,
+				D34DCFC423871BAA0052A8CF /* MapViewController.swift in Sources */,
 				D38D57A32375E38900CF1DDB /* TOUserDefaults.swift in Sources */,
 				D3A8C57D2376E36400CCA89B /* AppView+UIView.swift in Sources */,
 				CFB33FD82374C27600DE0507 /* Types.swift in Sources */,

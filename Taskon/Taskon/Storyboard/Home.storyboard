@@ -1607,6 +1607,59 @@
             </objects>
             <point key="canvasLocation" x="3026" y="-591"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="KqW-Dr-E22">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="OkU-4h-z1p" customClass="MapViewController" customModule="Taskon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jPf-Ee-3rk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CXg-6X-jF0">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jqq-1W-xTd">
+                                <rect key="frame" x="20" y="794" width="374" height="48"/>
+                                <color key="backgroundColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="1dz-KH-2Dk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="15"/>
+                                <state key="normal" title="NAVIGATE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="continueButtonTapped:" destination="R42-qa-E3s" eventType="touchUpInside" id="BXE-xe-2ih"/>
+                                    <action selector="navigateButtonTapped:" destination="OkU-4h-z1p" eventType="touchUpInside" id="OTE-pG-KbQ"/>
+                                    <action selector="saveButtonTapped:" destination="aBv-CG-wPE" eventType="touchUpInside" id="1VW-aW-hjV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="CXg-6X-jF0" firstAttribute="top" secondItem="CKl-gW-mXj" secondAttribute="top" id="3cP-Hm-XJ3"/>
+                            <constraint firstAttribute="trailing" secondItem="CXg-6X-jF0" secondAttribute="trailing" id="UEp-sj-LvQ"/>
+                            <constraint firstItem="Jqq-1W-xTd" firstAttribute="leading" secondItem="CKl-gW-mXj" secondAttribute="leading" constant="20" id="eVc-rO-z3Y"/>
+                            <constraint firstAttribute="bottom" secondItem="CXg-6X-jF0" secondAttribute="bottom" id="hNU-YN-MWi"/>
+                            <constraint firstItem="CKl-gW-mXj" firstAttribute="bottom" secondItem="Jqq-1W-xTd" secondAttribute="bottom" constant="20" id="ixh-FP-sys"/>
+                            <constraint firstItem="CXg-6X-jF0" firstAttribute="leading" secondItem="jPf-Ee-3rk" secondAttribute="leading" id="kw8-16-Uqn"/>
+                            <constraint firstItem="CKl-gW-mXj" firstAttribute="trailing" secondItem="Jqq-1W-xTd" secondAttribute="trailing" constant="20" id="sfR-f9-ezd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CKl-gW-mXj"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapview" destination="CXg-6X-jF0" id="pLy-Bx-Dkh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0t4-uJ-70L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3739" y="-591"/>
+        </scene>
         <!--New Task View Controller-->
         <scene sceneID="SG1-8L-5Vt">
             <objects>

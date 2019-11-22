@@ -21,4 +21,8 @@ class Constants {
         static let noResult: String = "No Result!"
     }
     
+    struct Map {
+        static let radius: Double = 500
+    }
+    
 }
