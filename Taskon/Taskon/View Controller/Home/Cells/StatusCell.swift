@@ -30,5 +30,15 @@ class StatusCell: UITableViewCell, Registerable {
 
         // Configure the view for the selected state
     }
+    
+    
+    // MARK: - Public Methods
+    
+    public func configure(task: Task) {
+        titleLabel.text = "Status"
+        dateLabel.text = task.dueTimestamp
+        dateLabel.textColor = .red
+        statusLabel.text = task.status.getText()
+    }
 
 }

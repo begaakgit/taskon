@@ -97,6 +97,11 @@
 		D3D90D6D2387EDE000DD0E9D /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D90D6C2387EDE000DD0E9D /* ContactsViewController.swift */; };
 		D3D90D6F2387F12F00DD0E9D /* CallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D90D6E2387F12F00DD0E9D /* CallCell.swift */; };
 		D3D90D712387F88700DD0E9D /* PhotosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D90D702387F88700DD0E9D /* PhotosManager.swift */; };
+		D3D90D73238856CE00DD0E9D /* UpdateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D90D72238856CE00DD0E9D /* UpdateTaskViewController.swift */; };
+		D3D90D752388618100DD0E9D /* AddUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D90D742388618100DD0E9D /* AddUserCell.swift */; };
+		D3D90D772388619100DD0E9D /* AddMaterialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D90D762388619100DD0E9D /* AddMaterialCell.swift */; };
+		D3D90D792388619F00DD0E9D /* AddTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D90D782388619F00DD0E9D /* AddTaskCell.swift */; };
+		D3D90D7B2389716C00DD0E9D /* AppImage+ UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D90D7A2389716C00DD0E9D /* AppImage+ UIImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -193,6 +198,11 @@
 		D3D90D6C2387EDE000DD0E9D /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		D3D90D6E2387F12F00DD0E9D /* CallCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallCell.swift; sourceTree = "<group>"; };
 		D3D90D702387F88700DD0E9D /* PhotosManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosManager.swift; sourceTree = "<group>"; };
+		D3D90D72238856CE00DD0E9D /* UpdateTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTaskViewController.swift; sourceTree = "<group>"; };
+		D3D90D742388618100DD0E9D /* AddUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserCell.swift; sourceTree = "<group>"; };
+		D3D90D762388619100DD0E9D /* AddMaterialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMaterialCell.swift; sourceTree = "<group>"; };
+		D3D90D782388619F00DD0E9D /* AddTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskCell.swift; sourceTree = "<group>"; };
+		D3D90D7A2389716C00DD0E9D /* AppImage+ UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppImage+ UIImage.swift"; sourceTree = "<group>"; };
 		E8EE73D8B5FC65238FC15B26 /* Pods_Taskon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taskon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -342,6 +352,7 @@
 				D3ADAE28237EC64000FD7F70 /* AppButton.swift */,
 				D34D8B6A2382F57300F18ECF /* AppFont+UIFont.swift */,
 				D3D4A4662384147000E6401F /* AppCollection+Collection.swift */,
+				D3D90D7A2389716C00DD0E9D /* AppImage+ UIImage.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -430,6 +441,7 @@
 				D3AF8BE52386508A0099A893 /* CommentsViewController.swift */,
 				D34DCFC323871BAA0052A8CF /* MapViewController.swift */,
 				D3D90D6C2387EDE000DD0E9D /* ContactsViewController.swift */,
+				D3D90D72238856CE00DD0E9D /* UpdateTaskViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -535,6 +547,9 @@
 				D3BC8ED42385BDE100CCB88E /* NormalCell.swift */,
 				D3A8009823869C0800224D25 /* CommentCell.swift */,
 				D3D90D6E2387F12F00DD0E9D /* CallCell.swift */,
+				D3D90D742388618100DD0E9D /* AddUserCell.swift */,
+				D3D90D762388619100DD0E9D /* AddMaterialCell.swift */,
+				D3D90D782388619F00DD0E9D /* AddTaskCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -692,6 +707,7 @@
 				CF272AF923749A8A00A05A9A /* NetworkRouter.swift in Sources */,
 				CFB33FCE2374B3DB00DE0507 /* MenuViewController.swift in Sources */,
 				D3A96DCD2376C6BE00291D24 /* NewTaskViewController.swift in Sources */,
+				D3D90D792388619F00DD0E9D /* AddTaskCell.swift in Sources */,
 				D38D57AD2375EEFF00CF1DDB /* TOError.swift in Sources */,
 				CF272B0023749F7E00A05A9A /* APIClient.swift in Sources */,
 				CF8462832372049A008C0314 /* AppViewController.swift in Sources */,
@@ -723,6 +739,8 @@
 				D336C3F923780AF6007DC885 /* SettingsViewController.swift in Sources */,
 				CF8462852372049A008C0314 /* LoginViewController.swift in Sources */,
 				D38D57BC23760F7600CF1DDB /* ServiceResponse.swift in Sources */,
+				D3D90D73238856CE00DD0E9D /* UpdateTaskViewController.swift in Sources */,
+				D3D90D7B2389716C00DD0E9D /* AppImage+ UIImage.swift in Sources */,
 				D3B1F9112384F69700C449A6 /* LocationManager.swift in Sources */,
 				D3333F852377330F0007A124 /* DatePickerViewController.swift in Sources */,
 				D36D999F23856DDC00A2A527 /* TaskDetailViewController.swift in Sources */,
@@ -739,10 +757,12 @@
 				D3A8C57D2376E36400CCA89B /* AppView+UIView.swift in Sources */,
 				CFB33FD82374C27600DE0507 /* Types.swift in Sources */,
 				D34D8B6D2383114B00F18ECF /* Task.swift in Sources */,
+				D3D90D752388618100DD0E9D /* AddUserCell.swift in Sources */,
 				D38D57A92375E8C500CF1DDB /* ServiceError.swift in Sources */,
 				D3ADAE29237EC64000FD7F70 /* AppButton.swift in Sources */,
 				D38D57A72375E75300CF1DDB /* TOClient.swift in Sources */,
 				CFE876B82374A7D90051FAA9 /* HomeViewController.swift in Sources */,
+				D3D90D772388619100DD0E9D /* AddMaterialCell.swift in Sources */,
 				D3AEF0012375BF240094F7B4 /* Utilities.swift in Sources */,
 				D3AF8BE8238651590099A893 /* Comment.swift in Sources */,
 				D38D57B82376092500CF1DDB /* UserRouter.swift in Sources */,

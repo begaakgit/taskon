@@ -67,7 +67,7 @@ extension MapViewController {
         sourceAnnotation.coordinate = sourceLocation.coordinate
         
         let destinationAnnotation = MKPointAnnotation()
-        destinationAnnotation.title = location.title
+        destinationAnnotation.title = location.title.isEmpty ? "Customer" : location.title
         destinationAnnotation.coordinate = destinationLocation.coordinate
         
         mapview.showAnnotations([sourceAnnotation, destinationAnnotation], animated: true)

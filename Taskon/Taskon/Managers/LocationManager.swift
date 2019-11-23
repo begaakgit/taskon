@@ -55,6 +55,26 @@ class LocationManager: NSObject {
         return Int(distanceInKM)
     }
     
+    public func address(for location: CLLocation, completion: @escaping AddressCompletion) {
+        let geocoder = CLGeocoder()
+        
+        // Look up the location and pass it to the completion handler
+        geocoder.reverseGeocodeLocation(location) { [weak self] placemarks, error in
+            guard let _ = self else {
+                completion(nil)
+                return
+            }
+            if error == nil {
+                let firstLocation = placemarks?[0]
+                completion(firstLocation)
+            }
+            else {
+                // An error occurred during geocoding.
+                completion(nil)
+            }
+        }
+    }
+    
 }
 
 

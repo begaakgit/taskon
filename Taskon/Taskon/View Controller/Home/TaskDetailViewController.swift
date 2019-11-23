@@ -7,11 +7,35 @@
 //
 
 import UIKit
+import CoreLocation
+import ImageViewer
 
 enum TaskDetailState {
     case registered
     case approved
     case inProgress
+}
+
+enum Sections: Int, CaseIterable {
+    case additional
+    case info
+    case photos
+}
+
+enum AdditionalRows: Int, CaseIterable {
+    case users
+    case materials
+    case jobs
+}
+
+enum InfoRows: Int, CaseIterable {
+    case status
+    case photo
+    case title
+    case description
+    case comments
+    case address
+    case contacts
 }
 
 class TaskDetailViewController: AppViewController {
@@ -24,6 +48,7 @@ class TaskDetailViewController: AppViewController {
     public var location: Location!
     private var state: TaskDetailState = .registered
     private var photosManager: PhotosManager!
+    private var images: [TaskImage] = []
     
     
     // MARK: - View Controller Life Cycle
@@ -35,6 +60,17 @@ class TaskDetailViewController: AppViewController {
         
         setupNavigationBar()
         setupViewController()
+    }
+    
+    deinit {
+        if !images.isEmpty {
+            if let taskImages = TOUserDefaults.taskImages.get() {
+                TOUserDefaults.taskImages.clear()
+                TOUserDefaults.taskImages.set(value: taskImages + images)
+            } else {
+                TOUserDefaults.taskImages.set(value: images)
+            }
+        }
     }
 
 }
@@ -51,12 +87,95 @@ extension TaskDetailViewController {
     
     private func setupViewController() {
         tableView.tableFooterView = UIView(frame: .zero)
+        if let taskImages = TOUserDefaults.taskImages.get() {
+            images = taskImages.filter { $0.taskId == task.id }
+            updateImageCache()
+        }
+        tableView.reloadData()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        openPhotos()
+    private func updateImageCache() {
+        if var taskImages = TOUserDefaults.taskImages.get() {
+            taskImages.removeAll { image in
+                return images.contains { $0.taskId == image.taskId }
+            }
+            TOUserDefaults.taskImages.set(value: taskImages)
+        }
     }
+    
+    private func additionalCell(for row: Int) -> UITableViewCell {
+        guard let row = AdditionalRows(rawValue: row),
+            let cell = tableView.getCell(type: NormalCell.self) else { return UITableViewCell() }
+        switch row {
+        case .users: cell.configureForUsers()
+        case .materials: cell.configureForMaterials()
+        case .jobs: cell.configureForJobs()
+        }
+        return cell
+    }
+    
+    private func infoCell(for row: Int) -> UITableViewCell {
+        guard let row = InfoRows(rawValue: row) else { return UITableViewCell() }
+        switch row {
+        case .status:
+            guard let cell = tableView.getCell(type: StatusCell.self) else { return UITableViewCell() }
+            cell.configure(task: task)
+            return cell
+            
+        case .photo:
+            guard let cell = tableView.getCell(type: ActionCell.self) else { return UITableViewCell() }
+            cell.delegate = self
+            cell.configure(for: task.status)
+            return cell
+            
+        case .title:
+            guard let cell = tableView.getCell(type: NormalCell.self) else { return UITableViewCell() }
+            cell.configure(title: task.title)
+            return cell
+            
+        case .description:
+            guard let cell = tableView.getCell(type: NormalCell.self) else { return UITableViewCell() }
+            cell.configure(description: task.description)
+            return cell
+            
+        case .comments:
+            guard let cell = tableView.getCell(type: NormalCell.self) else { return UITableViewCell() }
+            cell.configureForComments()
+            return cell
+            
+        case .address:
+            guard let cell = tableView.getCell(type: NormalCell.self) else { return UITableViewCell() }
+            cell.configure(address: task.customerNamePrint + " (" + location.title + ")")
+            return cell
+            
+        case .contacts:
+            guard let cell = tableView.getCell(type: ContactCell.self) else { return UITableViewCell() }
+            return cell
+        }
+    }
+    
+    private func add(image: UIImage, location: CLLocation?) {
+        if let location = location {
+            LocationManager.default.address(for: location) { [weak self] address in
+                guard let self = self else { return }
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    if let imageString = image.base64String() {
+                        let imageAddress = "\(address?.name ?? ""), \(address?.locality ?? ""), \(address?.country ?? "")"
+                        let taskImage = TaskImage(image: imageString, address: imageAddress, taskId: self.task.id)
+                        self.images.append(taskImage)
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
+    }
+    
+    public func deleteImage(at indexPath: IndexPath) {
+        images.remove(at: indexPath.row)
+        tableView.reloadData()
+    }
+
 }
 
 
@@ -64,13 +183,13 @@ extension TaskDetailViewController {
 
 extension TaskDetailViewController {
     
-    private func openComments(for taskId: Int) {
+    private func openComments() {
         let commentsVC: CommentsViewController = instanceFromStoryboard(storyboard: Storyboard.home)
-        commentsVC.taskId = taskId
+        commentsVC.taskId = task.id
         push(viewController: commentsVC, animated: true)
     }
     
-    private func openMap(for location: Location) {
+    private func openMap() {
         let mapVC: MapViewController = instanceFromStoryboard(storyboard: Storyboard.home)
         mapVC.location = location
         push(viewController: mapVC, animated: true)
@@ -87,11 +206,22 @@ extension TaskDetailViewController {
     
     private func openPhotos() {
         photosManager = PhotosManager(viewController: self)
-        photosManager.selectedImage = { [weak self] image in
-            guard let _ = self else { return }
-            debugPrint(image)
+        photosManager.selectedImage = { [weak self] image, location in
+            guard let self = self else { return }
+            self.add(image: image, location: location)
         }
         photosManager.start()
+    }
+    
+    private func openUpdateTask(mode: UpdateTaskMode) {
+        let updateTaskVC: UpdateTaskViewController = instanceFromStoryboard(storyboard: Storyboard.home)
+        updateTaskVC.mode = mode
+        push(viewController: updateTaskVC, animated: true)
+    }
+    
+    private func openGallery(at indexPath: IndexPath) {
+        let galleryVC = GalleryViewController(startIndex: indexPath.row, itemsDataSource: self)
+        present(galleryVC, animated: true, completion: nil)
     }
     
 }
@@ -102,15 +232,82 @@ extension TaskDetailViewController {
 extension TaskDetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return Sections.allCases.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        var rows = 0
+        if let section = Sections(rawValue: section) {
+            switch section {
+            case .additional:
+                if false {
+                    rows = AdditionalRows.allCases.count
+                } else {
+                    rows = 0
+                }
+
+            case .info:
+                if let contacts = task.contacts, !contacts.isEmpty {
+                } else {
+                    rows = InfoRows.allCases.count - 1
+                }
+                
+            case .photos:
+                rows = images.count
+            }
+        }
+        return rows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return ContactCell()
+        guard let section = Sections(rawValue: indexPath.section) else { return UITableViewCell() }
+        switch section {
+        case .additional: return additionalCell(for: indexPath.row)
+            
+        case .info: return infoCell(for: indexPath.row)
+            
+        case .photos:
+            guard let cell = tableView.getCell(type: ImageCell.self) else { return UITableViewCell() }
+            let image = images[indexPath.row]
+            cell.configure(image: image) { [weak self] in
+                guard let self = self else { return }
+                self.deleteImage(at: indexPath)
+            }
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.selectionStyle = .none
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        if let section = Sections(rawValue: indexPath.section) {
+            switch section {
+            case .additional:
+                if let row = AdditionalRows(rawValue: indexPath.row) {
+                    switch row {
+                    case .users: openUpdateTask(mode: .user)
+                    case .materials: openUpdateTask(mode: .material)
+                    case .jobs: openUpdateTask(mode: .job)
+                    }
+                }
+                
+            case .info:
+                if let row = InfoRows(rawValue: indexPath.row) {
+                    switch row {
+                    case .comments: openComments()
+                    case .address: openMap()
+                    case .contacts: openContacts()
+                    default: break
+                    }
+                }
+                
+            case .photos:
+                openGallery(at: indexPath)
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -120,4 +317,90 @@ extension TaskDetailViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: .zero)
+        
+        if let sec = Sections(rawValue: section) {
+            switch sec {
+            case .photos:
+                let label = UILabel(frame: .zero)
+                label.text = "Photos & Reports"
+                label.textColor = .darkGray
+                label.font = .toFront(ofSize: 17)
+                view.addSubview(label)
+                label.snp.makeConstraints {
+                    $0.leading.equalToSuperview().offset(20)
+                    $0.trailing.equalToSuperview()
+                    $0.top.equalToSuperview().offset(10)
+                    $0.bottom.equalToSuperview()
+                }
+                
+            default:
+                break
+            }
+        }
+        
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        var height: CGFloat = 0.01
+        
+        if let sec = Sections(rawValue: section) {
+            switch sec {
+            case .photos: height = images.isEmpty ? 0.01 : 30
+            default: height = 0.01
+            }
+        }
+        
+        return height
+    }
+}
+
+
+// MARK: Action Cell Methods
+
+extension TaskDetailViewController: ActionCellDelegate {
+    
+    func cameraButtonTapped() {
+        openPhotos()
+    }
+    
+    func acceptTaskTapped() {
+        //
+    }
+    
+    func startTaskTapped() {
+        //
+    }
+    
+    func stopTaskTapped() {
+        //
+    }
+    
+    func finishTaskTapped() {
+        //
+    }
+    
+}
+
+
+// MARK: - Ga Methods
+
+extension TaskDetailViewController: GalleryItemsDataSource {
+    
+    func itemCount() -> Int {
+        return images.count
+    }
+    
+    func provideGalleryItem(_ index: Int) -> GalleryItem {
+        let image = images[index]
+        if let item = image.image.image() {
+            return .image { [weak self] in $0(item) }
+        }
+        return .image { $0(nil) }
+    }
+    
+    
 }

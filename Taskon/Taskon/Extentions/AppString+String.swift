@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import  UIKit
 
 extension String {
     
@@ -18,6 +19,11 @@ extension String {
     
     func toDate(format: DateFormatType, ignoreTimeZone: Bool = false) -> Date? {
         return format.getFormatter(ignoreTimeZone: ignoreTimeZone).date(from: self)
+    }
+    
+    public func image() -> UIImage? {
+        guard let data = Data(base64Encoded: self) else { return nil }
+        return UIImage(data: data)
     }
     
 }

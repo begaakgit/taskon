@@ -30,5 +30,44 @@ class NormalCell: UITableViewCell, Registerable {
 
         // Configure the view for the selected state
     }
+    
+    
+    // MARK: - Public Methods
+    
+    public func configure(title: String) {
+        titleLabel.text = "Title"
+        descriptionLabel.text = title
+        arrowImageView.isHidden = true
+    }
+    
+    public func configure(description: String) {
+        titleLabel.text = "Description"
+        descriptionLabel.text = description
+        arrowImageView.isHidden = true
+    }
+    
+    public func configureForComments() {
+        titleLabel.text = "Comments"
+        descriptionLabel.text = "View comments and add new ones"
+        arrowImageView.isHidden = false
+    }
+    
+    public func configure(address: String) {
+        titleLabel.text = "Address"
+        descriptionLabel.text = address
+        arrowImageView.isHidden = false
+    }
+    
+    public func configureForUsers() {
+        
+    }
+    
+    public func configureForMaterials() {
+        
+    }
+    
+    public func configureForJobs() {
+        
+    }
 
 }

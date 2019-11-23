@@ -26,7 +26,7 @@ class PhotosManager: NSObject {
     
     // MARK: - Class Properties
     
-    private var viewController: UIViewController
+    private weak var viewController: UIViewController? = nil
     public var selectedImage: ImagePickerCompletion? = nil
     
     
@@ -67,7 +67,7 @@ extension PhotosManager {
         alertController.addAction(photoLibraryAction)
         alertController.addAction(cancelAction)
         
-        viewController.present(alertController, animated: true, completion: nil)
+        viewController?.present(alertController, animated: true, completion: nil)
     }
     
     private func startCamera() {
@@ -75,7 +75,7 @@ extension PhotosManager {
             let pickerController = UIImagePickerController()
             pickerController.delegate = self
             pickerController.sourceType = .camera
-            viewController.present(pickerController, animated: true, completion: nil)
+            viewController?.present(pickerController, animated: true, completion: nil)
             
         } else {
             if let viewController = viewController as? AppViewController {
@@ -89,7 +89,7 @@ extension PhotosManager {
             let pickerController = UIImagePickerController()
             pickerController.delegate = self
             pickerController.sourceType = .photoLibrary
-            viewController.present(pickerController, animated: true, completion: nil)
+            viewController?.present(pickerController, animated: true, completion: nil)
             
         } else {
             if let viewController = viewController as? AppViewController {
@@ -155,15 +155,19 @@ extension PhotosManager {
 extension PhotosManager: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        viewController.dismiss(animated: true, completion: nil)
+        viewController?.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
-            selectedImage?(image)
+            if let asset = info[.phAsset] as? PHAsset {
+                selectedImage?(image, asset.location)
+            } else {
+                selectedImage?(image, nil)
+            }
         } else {
             debugPrint("Some Thing went wrong!")
         }
-        viewController.dismiss(animated: true, completion: nil)
+        viewController?.dismiss(animated: true, completion: nil)
     }
 }

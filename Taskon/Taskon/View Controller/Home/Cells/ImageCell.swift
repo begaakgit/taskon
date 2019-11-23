@@ -16,6 +16,7 @@ class ImageCell: UITableViewCell, Registerable {
     @IBOutlet private weak var taskImageView: UIImageView!
     @IBOutlet private weak var imageAddressLabel: UILabel!
     @IBOutlet private weak var deleteButton: UIButton!
+    private var deleteAction: VoidCompletion? = nil
     
     
     // MARK: - Initialization Methods
@@ -35,7 +36,16 @@ class ImageCell: UITableViewCell, Registerable {
     // MARK: - Action Methods
     
     @IBAction private func deleteButtonTapped(_ sender: UIButton) {
-        
+        deleteAction?()
+    }
+    
+    
+    // MARK: - Public Methods
+    
+    public func configure(image: TaskImage, deleteAction: VoidCompletion? = nil) {
+        self.deleteAction = deleteAction
+        taskImageView.image = image.image.image()
+        imageAddressLabel.text = image.address
     }
 
 }

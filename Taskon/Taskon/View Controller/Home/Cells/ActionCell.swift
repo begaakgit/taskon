@@ -8,6 +8,14 @@
 
 import UIKit
 
+protocol ActionCellDelegate: class {
+    func cameraButtonTapped()
+    func acceptTaskTapped()
+    func startTaskTapped()
+    func stopTaskTapped()
+    func finishTaskTapped()
+}
+
 class ActionCell: UITableViewCell, Registerable {
 
     
@@ -19,6 +27,7 @@ class ActionCell: UITableViewCell, Registerable {
     @IBOutlet private weak var firstButton: UIButton!
     @IBOutlet private weak var secondButton: UIButton!
     @IBOutlet private weak var thirdButton: UIButton!
+    public weak var delegate: ActionCellDelegate? = nil
     
     
     // MARK: - Initialization Methods
@@ -38,15 +47,43 @@ class ActionCell: UITableViewCell, Registerable {
     // MARK: - Action Methods
     
     @IBAction private func firstButtonTapped(_ sender: UIButton) {
-        
+        guard let title = sender.title(for: .normal) else { return }
+        switch title {
+        case "ACCEPT": delegate?.acceptTaskTapped()
+        case "START": delegate?.startTaskTapped()
+        default: break
+        }
     }
     
     @IBAction private func secondButtonTapped(_ sender: UIButton) {
-        
+        delegate?.cameraButtonTapped()
     }
     
     @IBAction private func thirdButtonTapped(_ sender: UIButton) {
         
+    }
+    
+    
+    // MARK: - Public Methods
+    
+    public func configure(for status: TaskStatus) {
+        switch status {
+        case .registered:
+            firstView.isHidden = false
+            firstButton.setTitle("ACCEPT", for: .normal)
+            sencondView.isHidden = false
+            secondButton.setTitle("", for: .normal)
+            secondButton.setImage(#imageLiteral(resourceName: "camera"), for: .normal)
+            thirdView.isHidden = true
+            
+        default:
+            firstView.isHidden = false
+            firstButton.setTitle("START", for: .normal)
+            sencondView.isHidden = false
+            secondButton.setTitle("", for: .normal)
+            secondButton.setImage(#imageLiteral(resourceName: "camera"), for: .normal)
+            thirdView.isHidden = true
+        }
     }
 
 

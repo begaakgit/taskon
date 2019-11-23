@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
 typealias VoidCompletion = () -> Void
 typealias FilterCompletion = (Filter) -> Void
@@ -18,4 +19,5 @@ typealias ServiceFailure = (Error) -> Void
 typealias ServiceSuccess<T> = (T) -> Void
 typealias DateCompletion = (Date) -> Void
 typealias CustomerCompletion = (Customer) -> Void
-typealias ImagePickerCompletion = (UIImage) -> Void
+typealias ImagePickerCompletion = (UIImage, CLLocation?) -> Void
+typealias AddressCompletion = (CLPlacemark?) -> Void

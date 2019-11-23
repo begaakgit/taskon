@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Task: Codable {
     
@@ -133,4 +134,18 @@ enum TaskStatus: String, Codable {
         case .accepted: return "Accepted"
         }
     }
+}
+
+
+// MARK: - Task Images
+
+struct TaskImage: Codable {
+    
+    
+    // MARK: - Class Propeties
+    
+    var image: String
+    var address: String
+    var taskId: Int
+    
 }
