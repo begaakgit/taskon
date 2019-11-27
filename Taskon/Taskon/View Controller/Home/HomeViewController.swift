@@ -54,6 +54,7 @@ class HomeViewController: AppViewController {
     private func setupViewController() {
         tableView.tableFooterView = UIView(frame: .zero)
         performCoreDataRequest()
+        performStaticDataRequest()
     }
     
     private func updateUi() {
@@ -329,5 +330,16 @@ extension HomeViewController {
             guard let self = self else { return }
             self.logoutUser()
         }
+    }
+    
+    private func performStaticDataRequest() {
+        let request = APIClient.staticData()
+        
+        let success: ServiceSuccess<StaticData> = { [weak self] staticData in
+            guard let _ = self else { return }
+            TOUserDefaults.staticData.set(value: staticData)
+        }
+        
+        request.execute(errorHandler: errorHandler, onSuccess: success)
     }
 }

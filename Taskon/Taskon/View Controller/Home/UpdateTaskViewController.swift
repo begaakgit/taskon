@@ -62,6 +62,47 @@ extension UpdateTaskViewController {
         tableView.tableFooterView = UIView(frame: .zero)
         addButton.setTitle("ADD \(mode.title().capitalized)", for: .normal)
     }
+    
+    private func updateUi() {
+        var datasource: [Any] = []
+        
+        switch mode {
+        case .user: datasource = users
+        case .material: datasource = materials
+        case .job: datasource = jobs
+        }
+        
+        if datasource.isEmpty {
+            tableView.setEmpty(text: Constants.Messages.noResult)
+        } else {
+            tableView.resetEmptyText()
+        }
+        tableView.reloadData()
+    }
+    
+    private func addUser() {
+        let addUserVC: AddUserViewController = instanceFromStoryboard(storyboard: Storyboard.home)
+        addUserVC.addBlock = { [weak self] in
+            guard let _ = self else { return }
+        }
+        present(addUserVC, animated: true, completion: nil)
+    }
+    
+    private func addMaterial() {
+        let addUserVC: AddMaterialViewController = instanceFromStoryboard(storyboard: Storyboard.home)
+        addUserVC.addBlock = { [weak self] in
+            guard let _ = self else { return }
+        }
+        present(addUserVC, animated: true, completion: nil)
+    }
+    
+    private func addJob() {
+        let addUserVC: AddJobViewController = instanceFromStoryboard(storyboard: Storyboard.home)
+        addUserVC.addBlock = { [weak self] in
+            guard let _ = self else { return }
+        }
+        present(addUserVC, animated: true, completion: nil)
+    }
 }
 
 
@@ -74,7 +115,11 @@ extension UpdateTaskViewController {
     }
     
     @IBAction private func addBUttonTapped(_ sender: UIButton) {
-        
+        switch mode {
+        case .user: addUser()
+        case .material: addMaterial()
+        case .job: addJob()
+        }
     }
 }
 

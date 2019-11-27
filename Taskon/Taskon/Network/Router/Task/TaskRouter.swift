@@ -16,6 +16,7 @@ enum TaskRouter: NetworkRouter {
     case coreData(userId: Int)
     case comments(userId: Int, taskId: Int)
     case comment(userId: Int, taskId: Int, comment: String)
+    case staticData(userId: Int)
     
     
     // Path
@@ -34,27 +35,28 @@ enum TaskRouter: NetworkRouter {
         case .coreData: return "get_core_data"
         case .comments: return "get_comments_data"
         case .comment: return "sync_comments_data"
+        case .staticData: return "get_static_data"
         }
     }
     
     // Method
     var method: HTTPMethod {
         switch self {
-        case .customers, .new, .coreData, .comments, .comment: return .post
+        case .customers, .new, .coreData, .comments, .comment, .staticData: return .post
         }
     }
     
     // Token
     var token: Bool {
         switch self {
-        case .customers, .new, .coreData, .comments, .comment: return true
+        case .customers, .new, .coreData, .comments, .comment, .staticData: return true
         }
     }
     
     // API Key
     var apiKey: Bool {
         switch self {
-        case .customers, .new, .coreData, .comments, .comment: return true
+        case .customers, .new, .coreData, .comments, .comment, .staticData: return true
         }
     }
     
@@ -88,6 +90,9 @@ enum TaskRouter: NetworkRouter {
             return ["user_id" : userId,
                     "task_id" : taskId,
                     "task_comment" : comment]
+            
+        case .staticData(let userId):
+            return ["user_id" : userId]
             
         }
     }

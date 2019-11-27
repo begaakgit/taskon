@@ -53,14 +53,12 @@ extension CommentsViewController {
     }
     
     private func updateUi() {
-        
         if comments.isEmpty {
-            comments.removeAll()
             tableView.setEmpty(text: Constants.Messages.noResult)
         } else {
-            tableView.reloadData()
             tableView.resetEmptyText()
         }
+        tableView.reloadData()
     }
 }
 

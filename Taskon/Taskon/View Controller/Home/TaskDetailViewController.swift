@@ -72,6 +72,11 @@ class TaskDetailViewController: AppViewController {
             }
         }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        openUpdateTask(mode: .user)
+    }
 
 }
 
@@ -240,7 +245,7 @@ extension TaskDetailViewController: UITableViewDataSource, UITableViewDelegate {
         if let section = Sections(rawValue: section) {
             switch section {
             case .additional:
-                if false {
+                if true {
                     rows = AdditionalRows.allCases.count
                 } else {
                     rows = 0

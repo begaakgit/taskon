@@ -55,6 +55,10 @@
 		D357714923773CD20038C7EE /* AppDate+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357714823773CD20038C7EE /* AppDate+Date.swift */; };
 		D36D8484238707C9007A8F41 /* SBMessageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D8483238707C9007A8F41 /* SBMessageInputView.swift */; };
 		D36D999F23856DDC00A2A527 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D999E23856DDC00A2A527 /* TaskDetailViewController.swift */; };
+		D379B187238C2E210025EE67 /* StaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D379B186238C2E210025EE67 /* StaticData.swift */; };
+		D379B189238C34630025EE67 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D379B188238C34630025EE67 /* AddUserViewController.swift */; };
+		D379B18B238C35FE0025EE67 /* AddMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D379B18A238C35FE0025EE67 /* AddMaterialViewController.swift */; };
+		D379B18D238C361E0025EE67 /* AddJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D379B18C238C361E0025EE67 /* AddJobViewController.swift */; };
 		D38D57A32375E38900CF1DDB /* TOUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57A22375E38900CF1DDB /* TOUserDefaults.swift */; };
 		D38D57A52375E62F00CF1DDB /* EmptyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57A42375E62F00CF1DDB /* EmptyCodable.swift */; };
 		D38D57A72375E75300CF1DDB /* TOClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57A62375E75300CF1DDB /* TOClient.swift */; };
@@ -156,6 +160,10 @@
 		D357714823773CD20038C7EE /* AppDate+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDate+Date.swift"; sourceTree = "<group>"; };
 		D36D8483238707C9007A8F41 /* SBMessageInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBMessageInputView.swift; sourceTree = "<group>"; };
 		D36D999E23856DDC00A2A527 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		D379B186238C2E210025EE67 /* StaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticData.swift; sourceTree = "<group>"; };
+		D379B188238C34630025EE67 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
+		D379B18A238C35FE0025EE67 /* AddMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMaterialViewController.swift; sourceTree = "<group>"; };
+		D379B18C238C361E0025EE67 /* AddJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJobViewController.swift; sourceTree = "<group>"; };
 		D38D57A22375E38900CF1DDB /* TOUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOUserDefaults.swift; sourceTree = "<group>"; };
 		D38D57A42375E62F00CF1DDB /* EmptyCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCodable.swift; sourceTree = "<group>"; };
 		D38D57A62375E75300CF1DDB /* TOClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOClient.swift; sourceTree = "<group>"; };
@@ -415,6 +423,7 @@
 				D3AF8BE123864AF90099A893 /* TaskPauseType.swift */,
 				D3AF8BE323864D130099A893 /* Questionnaires.swift */,
 				D3AF8BE7238651590099A893 /* Comment.swift */,
+				D379B186238C2E210025EE67 /* StaticData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -442,6 +451,9 @@
 				D34DCFC323871BAA0052A8CF /* MapViewController.swift */,
 				D3D90D6C2387EDE000DD0E9D /* ContactsViewController.swift */,
 				D3D90D72238856CE00DD0E9D /* UpdateTaskViewController.swift */,
+				D379B188238C34630025EE67 /* AddUserViewController.swift */,
+				D379B18A238C35FE0025EE67 /* AddMaterialViewController.swift */,
+				D379B18C238C361E0025EE67 /* AddJobViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -698,6 +710,7 @@
 				D3A8009923869C0800224D25 /* CommentCell.swift in Sources */,
 				D3AEF0032375BF5A0094F7B4 /* AppTableView+UITableView.swift in Sources */,
 				CFB33FD52374C1E300DE0507 /* Menu.swift in Sources */,
+				D379B18D238C361E0025EE67 /* AddJobViewController.swift in Sources */,
 				CF272AFE23749B7E00A05A9A /* NetworkConstants.swift in Sources */,
 				D3AEEFFF2375BEC90094F7B4 /* HomeCell.swift in Sources */,
 				CF8462822372049A008C0314 /* AppColor+UIColor.swift in Sources */,
@@ -706,12 +719,15 @@
 				D3D4A46923841B1700E6401F /* Location.swift in Sources */,
 				CF272AF923749A8A00A05A9A /* NetworkRouter.swift in Sources */,
 				CFB33FCE2374B3DB00DE0507 /* MenuViewController.swift in Sources */,
+				D379B189238C34630025EE67 /* AddUserViewController.swift in Sources */,
 				D3A96DCD2376C6BE00291D24 /* NewTaskViewController.swift in Sources */,
 				D3D90D792388619F00DD0E9D /* AddTaskCell.swift in Sources */,
 				D38D57AD2375EEFF00CF1DDB /* TOError.swift in Sources */,
+				D379B18B238C35FE0025EE67 /* AddMaterialViewController.swift in Sources */,
 				CF272B0023749F7E00A05A9A /* APIClient.swift in Sources */,
 				CF8462832372049A008C0314 /* AppViewController.swift in Sources */,
 				D3ADAE2C237ECC3D00FD7F70 /* LoadingButton.swift in Sources */,
+				D379B187238C2E210025EE67 /* StaticData.swift in Sources */,
 				D3ADAE27237EC27300FD7F70 /* CustomersViewController.swift in Sources */,
 				CFB33FD02374B44100DE0507 /* Storyboard.swift in Sources */,
 				D3A96DCF2376C76900291D24 /* User.swift in Sources */,
