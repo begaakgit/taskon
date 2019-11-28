@@ -45,7 +45,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="382" height="29.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Er7-aC-89y">
-                                                                    <rect key="frame" x="0.0" y="6.5" width="244" height="16"/>
+                                                                    <rect key="frame" x="0.0" y="5" width="244" height="19"/>
                                                                     <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -60,7 +60,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3f-TF-QQQ">
-                                                                    <rect key="frame" x="252" y="6" width="130" height="17"/>
+                                                                    <rect key="frame" x="252" y="4.5" width="130" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="130" id="PpJ-ND-xb5"/>
                                                                     </constraints>
@@ -94,7 +94,7 @@
                                                             <rect key="frame" x="0.0" y="29.5" width="382" height="29"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6U-x4-gPe">
-                                                                    <rect key="frame" x="0.0" y="6" width="244" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="4.5" width="244" height="20"/>
                                                                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -109,7 +109,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1C-L5-1UJ">
-                                                                    <rect key="frame" x="252" y="6" width="130" height="17"/>
+                                                                    <rect key="frame" x="252" y="4.5" width="130" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="130" id="Ohg-Bh-wrH"/>
                                                                     </constraints>
@@ -143,7 +143,7 @@
                                                             <rect key="frame" x="0.0" y="58.5" width="382" height="29.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8X5-Hr-gKm">
-                                                                    <rect key="frame" x="0.0" y="6.5" width="244" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="5" width="244" height="20"/>
                                                                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -158,7 +158,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sh5-73-rIr">
-                                                                    <rect key="frame" x="252" y="7.5" width="130" height="15"/>
+                                                                    <rect key="frame" x="252" y="6" width="130" height="17.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="130" id="zIK-nc-hQG"/>
                                                                     </constraints>
@@ -277,16 +277,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RSR-ft-sch">
-                                                    <rect key="frame" x="20" y="8" width="374" height="37"/>
+                                                    <rect key="frame" x="20" y="8" width="374" height="42.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Application information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfT-5T-mDV">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
                                                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="6.0.1.1 / 6011" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehq-QE-nho">
-                                                            <rect key="frame" x="0.0" y="22" width="374" height="15"/>
+                                                            <rect key="frame" x="0.0" y="25" width="374" height="17.5"/>
                                                             <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -319,16 +319,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="15n-40-1t8">
-                                                    <rect key="frame" x="20" y="8" width="374" height="72"/>
+                                                    <rect key="frame" x="20" y="8" width="374" height="75"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size of photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ovt-gQ-fBD">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
                                                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgw-tc-Jb0">
-                                                            <rect key="frame" x="0.0" y="22" width="374" height="50"/>
+                                                            <rect key="frame" x="0.0" y="25" width="374" height="50"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QaL-dy-8pG">
                                                                     <rect key="frame" x="20" y="0.0" width="334" height="50"/>
@@ -340,10 +340,10 @@
                                                                                     <rect key="frame" x="0.0" y="0.0" width="98" height="50"/>
                                                                                     <subviews>
                                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xSh-aa-HyD">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="56.5" height="50"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="55.5" height="50"/>
                                                                                             <subviews>
                                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L8v-Nl-oAG" customClass="Checkbox" customModule="SimpleCheckbox">
-                                                                                                    <rect key="frame" x="26.5" y="20" width="30" height="30"/>
+                                                                                                    <rect key="frame" x="25.5" y="20" width="30" height="30"/>
                                                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                                                     <constraints>
                                                                                                         <constraint firstAttribute="width" constant="30" id="iNy-yE-66e"/>
@@ -359,7 +359,7 @@
                                                                                             </constraints>
                                                                                         </view>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VGA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLT-Mf-qLv">
-                                                                                            <rect key="frame" x="64.5" y="33" width="33.5" height="17"/>
+                                                                                            <rect key="frame" x="63.5" y="30" width="34.5" height="20"/>
                                                                                             <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="17"/>
                                                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                             <nil key="highlightedColor"/>
@@ -381,10 +381,10 @@
                                                                                     <rect key="frame" x="0.0" y="0.0" width="98" height="50"/>
                                                                                     <subviews>
                                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XK3-YT-oji">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="66" height="50"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="65.5" height="50"/>
                                                                                             <subviews>
                                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WcE-Bg-ukz" customClass="Checkbox" customModule="SimpleCheckbox">
-                                                                                                    <rect key="frame" x="36" y="20" width="30" height="30"/>
+                                                                                                    <rect key="frame" x="35.5" y="20" width="30" height="30"/>
                                                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                                                     <constraints>
                                                                                                         <constraint firstAttribute="width" constant="30" id="SYg-5g-FJY"/>
@@ -400,7 +400,7 @@
                                                                                             </constraints>
                                                                                         </view>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMc-GW-Njh">
-                                                                                            <rect key="frame" x="74" y="33" width="24" height="17"/>
+                                                                                            <rect key="frame" x="73.5" y="30" width="24.5" height="20"/>
                                                                                             <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="17"/>
                                                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                             <nil key="highlightedColor"/>
@@ -422,10 +422,10 @@
                                                                                     <rect key="frame" x="0.0" y="0.0" width="98" height="50"/>
                                                                                     <subviews>
                                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z3c-PB-RMK">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="50"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="69" height="50"/>
                                                                                             <subviews>
                                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QKK-HT-HRs" customClass="Checkbox" customModule="SimpleCheckbox">
-                                                                                                    <rect key="frame" x="40" y="20" width="30" height="30"/>
+                                                                                                    <rect key="frame" x="39" y="20" width="30" height="30"/>
                                                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                                                     <constraints>
                                                                                                         <constraint firstAttribute="height" constant="30" id="R2i-1I-V3e"/>
@@ -441,7 +441,7 @@
                                                                                             </constraints>
                                                                                         </view>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2K" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F30-jz-azY">
-                                                                                            <rect key="frame" x="78" y="33" width="20" height="17"/>
+                                                                                            <rect key="frame" x="77" y="30" width="21" height="20"/>
                                                                                             <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="17"/>
                                                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                             <nil key="highlightedColor"/>
@@ -495,16 +495,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kIp-h9-Dj7">
-                                                    <rect key="frame" x="20" y="8" width="374" height="52"/>
+                                                    <rect key="frame" x="20" y="8" width="374" height="55"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location check interval (sec.)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGo-zu-3mH">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
                                                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4k-0O-e8e">
-                                                            <rect key="frame" x="0.0" y="22" width="374" height="30"/>
+                                                            <rect key="frame" x="0.0" y="25" width="374" height="30"/>
                                                             <subviews>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nhV-z9-FkR">
                                                                     <rect key="frame" x="20" y="0.0" width="334" height="30"/>
@@ -555,16 +555,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yb3-nG-K7Q">
-                                                    <rect key="frame" x="20" y="8" width="374" height="52"/>
+                                                    <rect key="frame" x="20" y="8" width="374" height="55"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location accuracy (m)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOf-df-bd2">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
                                                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2r-q3-3pb">
-                                                            <rect key="frame" x="0.0" y="22" width="374" height="30"/>
+                                                            <rect key="frame" x="0.0" y="25" width="374" height="30"/>
                                                             <subviews>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="50" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aER-zK-UE8">
                                                                     <rect key="frame" x="20" y="0.0" width="334" height="30"/>
@@ -615,16 +615,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NvN-JN-KLa">
-                                                    <rect key="frame" x="20" y="8" width="374" height="52"/>
+                                                    <rect key="frame" x="20" y="8" width="374" height="55"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automatic synchronization interval (minutes)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEj-0u-bak">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
                                                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pU3-6f-pML">
-                                                            <rect key="frame" x="0.0" y="22" width="374" height="30"/>
+                                                            <rect key="frame" x="0.0" y="25" width="374" height="30"/>
                                                             <subviews>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DfO-bM-eZo">
                                                                     <rect key="frame" x="20" y="0.0" width="334" height="30"/>
@@ -785,16 +785,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4ug-es-glb">
-                                                    <rect key="frame" x="20" y="8" width="374" height="52"/>
+                                                    <rect key="frame" x="20" y="8" width="374" height="55"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reminder interval (minutes)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAD-UO-o0q">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
                                                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rvm-4g-d2F">
-                                                            <rect key="frame" x="0.0" y="22" width="374" height="30"/>
+                                                            <rect key="frame" x="0.0" y="25" width="374" height="30"/>
                                                             <subviews>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="15" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ax3-kj-xwB">
                                                                     <rect key="frame" x="20" y="0.0" width="334" height="30"/>
@@ -845,16 +845,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="CYY-E4-vUc">
-                                                    <rect key="frame" x="20" y="8" width="374" height="52"/>
+                                                    <rect key="frame" x="20" y="8" width="374" height="55"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reminder reitration times" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fl1-zP-sJr">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
                                                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Laz-Z1-Hos">
-                                                            <rect key="frame" x="0.0" y="22" width="374" height="30"/>
+                                                            <rect key="frame" x="0.0" y="25" width="374" height="30"/>
                                                             <subviews>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mNS-4x-bNh">
                                                                     <rect key="frame" x="20" y="0.0" width="334" height="30"/>
@@ -905,16 +905,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7bc-zC-VM0">
-                                                    <rect key="frame" x="20" y="8" width="374" height="37"/>
+                                                    <rect key="frame" x="20" y="8" width="374" height="42.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gadget id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E25-zg-pSE">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
                                                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="iPhone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ou-xq-NrD">
-                                                            <rect key="frame" x="0.0" y="22" width="374" height="15"/>
+                                                            <rect key="frame" x="0.0" y="25" width="374" height="17.5"/>
                                                             <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1043,14 +1043,14 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YAW-ug-f3a">
                                                     <rect key="frame" x="20" y="8" width="342" height="40"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6y-t9-Gvf">
-                                                            <rect key="frame" x="0.0" y="0.0" width="342" height="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6y-t9-Gvf">
+                                                            <rect key="frame" x="0.0" y="0.0" width="342" height="20"/>
                                                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pl-7O-lX3">
-                                                            <rect key="frame" x="0.0" y="22" width="342" height="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pl-7O-lX3">
+                                                            <rect key="frame" x="0.0" y="25" width="342" height="15"/>
                                                             <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1101,22 +1101,22 @@
                                                     <rect key="frame" x="20" y="8" width="342" height="40"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgc-9e-xHQ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="342" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="342" height="15"/>
                                                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gcZ-5a-t9V">
-                                                            <rect key="frame" x="0.0" y="22" width="342" height="18"/>
+                                                            <rect key="frame" x="0.0" y="20" width="342" height="20"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrV-5I-bfi">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="168.5" height="18"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="168.5" height="20"/>
                                                                     <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="20"/>
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Phone Number" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBE-vy-JSv">
-                                                                    <rect key="frame" x="173.5" y="0.0" width="168.5" height="17"/>
+                                                                    <rect key="frame" x="173.5" y="0.0" width="168.5" height="20"/>
                                                                     <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="17"/>
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -1170,22 +1170,22 @@
                                                     <rect key="frame" x="20" y="15" width="374" height="43"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClJ-PC-MRV">
-                                                            <rect key="frame" x="0.0" y="0.0" width="275.5" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="274.5" height="20"/>
                                                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="FcJ-uB-CRp">
-                                                            <rect key="frame" x="280.5" y="0.0" width="93.5" height="42"/>
+                                                            <rect key="frame" x="279.5" y="0.0" width="94.5" height="43"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDm-v2-qXZ">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="93.5" height="20"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" ambiguous="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDm-v2-qXZ">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="94.5" height="23.5"/>
                                                                     <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="20"/>
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Status Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9W-Q9-PT6">
-                                                                    <rect key="frame" x="0.0" y="25" width="93.5" height="17"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="749" ambiguous="YES" text="Status Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9W-Q9-PT6">
+                                                                    <rect key="frame" x="0.0" y="28.5" width="94.5" height="14.5"/>
                                                                     <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="17"/>
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -1360,7 +1360,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XoP-Ji-NjO">
-                                                            <rect key="frame" x="110" y="19.5" width="216" height="17"/>
+                                                            <rect key="frame" x="110" y="18" width="216" height="20"/>
                                                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1444,20 +1444,20 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentCell" id="oQn-07-KWr" customClass="CommentCell" customModule="Taskon" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="84"/>
+                                                <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oQn-07-KWr" id="tVu-gP-toQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2Z7-g6-fJU">
-                                                            <rect key="frame" x="20" y="10" width="374" height="74"/>
+                                                            <rect key="frame" x="20" y="10" width="374" height="80"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="w9K-Nr-v4a">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="18"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="21"/>
                                                                     <subviews>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZY-Oj-acm">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="183" height="18"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="183" height="21"/>
                                                                             <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="18"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -1472,7 +1472,7 @@
                                                                             </userDefinedRuntimeAttributes>
                                                                         </label>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kP-dI-pcD">
-                                                                            <rect key="frame" x="191" y="0.0" width="183" height="18"/>
+                                                                            <rect key="frame" x="191" y="0.0" width="183" height="21"/>
                                                                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="14"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -1492,21 +1492,21 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </stackView>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZl-fv-FxX">
-                                                                    <rect key="frame" x="0.0" y="26" width="374" height="1"/>
+                                                                    <rect key="frame" x="0.0" y="29" width="374" height="1"/>
                                                                     <color key="backgroundColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="8H4-Gj-THZ"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I83-R4-Vvb">
-                                                                    <rect key="frame" x="0.0" y="35" width="374" height="5"/>
+                                                                    <rect key="frame" x="0.0" y="38" width="374" height="5"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="5" id="kvL-pg-Mzf"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4w-jP-fUJ">
-                                                                    <rect key="frame" x="0.0" y="48" width="374" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="51" width="374" height="20"/>
                                                                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1521,7 +1521,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1AW-2z-fzG">
-                                                                    <rect key="frame" x="0.0" y="73" width="374" height="1"/>
+                                                                    <rect key="frame" x="0.0" y="79" width="374" height="1"/>
                                                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="E9v-UR-a2D"/>
@@ -1694,7 +1694,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="So7-SC-3kq">
-                                                            <rect key="frame" x="32" y="2.5" width="145" height="17"/>
+                                                            <rect key="frame" x="32" y="1" width="145" height="20"/>
                                                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -2234,6 +2234,47 @@
             </objects>
             <point key="canvasLocation" x="5172" y="-591"/>
         </scene>
+        <!--Task Finished View Controller-->
+        <scene sceneID="qxw-VX-c9Z">
+            <objects>
+                <tableViewController storyboardIdentifier="TaskFinishedViewController" id="nG2-gp-3TS" customClass="TaskFinishedViewController" customModule="Taskon" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zbt-Oj-H0s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <sections>
+                            <tableViewSection id="WAE-Mo-JEq">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Eps-Ok-ZNQ">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Eps-Ok-ZNQ" id="BHq-ZS-nDp">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IT0-d0-fQb">
+                                                    <rect key="frame" x="35" y="11" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="nG2-gp-3TS" id="6Yr-U2-NPW"/>
+                            <outlet property="delegate" destination="nG2-gp-3TS" id="Yor-cS-WcX"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ovZ-d2-ExQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5907" y="-591"/>
+        </scene>
         <!--Add Job View Controller-->
         <scene sceneID="1bn-0O-QWz">
             <objects>
@@ -2290,7 +2331,7 @@
                                                 <rect key="frame" x="274" y="0.0" width="100" height="45"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSD-su-Uec" customClass="LoadingButton" customModule="Taskon" customModuleProvider="target">
-                                                        <rect key="frame" x="6" y="2.5" width="88" height="40"/>
+                                                        <rect key="frame" x="4.5" y="2.5" width="91" height="40"/>
                                                         <color key="backgroundColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="IH1-rv-7vQ"/>
@@ -2446,7 +2487,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvq-jc-IEQ">
-                                        <rect key="frame" x="20" y="19" width="374" height="25"/>
+                                        <rect key="frame" x="20" y="14.5" width="374" height="29.5"/>
                                         <color key="backgroundColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2469,7 +2510,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ip5-zK-OI2">
-                                <rect key="frame" x="41.5" y="408" width="331" height="25"/>
+                                <rect key="frame" x="41.5" y="408" width="331" height="29.5"/>
                                 <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

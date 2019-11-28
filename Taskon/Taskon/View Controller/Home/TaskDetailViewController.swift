@@ -210,7 +210,9 @@ extension TaskDetailViewController {
     }
     
     private func finishTask() {
-        debugPrint("Finish")
+        let finishTaskVC: TaskFinishedViewController = instanceFromStoryboard(storyboard: Storyboard.home)
+        finishTaskVC.location = location
+        push(viewController: finishTaskVC, animated: true)
     }
 
 }
