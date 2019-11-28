@@ -35,6 +35,7 @@ extension AddMaterialViewController {
     
     private func setupNavigationBar() {
         navigationItem.title = "Add Material"
+        navigationItem.largeTitleDisplayMode = .never
     }
     
     private func setupViewController() {

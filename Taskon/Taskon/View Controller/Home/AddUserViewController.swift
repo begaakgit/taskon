@@ -37,6 +37,7 @@ extension AddUserViewController {
     
     private func setupNavigationBar() {
         navigationItem.title = "Users"
+        navigationItem.largeTitleDisplayMode = .never
     }
     
     private func setupViewController() {

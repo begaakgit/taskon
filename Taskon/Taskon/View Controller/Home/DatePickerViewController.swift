@@ -14,7 +14,7 @@ class DatePickerViewController: AppViewController {
     
     // MARK: - Class Properties
     
-    @IBOutlet private weak var datePickerView: JBDatePickerView!
+    @IBOutlet weak var datePickerView: JBDatePickerView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet private weak var continueButton: UIButton!

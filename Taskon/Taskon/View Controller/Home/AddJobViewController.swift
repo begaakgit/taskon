@@ -35,6 +35,7 @@ extension AddJobViewController {
     
     private func setupNavigationBar() {
         navigationItem.title = "Add Job"
+        navigationItem.largeTitleDisplayMode = .never
     }
     
     private func setupViewController() {
