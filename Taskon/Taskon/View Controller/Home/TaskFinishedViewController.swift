@@ -15,6 +15,9 @@ class TaskFinishedViewController: AppTableViewController {
     // MARK: - Class Properties
     
     public var location: Location!
+    @IBOutlet private weak var textview: UITextView!
+    @IBOutlet private weak var arrivalTextField: UITextField!
+    @IBOutlet private weak var hourlyTextField: UITextField!
     @IBOutlet private weak var firstCheckBox: Checkbox!
     @IBOutlet private weak var secondCheckBox: Checkbox!
     
@@ -30,6 +33,11 @@ class TaskFinishedViewController: AppTableViewController {
         setupNavigationBar()
         setupViewController()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        textview.becomeFirstResponder()
+    }
 }
 
 
@@ -44,13 +52,16 @@ extension TaskFinishedViewController {
     }
     
     private func setupViewController() {
+        arrivalTextField.text = "10"
+        hourlyTextField.text = "15"
+        
         firstCheckBox.borderCornerRadius = 3.0
         firstCheckBox.borderLineWidth = 2.0
         firstCheckBox.borderStyle = .square
         firstCheckBox.checkmarkStyle = .tick
         firstCheckBox.checkmarkColor = .mainBlue
         firstCheckBox.checkmarkSize = 0.75
-        firstCheckBox.isChecked = false
+        firstCheckBox.isChecked = true
         
         secondCheckBox.borderCornerRadius = 3.0
         secondCheckBox.borderLineWidth = 2.0
@@ -68,7 +79,8 @@ extension TaskFinishedViewController {
 extension TaskFinishedViewController {
     
     @objc private func continueButtontapped(_ sender: UIBarButtonItem) {
-        
+        let taskReportVC: TaskReportViewController = instanceFromStoryboard(storyboard: Storyboard.home)
+        push(viewController: taskReportVC, animated: true)
     }
 }
 
@@ -77,11 +89,15 @@ extension TaskFinishedViewController {
     
 extension TaskFinishedViewController {
     
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.selectionStyle = .none
+    }
+    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: .zero)
         
         let label = UILabel(frame: .zero)
-        label.font = .toFront(ofSize: 20, type: .bold)
+        label.font = UIFont.boldSystemFont(ofSize: 15)
         if section == 0 {
             label.text = "Result"
         } else if section == 1 {
@@ -94,6 +110,7 @@ extension TaskFinishedViewController {
             $0.leading.equalTo(16)
             $0.trailing.equalTo(-16)
             $0.top.equalTo(8)
+            $0.bottom.equalTo(-3)
         }
         
         let lineView = UIView(frame: .zero)
@@ -111,7 +128,7 @@ extension TaskFinishedViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 32
+        return 35
     }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -122,7 +139,7 @@ extension TaskFinishedViewController {
         if indexPath.section == 0 {
             return 120
         } else {
-            return 65
+            return 50
         }
     }
 }

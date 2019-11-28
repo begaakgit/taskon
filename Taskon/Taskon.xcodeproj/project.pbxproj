@@ -91,6 +91,7 @@
 		D3AF8BE62386508A0099A893 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF8BE52386508A0099A893 /* CommentsViewController.swift */; };
 		D3AF8BE8238651590099A893 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF8BE7238651590099A893 /* Comment.swift */; };
 		D3B1F9112384F69700C449A6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B1F9102384F69700C449A6 /* LocationManager.swift */; };
+		D3BB79E523902469009FF66F /* TaskReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BB79E423902469009FF66F /* TaskReportViewController.swift */; };
 		D3BC8ECD2385BA1100CCB88E /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BC8ECC2385BA1100CCB88E /* ImageCell.swift */; };
 		D3BC8ECF2385BB7200CCB88E /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BC8ECE2385BB7200CCB88E /* ActionCell.swift */; };
 		D3BC8ED12385BCDB00CCB88E /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BC8ED02385BCDB00CCB88E /* StatusCell.swift */; };
@@ -197,6 +198,7 @@
 		D3AF8BE52386508A0099A893 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		D3AF8BE7238651590099A893 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		D3B1F9102384F69700C449A6 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		D3BB79E423902469009FF66F /* TaskReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskReportViewController.swift; sourceTree = "<group>"; };
 		D3BC8ECC2385BA1100CCB88E /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		D3BC8ECE2385BB7200CCB88E /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		D3BC8ED02385BCDB00CCB88E /* StatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
@@ -457,6 +459,7 @@
 				D379B18A238C35FE0025EE67 /* AddMaterialViewController.swift */,
 				D379B18C238C361E0025EE67 /* AddJobViewController.swift */,
 				D39BDBF623900F5800A6469C /* TaskFinishedViewController.swift */,
+				D3BB79E423902469009FF66F /* TaskReportViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -749,6 +752,7 @@
 				D3BC8ED52385BDE100CCB88E /* NormalCell.swift in Sources */,
 				D39FFC302383F17300E1C879 /* CoreData.swift in Sources */,
 				D34D8B6B2382F57300F18ECF /* AppFont+UIFont.swift in Sources */,
+				D3BB79E523902469009FF66F /* TaskReportViewController.swift in Sources */,
 				CFE876BA2374A8E80051FAA9 /* Constants.swift in Sources */,
 				D3D90D6F2387F12F00DD0E9D /* CallCell.swift in Sources */,
 				CF272B032374A06400A05A9A /* CompanyRouter.swift in Sources */,
