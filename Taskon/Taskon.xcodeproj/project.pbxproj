@@ -92,6 +92,8 @@
 		D3AF8BE8238651590099A893 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF8BE7238651590099A893 /* Comment.swift */; };
 		D3B1F9112384F69700C449A6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B1F9102384F69700C449A6 /* LocationManager.swift */; };
 		D3BB79E523902469009FF66F /* TaskReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BB79E423902469009FF66F /* TaskReportViewController.swift */; };
+		D3BB79E723902951009FF66F /* ProviderSignatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BB79E623902951009FF66F /* ProviderSignatureViewController.swift */; };
+		D3BB79E923902A42009FF66F /* CustomerSignatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BB79E823902A42009FF66F /* CustomerSignatureViewController.swift */; };
 		D3BC8ECD2385BA1100CCB88E /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BC8ECC2385BA1100CCB88E /* ImageCell.swift */; };
 		D3BC8ECF2385BB7200CCB88E /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BC8ECE2385BB7200CCB88E /* ActionCell.swift */; };
 		D3BC8ED12385BCDB00CCB88E /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BC8ED02385BCDB00CCB88E /* StatusCell.swift */; };
@@ -199,6 +201,8 @@
 		D3AF8BE7238651590099A893 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		D3B1F9102384F69700C449A6 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		D3BB79E423902469009FF66F /* TaskReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskReportViewController.swift; sourceTree = "<group>"; };
+		D3BB79E623902951009FF66F /* ProviderSignatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderSignatureViewController.swift; sourceTree = "<group>"; };
+		D3BB79E823902A42009FF66F /* CustomerSignatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSignatureViewController.swift; sourceTree = "<group>"; };
 		D3BC8ECC2385BA1100CCB88E /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		D3BC8ECE2385BB7200CCB88E /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		D3BC8ED02385BCDB00CCB88E /* StatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
@@ -460,6 +464,8 @@
 				D379B18C238C361E0025EE67 /* AddJobViewController.swift */,
 				D39BDBF623900F5800A6469C /* TaskFinishedViewController.swift */,
 				D3BB79E423902469009FF66F /* TaskReportViewController.swift */,
+				D3BB79E623902951009FF66F /* ProviderSignatureViewController.swift */,
+				D3BB79E823902A42009FF66F /* CustomerSignatureViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -759,6 +765,7 @@
 				CF8462842372049A008C0314 /* AppNavigationController.swift in Sources */,
 				D38D57AF2375F74900CF1DDB /* AppFuture+PromisedFuture.swift in Sources */,
 				D3BC8ED12385BCDB00CCB88E /* StatusCell.swift in Sources */,
+				D3BB79E723902951009FF66F /* ProviderSignatureViewController.swift in Sources */,
 				D336C3F923780AF6007DC885 /* SettingsViewController.swift in Sources */,
 				D39BDBF723900F5800A6469C /* TaskFinishedViewController.swift in Sources */,
 				CF8462852372049A008C0314 /* LoginViewController.swift in Sources */,
@@ -768,6 +775,7 @@
 				D3B1F9112384F69700C449A6 /* LocationManager.swift in Sources */,
 				D3333F852377330F0007A124 /* DatePickerViewController.swift in Sources */,
 				D36D999F23856DDC00A2A527 /* TaskDetailViewController.swift in Sources */,
+				D3BB79E923902A42009FF66F /* CustomerSignatureViewController.swift in Sources */,
 				D38D57B32376063E00CF1DDB /* Network.swift in Sources */,
 				D3BC8ED32385BD5900CCB88E /* ContactCell.swift in Sources */,
 				D3AF8BE62386508A0099A893 /* CommentsViewController.swift in Sources */,

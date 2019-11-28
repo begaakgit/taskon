@@ -46,8 +46,12 @@ extension TaskReportViewController {
 extension TaskReportViewController {
     
     @IBAction private func providerButtonTapped(_ sender: UIButton) {
+        let providerVC: ProviderSignatureViewController = instanceFromStoryboard(storyboard: Storyboard.home)
+        push(viewController: providerVC, animated: true)
     }
     
     @IBAction private func customerButtonTapped(_ sender: UIButton) {
+        let customerVC: CustomerSignatureViewController = instanceFromStoryboard(storyboard: Storyboard.home)
+        push(viewController: customerVC, animated: true)
     }
 }

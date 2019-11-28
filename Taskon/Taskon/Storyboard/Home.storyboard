@@ -2557,11 +2557,15 @@
                                     <action selector="addBUttonTapped:" destination="sEg-ZD-1tf" eventType="touchUpInside" id="Nh2-cw-5D2"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="j9V-EW-8cC">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="j9V-EW-8cC">
                                 <rect key="frame" x="20" y="714" width="374" height="50"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDu-HC-wns">
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Qv-Cf-mVf">
-                                        <rect key="frame" x="0.0" y="0.0" width="183" height="50"/>
+                                        <rect key="frame" x="53" y="0.0" width="130" height="50"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signature" translatesAutoresizingMaskIntoConstraints="NO" id="Udq-BW-ae3">
                                                 <rect key="frame" x="0.0" y="10" width="30" height="30"/>
@@ -2571,13 +2575,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROVIDER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KU-u8-a5Q">
-                                                <rect key="frame" x="40" y="16.5" width="143" height="17"/>
+                                                <rect key="frame" x="40" y="16.5" width="90" height="17"/>
                                                 <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ID5-xz-ahg">
-                                                <rect key="frame" x="0.0" y="0.0" width="183" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
                                                 <connections>
                                                     <action selector="providerButtonTapped:" destination="pxS-ld-QNH" eventType="touchUpInside" id="xRE-kt-DfV"/>
                                                 </connections>
@@ -2586,6 +2590,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="Udq-BW-ae3" firstAttribute="leading" secondItem="9Qv-Cf-mVf" secondAttribute="leading" id="4sb-zy-DZe"/>
+                                            <constraint firstAttribute="width" constant="130" id="6Oi-5O-gIK"/>
                                             <constraint firstAttribute="trailing" secondItem="2KU-u8-a5Q" secondAttribute="trailing" id="9N7-a9-bwu"/>
                                             <constraint firstItem="ID5-xz-ahg" firstAttribute="top" secondItem="9Qv-Cf-mVf" secondAttribute="top" id="FAQ-IU-ZcP"/>
                                             <constraint firstAttribute="trailing" secondItem="ID5-xz-ahg" secondAttribute="trailing" id="IXZ-1D-xOP"/>
@@ -2597,7 +2602,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZm-iW-1Jm">
-                                        <rect key="frame" x="191" y="0.0" width="183" height="50"/>
+                                        <rect key="frame" x="191" y="0.0" width="130" height="50"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signature" translatesAutoresizingMaskIntoConstraints="NO" id="uuD-Sv-GGa">
                                                 <rect key="frame" x="0.0" y="10" width="30" height="30"/>
@@ -2607,13 +2612,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CUSTOMER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXM-We-NJu">
-                                                <rect key="frame" x="40" y="16.5" width="143" height="17"/>
+                                                <rect key="frame" x="40" y="16.5" width="90" height="17"/>
                                                 <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQd-V4-WPO">
-                                                <rect key="frame" x="0.0" y="0.0" width="183" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
                                                 <connections>
                                                     <action selector="customerButtonTapped:" destination="pxS-ld-QNH" eventType="touchUpInside" id="tMS-M8-O9w"/>
                                                 </connections>
@@ -2630,11 +2635,17 @@
                                             <constraint firstItem="uuD-Sv-GGa" firstAttribute="centerY" secondItem="FZm-iW-1Jm" secondAttribute="centerY" id="nmh-NO-PgY"/>
                                             <constraint firstItem="zXM-We-NJu" firstAttribute="centerY" secondItem="FZm-iW-1Jm" secondAttribute="centerY" id="tNt-Um-lAo"/>
                                             <constraint firstItem="uuD-Sv-GGa" firstAttribute="leading" secondItem="FZm-iW-1Jm" secondAttribute="leading" id="vf0-j6-5zV"/>
+                                            <constraint firstAttribute="width" constant="130" id="wb1-uD-Pzh"/>
                                         </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lby-O0-gbk">
+                                        <rect key="frame" x="329" y="0.0" width="45" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="EQB-Ib-7y5"/>
+                                    <constraint firstItem="yDu-HC-wns" firstAttribute="width" secondItem="lby-O0-gbk" secondAttribute="width" id="f8H-0S-lRp"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -2653,6 +2664,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n1t-gH-TtQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6631.884057971015" y="-591.29464285714278"/>
+        </scene>
+        <!--Provider Signature View Controller-->
+        <scene sceneID="bHe-fA-wFi">
+            <objects>
+                <viewController storyboardIdentifier="ProviderSignatureViewController" id="bgX-OW-IMh" customClass="ProviderSignatureViewController" customModule="Taskon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GbN-8m-JaW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="R0y-iQ-JZu"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vEs-bd-0h8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5906" y="104"/>
+        </scene>
+        <!--Customer Signature View Controller-->
+        <scene sceneID="bH7-cB-uNp">
+            <objects>
+                <viewController storyboardIdentifier="CustomerSignatureViewController" id="uef-kG-QyE" customClass="CustomerSignatureViewController" customModule="Taskon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PgR-3w-QE9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="9fn-d2-KSJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8HT-Gq-P0Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6632" y="104"/>
         </scene>
         <!--Add Job View Controller-->
         <scene sceneID="1bn-0O-QWz">
