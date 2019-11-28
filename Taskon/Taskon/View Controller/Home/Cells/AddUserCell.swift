@@ -13,6 +13,7 @@ class AddUserCell: UITableViewCell, Registerable {
     
     // MARK: - Class Properties
     
+    @IBOutlet private weak var indexLabel: UILabel!
     @IBOutlet private weak var nameLabel: UILabel!
     private var deleteAction: VoidCompletion? = nil
     
@@ -37,6 +38,15 @@ class AddUserCell: UITableViewCell, Registerable {
     
     @IBAction private func deleteButtonTapped(_ sender: UIButton) {
         deleteAction?()
+    }
+    
+    
+    // MARK: - Public Methods
+    
+    public func configure(user: StaticUser, for index: Int, removeAction: VoidCompletion?) {
+        deleteAction = removeAction
+        indexLabel.text = "[\(index)] User"
+        nameLabel.text = user.name + user .surname
     }
 
 }

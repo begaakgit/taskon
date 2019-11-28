@@ -72,11 +72,6 @@ class TaskDetailViewController: AppViewController {
             }
         }
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        openUpdateTask(mode: .user)
-    }
 
 }
 

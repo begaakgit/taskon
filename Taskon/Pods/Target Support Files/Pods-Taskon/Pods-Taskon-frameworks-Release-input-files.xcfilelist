@@ -2,6 +2,7 @@ ${PODS_ROOT}/Target Support Files/Pods-Taskon/Pods-Taskon-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework
 ${BUILT_PRODUCTS_DIR}/CodableAlamofire/CodableAlamofire.framework
+${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework
 ${BUILT_PRODUCTS_DIR}/ImageViewer/ImageViewer.framework
 ${BUILT_PRODUCTS_DIR}/JBDatePicker/JBDatePicker.framework
 ${BUILT_PRODUCTS_DIR}/Keyboard+LayoutGuide/KeyboardLayoutGuide.framework

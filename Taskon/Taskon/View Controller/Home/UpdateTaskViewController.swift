@@ -30,7 +30,7 @@ class UpdateTaskViewController: AppViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var addButton: UIButton!
     public var mode: UpdateTaskMode = .user
-    private var users: [String] = []
+    private var users: [StaticUser] = []
     private var materials: [String] = []
     private var jobs: [String] = []
     
@@ -61,6 +61,7 @@ extension UpdateTaskViewController {
     private func setupViewController() {
         tableView.tableFooterView = UIView(frame: .zero)
         addButton.setTitle("ADD \(mode.title().capitalized)", for: .normal)
+        updateUi()
     }
     
     private func updateUi() {
@@ -72,36 +73,61 @@ extension UpdateTaskViewController {
         case .job: datasource = jobs
         }
         
+        tableView.reloadData()
         if datasource.isEmpty {
             tableView.setEmpty(text: Constants.Messages.noResult)
         } else {
             tableView.resetEmptyText()
         }
-        tableView.reloadData()
     }
     
     private func addUser() {
         let addUserVC: AddUserViewController = instanceFromStoryboard(storyboard: Storyboard.home)
-        addUserVC.addBlock = { [weak self] in
-            guard let _ = self else { return }
+        addUserVC.addBlock = { [weak self] user in
+            guard let self = self else { return }
+            self.dismiss(animated: true, completion: nil)
+            self.users.append(user)
+            self.updateUi()
         }
-        present(addUserVC, animated: true, completion: nil)
+        let navController = AppNavigationController(rootViewController: addUserVC)
+        present(navController, animated: true, completion: nil)
     }
     
     private func addMaterial() {
-        let addUserVC: AddMaterialViewController = instanceFromStoryboard(storyboard: Storyboard.home)
-        addUserVC.addBlock = { [weak self] in
+        let addMaterialVC: AddMaterialViewController = instanceFromStoryboard(storyboard: Storyboard.home)
+        addMaterialVC.addBlock = { [weak self] in
             guard let _ = self else { return }
         }
-        present(addUserVC, animated: true, completion: nil)
+        let navController = AppNavigationController(rootViewController: addMaterialVC)
+        present(navController, animated: true, completion: nil)
     }
     
     private func addJob() {
-        let addUserVC: AddJobViewController = instanceFromStoryboard(storyboard: Storyboard.home)
-        addUserVC.addBlock = { [weak self] in
+        let addJobVC: AddJobViewController = instanceFromStoryboard(storyboard: Storyboard.home)
+        addJobVC.addBlock = { [weak self] in
             guard let _ = self else { return }
         }
-        present(addUserVC, animated: true, completion: nil)
+        let navController = AppNavigationController(rootViewController: addJobVC)
+        present(navController, animated: true, completion: nil)
+    }
+    
+    private func userCell(for indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.getCell(type: AddUserCell.self) else { return UITableViewCell() }
+        let user = users[indexPath.row]
+        cell.configure(user: user, for: indexPath.row + 1) { [weak self] in
+            guard let self = self else { return }
+            self.users.remove(at: indexPath.row)
+            self.tableView.reloadData()
+        }
+        return cell
+    }
+    
+    private func materialCell(for indexPAth: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    private func jobCell(for indexPAth: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
 }
 
@@ -111,7 +137,7 @@ extension UpdateTaskViewController {
 extension UpdateTaskViewController {
     
     @objc private func saveButtonTapped(_ sender: UIBarButtonItem) {
-        
+        pop(animated: true)
     }
     
     @IBAction private func addBUttonTapped(_ sender: UIButton) {
@@ -133,11 +159,19 @@ extension UpdateTaskViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        switch mode {
+        case .user:  return users.count
+        case .material: return materials.count
+        case .job: return jobs.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        switch mode {
+        case .user:  return userCell(for: indexPath)
+        case .material: return materialCell(for: indexPath)
+        case .job: return jobCell(for: indexPath)
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -151,4 +185,5 @@ extension UpdateTaskViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+
 }

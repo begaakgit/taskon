@@ -59,15 +59,21 @@ class NormalCell: UITableViewCell, Registerable {
     }
     
     public func configureForUsers() {
-        
+        titleLabel.text = "Users"
+        descriptionLabel.text = "Add User"
+        arrowImageView.isHidden = false
     }
     
     public func configureForMaterials() {
-        
+        titleLabel.text = "Materials"
+        descriptionLabel.text = "Add Materials"
+        arrowImageView.isHidden = false
     }
     
     public func configureForJobs() {
-        
+        titleLabel.text = "Jobs"
+        descriptionLabel.text = "Add Jobs"
+        arrowImageView.isHidden = false
     }
 
 }

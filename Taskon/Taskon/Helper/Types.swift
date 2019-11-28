@@ -21,3 +21,4 @@ typealias DateCompletion = (Date) -> Void
 typealias CustomerCompletion = (Customer) -> Void
 typealias ImagePickerCompletion = (UIImage, CLLocation?) -> Void
 typealias AddressCompletion = (CLPlacemark?) -> Void
+typealias AddUser = (StaticUser) -> Void

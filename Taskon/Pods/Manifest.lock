@@ -4,6 +4,7 @@ PODS:
     - Alamofire (~> 4.8)
   - CodableAlamofire (1.1.2):
     - Alamofire (~> 4.0)
+  - DropDown (2.3.13)
   - ImageViewer (5.0.0)
   - JBDatePicker (1.2.5)
   - "Keyboard+LayoutGuide (1.5.0)"
@@ -21,6 +22,7 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireNetworkActivityIndicator
   - CodableAlamofire
+  - DropDown
   - ImageViewer
   - JBDatePicker
   - "Keyboard+LayoutGuide"
@@ -39,6 +41,7 @@ SPEC REPOS:
     - Alamofire
     - AlamofireNetworkActivityIndicator
     - CodableAlamofire
+    - DropDown
     - ImageViewer
     - JBDatePicker
     - "Keyboard+LayoutGuide"
@@ -56,6 +59,7 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireNetworkActivityIndicator: 9acc3de3ca6645bf0efed462396b0df13dd3e7b8
   CodableAlamofire: b7adfb2e5e980392014b4b3f3b8b62c01b9de4aa
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   ImageViewer: 3def6e39c6979ce3e9d001c78eec0d8b895f2f73
   JBDatePicker: 0e791c8a79c49b0d37decea28ba147515bf5cfca
   "Keyboard+LayoutGuide": 8419e1a75285895bc9a6fc032b63fff24f2ef02c
@@ -69,6 +73,6 @@ SPEC CHECKSUMS:
   SSSpinnerButton: ba9ec6858f2f6fa902a5131d3aec5282588241f8
   SwiftValidator: 0b6a48bf10364411b0d64c97f78665ff87ca9f8b
 
-PODFILE CHECKSUM: 9f737009ae0853bcc50fdf0d6e2efc3c4ea7f953
+PODFILE CHECKSUM: d5c973745662f4d1c464112006072a2f24ebaa28
 
 COCOAPODS: 1.8.4

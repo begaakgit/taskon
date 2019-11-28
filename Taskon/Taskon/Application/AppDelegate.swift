@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireNetworkActivityIndicator
+import DropDown
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -44,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     
     private func setupThirdParty() {
+        DropDown.startListeningToKeyboard()
         NetworkActivityIndicatorManager.shared.startDelay = 1.0
         NetworkActivityIndicatorManager.shared.startDelay = 0.2
         NetworkActivityIndicatorManager.shared.isEnabled = true
