@@ -54,4 +54,8 @@ extension TaskReportViewController {
         let customerVC: CustomerSignatureViewController = instanceFromStoryboard(storyboard: Storyboard.home)
         push(viewController: customerVC, animated: true)
     }
+    
+    @IBAction private func continueButtonTapped(_ sender: UIButton) {
+        
+    }
 }
