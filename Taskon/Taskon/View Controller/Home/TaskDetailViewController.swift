@@ -14,6 +14,7 @@ enum TaskDetailState {
     case registered
     case approved
     case inProgress
+    case notFinished
 }
 
 enum Sections: Int, CaseIterable {
@@ -49,6 +50,7 @@ class TaskDetailViewController: AppViewController {
     private var state: TaskDetailState = .registered
     private var photosManager: PhotosManager!
     private var images: [TaskImage] = []
+    private var showFirstSection: Bool = false
     
     
     // MARK: - View Controller Life Cycle
@@ -86,6 +88,22 @@ extension TaskDetailViewController {
     }
     
     private func setupViewController() {
+        
+        switch task.status {
+        case .inProgress:
+            state = .inProgress
+            showFirstSection = true
+        case .approved:
+            state = .approved
+            showFirstSection = false
+        case .registered:
+            state = .registered
+            showFirstSection = false
+        default:
+            state = .notFinished
+            showFirstSection = false
+        }
+        
         tableView.tableFooterView = UIView(frame: .zero)
         if let taskImages = TOUserDefaults.taskImages.get() {
             images = taskImages.filter { $0.taskId == task.id }
@@ -125,7 +143,7 @@ extension TaskDetailViewController {
         case .photo:
             guard let cell = tableView.getCell(type: ActionCell.self) else { return UITableViewCell() }
             cell.delegate = self
-            cell.configure(for: task.status)
+            cell.configure(for: state)
             return cell
             
         case .title:
@@ -171,9 +189,28 @@ extension TaskDetailViewController {
         }
     }
     
-    public func deleteImage(at indexPath: IndexPath) {
+    private func deleteImage(at indexPath: IndexPath) {
         images.remove(at: indexPath.row)
         tableView.reloadData()
+    }
+    
+    private func startNewTask() {
+        state = .approved
+        tableView.reloadData()
+    }
+    
+    private func startPauseTask() {
+        state = .inProgress
+        tableView.reloadData()
+    }
+    
+    private func pauseTask() {
+        state = .notFinished
+        tableView.reloadData()
+    }
+    
+    private func finishTask() {
+        debugPrint("Finish")
     }
 
 }
@@ -240,7 +277,7 @@ extension TaskDetailViewController: UITableViewDataSource, UITableViewDelegate {
         if let section = Sections(rawValue: section) {
             switch section {
             case .additional:
-                if true {
+                if showFirstSection {
                     rows = AdditionalRows.allCases.count
                 } else {
                     rows = 0
@@ -368,19 +405,19 @@ extension TaskDetailViewController: ActionCellDelegate {
     }
     
     func acceptTaskTapped() {
-        //
+        startNewTask()
     }
     
     func startTaskTapped() {
-        //
+        startPauseTask()
     }
     
     func stopTaskTapped() {
-        //
+        pauseTask()
     }
     
     func finishTaskTapped() {
-        //
+        finishTaskTapped()
     }
     
 }

@@ -123,6 +123,8 @@ enum TaskStatus: String, Codable {
     case onHold = "On Hold"
     case inProgress = "In Progress"
     case accepted = "Accepted"
+    case approved = "Approved"
+    case notFinished = "Not Finished"
     
     func getText() -> String {
         switch self {
@@ -132,6 +134,8 @@ enum TaskStatus: String, Codable {
         case .onHold: return "On Hold"
         case .inProgress: return "In Progress"
         case .accepted: return "Accepted"
+        case .notFinished: return "Not Finished"
+        case .approved: return "Approved"
         }
     }
 }

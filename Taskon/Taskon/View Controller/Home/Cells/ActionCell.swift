@@ -35,6 +35,9 @@ class ActionCell: UITableViewCell, Registerable {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        firstButton.titleLabel?.font = .toFront(ofSize: 17, type: .bold)
+        thirdButton.titleLabel?.font = .toFront(ofSize: 17, type: .bold)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -47,12 +50,7 @@ class ActionCell: UITableViewCell, Registerable {
     // MARK: - Action Methods
     
     @IBAction private func firstButtonTapped(_ sender: UIButton) {
-        guard let title = sender.title(for: .normal) else { return }
-        switch title {
-        case "ACCEPT": delegate?.acceptTaskTapped()
-        case "START": delegate?.startTaskTapped()
-        default: break
-        }
+        buttontapped(sender)
     }
     
     @IBAction private func secondButtonTapped(_ sender: UIButton) {
@@ -60,14 +58,28 @@ class ActionCell: UITableViewCell, Registerable {
     }
     
     @IBAction private func thirdButtonTapped(_ sender: UIButton) {
-        
+        buttontapped(sender)
+    }
+    
+    
+    // MARK: - Private Methods
+    
+    private func buttontapped(_ sender: UIButton) {
+        guard let title = sender.title(for: .normal) else { return }
+        switch title {
+        case "ACCEPT": delegate?.acceptTaskTapped()
+        case "START": delegate?.startTaskTapped()
+        case "FINISH": delegate?.finishTaskTapped()
+        case "PAUSE": delegate?.stopTaskTapped()
+        default: break
+        }
     }
     
     
     // MARK: - Public Methods
     
-    public func configure(for status: TaskStatus) {
-        switch status {
+    public func configure(for state: TaskDetailState) {
+        switch state {
         case .registered:
             firstView.isHidden = false
             firstButton.setTitle("ACCEPT", for: .normal)
@@ -76,7 +88,24 @@ class ActionCell: UITableViewCell, Registerable {
             secondButton.setImage(#imageLiteral(resourceName: "camera"), for: .normal)
             thirdView.isHidden = true
             
-        default:
+        case .approved:
+            firstView.isHidden = false
+            firstButton.setTitle("START", for: .normal)
+            sencondView.isHidden = false
+            secondButton.setTitle("", for: .normal)
+            secondButton.setImage(#imageLiteral(resourceName: "camera"), for: .normal)
+            thirdView.isHidden = true
+            
+        case .inProgress:
+            firstView.isHidden = false
+            firstButton.setTitle("FINISH", for: .normal)
+            sencondView.isHidden = false
+            secondButton.setTitle("", for: .normal)
+            secondButton.setImage(#imageLiteral(resourceName: "camera"), for: .normal)
+            thirdView.isHidden = false
+            thirdButton.setTitle("PAUSE", for: .normal)
+            
+        case .notFinished:
             firstView.isHidden = false
             firstButton.setTitle("START", for: .normal)
             sencondView.isHidden = false

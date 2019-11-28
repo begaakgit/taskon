@@ -33,6 +33,11 @@ class LoginViewController: AppViewController {
         
         setupNavigationBar()
         setupViewController()
+        
+        userTextField.text = "test"
+        passwordTextField.text = "test"
+        clientCodeTextField.text = "tmdemo"
+        loginButton.enable = true
     }
 
     
