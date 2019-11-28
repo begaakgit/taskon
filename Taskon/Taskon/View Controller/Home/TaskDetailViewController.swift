@@ -419,7 +419,7 @@ extension TaskDetailViewController: ActionCellDelegate {
     }
     
     func finishTaskTapped() {
-        finishTaskTapped()
+        finishTask()
     }
     
 }
