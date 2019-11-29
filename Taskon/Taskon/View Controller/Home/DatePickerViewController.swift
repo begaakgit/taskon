@@ -7,18 +7,19 @@
 //
 
 import UIKit
-import JBDatePicker
+import KDCalendar
 
 class DatePickerViewController: AppViewController {
     
     
     // MARK: - Class Properties
     
-    @IBOutlet weak var datePickerView: JBDatePickerView!
+    @IBOutlet weak var calendar: CalendarView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet private weak var continueButton: UIButton!
     public var datePickerCompletion: DateCompletion? = nil
+    private var selectedDate: Date? = nil
     
     
     // MARK: - View Controller Life Cycle
@@ -30,6 +31,12 @@ class DatePickerViewController: AppViewController {
         
         setupNavigationBar()
         setupViewController()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        calendar.selectDate(Date())
+        calendar.setDisplayDate(Date(), animated: false)
     }
 }
 
@@ -44,19 +51,37 @@ extension DatePickerViewController {
     }
     
     private func setupViewController() {
-        datePickerView.delegate = self
-        updateTitleLabel()
-        updateDateLabel()
-    }
-    
-    private func updateTitleLabel() {
-        let selectedMonth = datePickerView.presentedMonthView.monthDescription
-        titleLabel.text = selectedMonth
-    }
-    
-    private func updateDateLabel() {
-        let selectedDate = datePickerView.selectedDateView.date ?? Date()
-        dateLabel.text = selectedDate.getString(of: .normal)
+        let style = CalendarView.Style()
+        style.cellShape = .round
+        style.cellColorDefault = .clear
+        style.cellColorToday = .red
+        style.cellSelectedBorderColor = .mainBlue
+        style.cellEventColor = .green
+        style.headerTextColor = .clear
+        style.cellTextColorDefault = .darkGray
+        style.cellTextColorToday = .white
+        style.cellTextColorWeekend = .red
+        style.cellColorOutOfRange = .lightGray
+        style.headerBackgroundColor = .clear
+        style.weekdaysBackgroundColor = .clear
+        style.firstWeekday = .monday
+        style.locale = Locale.current
+        style.timeZone = TimeZone.current
+        style.cellFont = .toFront(ofSize: 20)
+        style.headerFont = .toFront(ofSize: 22)
+        style.weekdaysFont = .toFront(ofSize: 15)
+        calendar.style = style
+        
+        calendar.dataSource = self
+        calendar.delegate = self
+        
+        calendar.direction = .horizontal
+        calendar.multipleSelectionEnable = false
+        calendar.marksWeekends = true
+        
+        calendar.backgroundColor = .white
+        
+        dateLabel.text = Date().getString(of: .normal)
     }
     
 }
@@ -69,7 +94,7 @@ extension DatePickerViewController {
     @IBAction private func continueButtonTapped(_ sender: UIButton) {
         dismiss(animated: true) { [weak self] in
             guard let self = self else { return }
-            let selectedDate = self.datePickerView.selectedDateView.date ?? Date()
+            let selectedDate = self.selectedDate ?? Date()
             self.datePickerCompletion?(selectedDate)
         }
     }
@@ -77,31 +102,56 @@ extension DatePickerViewController {
 
 
 // MARK: - JBDatePickerView Methods
+
+extension DatePickerViewController: CalendarViewDataSource, CalendarViewDelegate {
     
-extension DatePickerViewController: JBDatePickerViewDelegate {
-    
-    func didSelectDay(_ dayView: JBDatePickerDayView) {
-        updateDateLabel()
+    func startDate() -> Date {
+        let today = Date()
+        
+        var dateComponents = DateComponents()
+        dateComponents.year = -100
+        let hundredYearsAgo = calendar.calendar.date(byAdding: dateComponents, to: today)
+        
+        return hundredYearsAgo ?? today
     }
     
-    func didPresentOtherMonth(_ monthView: JBDatePickerMonthView) {
-        updateTitleLabel()
+    func endDate() -> Date {
+        let today = Date()
+        
+        var dateComponents = DateComponents()
+        dateComponents.year = 100
+        let hundredYearsAfter = calendar.calendar.date(byAdding: dateComponents, to: today)
+        
+        return hundredYearsAfter ?? today
     }
     
-    var shouldShowMonthOutDates: Bool { return false }
+    func headerString(_ date: Date) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "LLLL"
+        let nameOfMonth = dateFormatter.string(from: date)
+        titleLabel.text = nameOfMonth
+        return nil
+    }
     
-    var weekDaysViewHeightRatio: CGFloat { return 0.2 }
+    func calendar(_ calendar: CalendarView, didScrollToMonth date: Date) {
+        debugPrint(date)
+    }
     
-    var colorForDayLabelInMonth: UIColor { return .darkGray }
+    func calendar(_ calendar: CalendarView, didSelectDate date: Date, withEvents events: [CalendarEvent]) {
+        selectedDate = date
+        dateLabel.text = date.getString(of: .normal)
+    }
     
-    var colorForDayLabelOutOfMonth: UIColor { return .darkGray }
+    func calendar(_ calendar: CalendarView, canSelectDate date: Date) -> Bool {
+        return true
+    }
     
-    var colorForSelelectedDayLabel: UIColor { return .white }
+    func calendar(_ calendar: CalendarView, didDeselectDate date: Date) {
+        //
+    }
     
-    var colorForSelectionCircleForOtherDate: UIColor { return .mainBlue }
-    
-    var selectionShape: JBSelectionShape { return .circle }
-    
-    var colorForWeekDaysViewBackground: UIColor { return .mainBlue }
+    func calendar(_ calendar: CalendarView, didLongPressDate date: Date, withEvents events: [CalendarEvent]?) {
+        //
+    }
 
 }

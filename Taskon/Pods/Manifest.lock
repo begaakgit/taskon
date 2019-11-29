@@ -5,7 +5,9 @@ PODS:
   - CodableAlamofire (1.1.2):
     - Alamofire (~> 4.0)
   - ImageViewer (5.0.0)
-  - JBDatePicker (1.2.5)
+  - KDCalendar (1.8.2):
+    - KDCalendar/EventManager (= 1.8.2)
+  - KDCalendar/EventManager (1.8.2)
   - "Keyboard+LayoutGuide (1.5.0)"
   - Loaf (0.5.0)
   - PromisedFuture (1.0.1)
@@ -23,7 +25,7 @@ DEPENDENCIES:
   - AlamofireNetworkActivityIndicator
   - CodableAlamofire
   - ImageViewer
-  - JBDatePicker
+  - KDCalendar
   - "Keyboard+LayoutGuide"
   - Loaf
   - PromisedFuture
@@ -42,7 +44,7 @@ SPEC REPOS:
     - AlamofireNetworkActivityIndicator
     - CodableAlamofire
     - ImageViewer
-    - JBDatePicker
+    - KDCalendar
     - "Keyboard+LayoutGuide"
     - Loaf
     - PromisedFuture
@@ -60,7 +62,7 @@ SPEC CHECKSUMS:
   AlamofireNetworkActivityIndicator: 9acc3de3ca6645bf0efed462396b0df13dd3e7b8
   CodableAlamofire: b7adfb2e5e980392014b4b3f3b8b62c01b9de4aa
   ImageViewer: 3def6e39c6979ce3e9d001c78eec0d8b895f2f73
-  JBDatePicker: 0e791c8a79c49b0d37decea28ba147515bf5cfca
+  KDCalendar: 114f8d2dd091608c2d8db7d5783c96a4c4a60398
   "Keyboard+LayoutGuide": 8419e1a75285895bc9a6fc032b63fff24f2ef02c
   Loaf: 0800b444431366bc395d54267975d4ad4ad5c99c
   PromisedFuture: 3f863d17c047c3474c85045b254bb1c94743ed0f
@@ -73,6 +75,6 @@ SPEC CHECKSUMS:
   SwiftSignatureView: 7c163f7b3d394d5db060a0ae1080ff8bc4c25c4e
   SwiftValidator: 0b6a48bf10364411b0d64c97f78665ff87ca9f8b
 
-PODFILE CHECKSUM: 41b52952108d26f130c87a9b596e28af0e3ec3f8
+PODFILE CHECKSUM: 45d462e5de9b8e9bdb2b0699bc90eb4d904ef08b
 
 COCOAPODS: 1.8.4

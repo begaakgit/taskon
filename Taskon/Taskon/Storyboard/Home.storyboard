@@ -3155,11 +3155,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eae-YA-bH8" customClass="CalendarView" customModule="KDCalendar">
+                                <rect key="frame" x="0.0" y="34" width="414" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="MBL-ht-0si"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CaL-Mq-yhC">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvq-jc-IEQ">
-                                        <rect key="frame" x="20" y="19" width="374" height="25"/>
+                                        <rect key="frame" x="20" y="9.5" width="374" height="25"/>
                                         <color key="backgroundColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3168,21 +3175,14 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="gvq-jc-IEQ" secondAttribute="bottom" id="GtX-jQ-tP5"/>
+                                    <constraint firstItem="gvq-jc-IEQ" firstAttribute="centerY" secondItem="CaL-Mq-yhC" secondAttribute="centerY" id="BId-Ir-uyS"/>
                                     <constraint firstItem="gvq-jc-IEQ" firstAttribute="leading" secondItem="CaL-Mq-yhC" secondAttribute="leading" constant="20" id="adu-O1-jpb"/>
                                     <constraint firstAttribute="trailing" secondItem="gvq-jc-IEQ" secondAttribute="trailing" constant="20" id="aoe-Fw-dgH"/>
                                     <constraint firstAttribute="height" constant="44" id="xvU-eU-ODj"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eae-YA-bH8" customClass="JBDatePickerView" customModule="JBDatePicker">
-                                <rect key="frame" x="0.0" y="88" width="414" height="300"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="MBL-ht-0si"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ip5-zK-OI2">
-                                <rect key="frame" x="41.5" y="408" width="331" height="25"/>
+                                <rect key="frame" x="41.5" y="354" width="331" height="25"/>
                                 <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -3230,7 +3230,7 @@
                         <constraints>
                             <constraint firstItem="CaL-Mq-yhC" firstAttribute="leading" secondItem="gXQ-25-Fkp" secondAttribute="leading" id="2DI-wh-rxr"/>
                             <constraint firstItem="Ip5-zK-OI2" firstAttribute="width" secondItem="4no-rv-oyg" secondAttribute="width" multiplier="0.8" id="5ME-rV-wB8"/>
-                            <constraint firstItem="Eae-YA-bH8" firstAttribute="top" secondItem="CaL-Mq-yhC" secondAttribute="bottom" id="8eY-tJ-aTw"/>
+                            <constraint firstItem="4no-rv-oyg" firstAttribute="top" secondItem="Eae-YA-bH8" secondAttribute="top" constant="10" id="9AY-Nb-9hx"/>
                             <constraint firstItem="4no-rv-oyg" firstAttribute="trailing" secondItem="Eae-YA-bH8" secondAttribute="trailing" id="Baq-rV-1eY"/>
                             <constraint firstItem="t8g-nm-QC7" firstAttribute="leading" secondItem="4no-rv-oyg" secondAttribute="leading" constant="20" id="FNQ-Tz-zgb"/>
                             <constraint firstItem="Ip5-zK-OI2" firstAttribute="top" secondItem="Eae-YA-bH8" secondAttribute="bottom" constant="20" id="H7D-Ay-c4C"/>
@@ -3244,9 +3244,9 @@
                         <viewLayoutGuide key="safeArea" id="4no-rv-oyg"/>
                     </view>
                     <connections>
+                        <outlet property="calendar" destination="Eae-YA-bH8" id="o2c-LE-mhc"/>
                         <outlet property="continueButton" destination="fqf-Pr-02H" id="UQi-3c-S1F"/>
                         <outlet property="dateLabel" destination="Ip5-zK-OI2" id="Zuq-4P-e49"/>
-                        <outlet property="datePickerView" destination="Eae-YA-bH8" id="YdJ-Pq-HnC"/>
                         <outlet property="titleLabel" destination="gvq-jc-IEQ" id="oyk-VM-TWE"/>
                     </connections>
                 </viewController>

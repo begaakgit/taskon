@@ -10,7 +10,7 @@ target 'Taskon' do
   pod 'SwiftValidator'
   pod 'SnapKit'
   pod 'SSSpinnerButton'
-  pod 'JBDatePicker'
+  pod 'KDCalendar'
   pod 'SkeletonView'
   pod 'SimpleCheckbox'
   pod 'Loaf'

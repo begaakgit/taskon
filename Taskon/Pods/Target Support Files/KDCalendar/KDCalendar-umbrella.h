@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double JBDatePickerVersionNumber;
-FOUNDATION_EXPORT const unsigned char JBDatePickerVersionString[];
+FOUNDATION_EXPORT double KDCalendarVersionNumber;
+FOUNDATION_EXPORT const unsigned char KDCalendarVersionString[];
 
