@@ -14,10 +14,14 @@ class AddMaterialCell: UITableViewCell, Registerable {
     
     // MARK: - Class Properties
     
-    @IBOutlet private weak var materialField: SkyFloatingLabelTextField!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var materialTextView: UITextView!
     @IBOutlet private weak var quantityField: SkyFloatingLabelTextField!
     @IBOutlet private weak var priceField: SkyFloatingLabelTextField!
     private var deleteAction: VoidCompletion? = nil
+    private var textViewAction: TextCompletion? = nil
+    private var quantityFieldAction: TextCompletion? = nil
+    private var priceFieldAction: TextCompletion? = nil
     
     
     // MARK: - Initialization Methods
@@ -27,6 +31,12 @@ class AddMaterialCell: UITableViewCell, Registerable {
         // Initialization code
         
         selectionStyle = .none
+        materialTextView.delegate = self
+        quantityField.delegate = self
+        priceField.delegate = self
+        quantityField.textAlignment = .center
+        priceField.textAlignment = .center
+        materialTextView.font = .toFront(ofSize: 14)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -41,5 +51,49 @@ class AddMaterialCell: UITableViewCell, Registerable {
     @IBAction private func deleteButtonTapped(_ sender: UIButton) {
         deleteAction?()
     }
+    
+    
+    // MARK: - Public Methods
+    
+    public func configure(material: Material,
+                          for index: Int,
+                          didChange action: @escaping TextCompletion,
+                          quantity: @escaping TextCompletion,
+                          price: @escaping TextCompletion,
+                          deleteAction: @escaping VoidCompletion) {
+        textViewAction = action
+        quantityFieldAction = quantity
+        priceFieldAction = price
+        self.deleteAction = deleteAction
+        
+        titleLabel.text = "[\(index)] Material"
+        materialTextView.text = material.description
+        quantityField.text = "\(material.quantity)"
+        priceField.text = "\(material.price)"
+    }
 
+}
+
+
+// MARK: - TextView Methods
+
+extension AddMaterialCell: UITextViewDelegate {
+    
+    func textViewDidChange(_ textView: UITextView) {
+        textViewAction?(textView.text)
+    }
+}
+
+
+// MARK: - TextField Methods
+
+extension AddMaterialCell: UITextFieldDelegate {
+    
+    func textFieldDidChange(_ textField: UITextField) {
+        if textField == quantityField {
+            quantityFieldAction?(textField.text ?? "")
+        } else {
+            priceFieldAction?(textField.text ?? "")
+        }
+    }
 }

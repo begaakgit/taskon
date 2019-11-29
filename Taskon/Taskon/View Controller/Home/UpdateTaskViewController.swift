@@ -31,7 +31,7 @@ class UpdateTaskViewController: AppViewController {
     @IBOutlet private weak var addButton: UIButton!
     public var mode: UpdateTaskMode = .user
     private var users: [StaticUser] = []
-    private var materials: [String] = []
+    private var materials: [Material] = []
     private var jobs: [String] = []
     
     
@@ -94,21 +94,17 @@ extension UpdateTaskViewController {
     }
     
     private func addMaterial() {
-        let addMaterialVC: AddMaterialViewController = instanceFromStoryboard(storyboard: Storyboard.home)
-        addMaterialVC.addBlock = { [weak self] in
-            guard let _ = self else { return }
+        let material = Material(description: "", quantity: 0, price: 0)
+        materials.append(material)
+        if materials.count > 1 {
+            let indexPath = IndexPath(row: materials.count - 1, section: 0)
+            tableView.insertRows(at: [indexPath], with: .automatic)
+        } else {
+            self.updateUi()
         }
-        let navController = AppNavigationController(rootViewController: addMaterialVC)
-        present(navController, animated: true, completion: nil)
     }
     
     private func addJob() {
-        let addJobVC: AddJobViewController = instanceFromStoryboard(storyboard: Storyboard.home)
-        addJobVC.addBlock = { [weak self] in
-            guard let _ = self else { return }
-        }
-        let navController = AppNavigationController(rootViewController: addJobVC)
-        present(navController, animated: true, completion: nil)
     }
     
     private func userCell(for indexPath: IndexPath) -> UITableViewCell {
@@ -117,16 +113,54 @@ extension UpdateTaskViewController {
         cell.configure(user: user, for: indexPath.row + 1) { [weak self] in
             guard let self = self else { return }
             self.users.remove(at: indexPath.row)
-            self.tableView.reloadData()
+            self.updateUi()
         }
         return cell
     }
     
-    private func materialCell(for indexPAth: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+    private func materialCell(for indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.getCell(type: AddMaterialCell.self) else { return UITableViewCell() }
+        var material = materials[indexPath.row]
+        
+        let textviewChange: TextCompletion = { [weak self] text in
+            guard let self = self else { return }
+            self.tableView.beginUpdates()
+            self.tableView.endUpdates()
+            material.description = text
+            self.materials.remove(at: indexPath.row)
+            self.materials.insert(material, at: indexPath.row)
+        }
+        
+        let quantityChange: TextCompletion = { [weak self] quantity in
+            guard let self = self else { return }
+            material.quantity = Int(quantity) ?? 0
+            self.materials.remove(at: indexPath.row)
+            self.materials.insert(material, at: indexPath.row)
+        }
+        
+        let priceChange: TextCompletion = { [weak self] price in
+            guard let self = self else { return }
+            material.price = Int(price) ?? 0
+            self.materials.remove(at: indexPath.row)
+            self.materials.insert(material, at: indexPath.row)
+        }
+        
+        let deleteAction: VoidCompletion = { [weak self] in
+            guard let self = self else { return }
+            self.materials.remove(at: indexPath.row)
+            self.updateUi()
+        }
+        
+        cell.configure(material: material,
+                       for: indexPath.row + 1,
+                       didChange: textviewChange,
+                       quantity: quantityChange,
+                       price: priceChange,
+                       deleteAction: deleteAction)
+        return cell
     }
     
-    private func jobCell(for indexPAth: IndexPath) -> UITableViewCell {
+    private func jobCell(for indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
 }
