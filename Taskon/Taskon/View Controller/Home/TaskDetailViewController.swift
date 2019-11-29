@@ -168,6 +168,9 @@ extension TaskDetailViewController {
             
         case .contacts:
             guard let cell = tableView.getCell(type: ContactCell.self) else { return UITableViewCell() }
+            if let contacts = task.contacts, let contact = contacts.first {
+                cell.configure(contact: contact)
+            }
             return cell
         }
     }
@@ -287,6 +290,7 @@ extension TaskDetailViewController: UITableViewDataSource, UITableViewDelegate {
 
             case .info:
                 if let contacts = task.contacts, !contacts.isEmpty {
+                    rows = InfoRows.allCases.count
                 } else {
                     rows = InfoRows.allCases.count - 1
                 }

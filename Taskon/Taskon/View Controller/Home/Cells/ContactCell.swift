@@ -31,5 +31,14 @@ class ContactCell: UITableViewCell, Registerable {
 
         // Configure the view for the selected state
     }
+    
+    
+    // MARK: - Public Methods
+    
+    public func configure(contact: Contact) {
+        titleLabel.text = "Contacts"
+        descriptionLabel.text = contact.name
+        phoneLabel.text = contact.phone
+    }
 
 }
