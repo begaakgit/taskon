@@ -32,7 +32,7 @@ class UpdateTaskViewController: AppViewController {
     public var mode: UpdateTaskMode = .user
     private var users: [StaticUser] = []
     private var materials: [Material] = []
-    private var jobs: [String] = []
+    private var jobs: [Job] = []
     
     
     // MARK: - View Controller Life Cycle
@@ -105,6 +105,14 @@ extension UpdateTaskViewController {
     }
     
     private func addJob() {
+        let job = Job(description: "")
+        jobs.append(job)
+        if jobs.count > 1 {
+            let indexPath = IndexPath(row: jobs.count - 1, section: 0)
+            tableView.insertRows(at: [indexPath], with: .automatic)
+        } else {
+            self.updateUi()
+        }
     }
     
     private func userCell(for indexPath: IndexPath) -> UITableViewCell {
@@ -161,7 +169,29 @@ extension UpdateTaskViewController {
     }
     
     private func jobCell(for indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.getCell(type: AddTaskCell.self) else { return UITableViewCell() }
+        var job = jobs[indexPath.row]
+        
+        let textviewChange: TextCompletion = { [weak self] text in
+            guard let self = self else { return }
+            self.tableView.beginUpdates()
+            self.tableView.endUpdates()
+            job.description = text
+            self.jobs.remove(at: indexPath.row)
+            self.jobs.insert(job, at: indexPath.row)
+        }
+        
+        let deleteAction: VoidCompletion = { [weak self] in
+            guard let self = self else { return }
+            self.jobs.remove(at: indexPath.row)
+            self.updateUi()
+        }
+        
+        cell.configure(job: job,
+                       for: indexPath.row + 1,
+                       didChange: textviewChange,
+                       deleteAction: deleteAction)
+        return cell
     }
 }
 

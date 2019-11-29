@@ -93,6 +93,7 @@
 		D3BB79E723902951009FF66F /* ProviderSignatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BB79E623902951009FF66F /* ProviderSignatureViewController.swift */; };
 		D3BB79E923902A42009FF66F /* CustomerSignatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BB79E823902A42009FF66F /* CustomerSignatureViewController.swift */; };
 		D3BB79EB2390DCD0009FF66F /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BB79EA2390DCD0009FF66F /* Material.swift */; };
+		D3BB79ED2390EB62009FF66F /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BB79EC2390EB62009FF66F /* Job.swift */; };
 		D3BC8ECD2385BA1100CCB88E /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BC8ECC2385BA1100CCB88E /* ImageCell.swift */; };
 		D3BC8ECF2385BB7200CCB88E /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BC8ECE2385BB7200CCB88E /* ActionCell.swift */; };
 		D3BC8ED12385BCDB00CCB88E /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BC8ED02385BCDB00CCB88E /* StatusCell.swift */; };
@@ -201,6 +202,7 @@
 		D3BB79E623902951009FF66F /* ProviderSignatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderSignatureViewController.swift; sourceTree = "<group>"; };
 		D3BB79E823902A42009FF66F /* CustomerSignatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSignatureViewController.swift; sourceTree = "<group>"; };
 		D3BB79EA2390DCD0009FF66F /* Material.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
+		D3BB79EC2390EB62009FF66F /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		D3BC8ECC2385BA1100CCB88E /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		D3BC8ECE2385BB7200CCB88E /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		D3BC8ED02385BCDB00CCB88E /* StatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 				D3AF8BE7238651590099A893 /* Comment.swift */,
 				D379B186238C2E210025EE67 /* StaticData.swift */,
 				D3BB79EA2390DCD0009FF66F /* Material.swift */,
+				D3BB79EC2390EB62009FF66F /* Job.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -785,6 +788,7 @@
 				D3A8C57D2376E36400CCA89B /* AppView+UIView.swift in Sources */,
 				CFB33FD82374C27600DE0507 /* Types.swift in Sources */,
 				D34D8B6D2383114B00F18ECF /* Task.swift in Sources */,
+				D3BB79ED2390EB62009FF66F /* Job.swift in Sources */,
 				D3D90D752388618100DD0E9D /* AddUserCell.swift in Sources */,
 				D38D57A92375E8C500CF1DDB /* ServiceError.swift in Sources */,
 				D3ADAE29237EC64000FD7F70 /* AppButton.swift in Sources */,
