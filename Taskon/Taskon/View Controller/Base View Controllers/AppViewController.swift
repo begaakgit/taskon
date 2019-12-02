@@ -67,8 +67,8 @@ extension AppViewController {
         }
     }
     
-    public func syncData(materials: [TaskUsedMaterial], completion: VoidCompletion? = nil) {
-        performSyncDataRequest(materials: materials, completion: completion)
+    public func syncData(taskAction: TaskAction?, materials: [TaskUsedMaterial], completion: VoidCompletion? = nil) {
+        performSyncDataRequest(taskAction: taskAction, materials: materials, completion: completion)
     }
     
 }
@@ -78,8 +78,8 @@ extension AppViewController {
 
 extension AppViewController {
     
-    private func performSyncDataRequest(materials: [TaskUsedMaterial], completion: VoidCompletion? = nil) {
-        let request = APIClient.syncData(materials: materials)
+    private func performSyncDataRequest(taskAction: TaskAction?, materials: [TaskUsedMaterial], completion: VoidCompletion? = nil) {
+        let request = APIClient.syncData(taskAction: taskAction, materials: materials)
         
         let success: ServiceSuccess<EmptyCodable> = { [weak self] emptyCodable in
             guard let self = self else { return }

@@ -226,7 +226,7 @@ extension UpdateTaskViewController {
     
     @objc private func saveButtonTapped(_ sender: UIBarButtonItem) {
         view.isUserInteractionEnabled = false
-        syncData(materials: materials) { [weak self] in
+        syncData(taskAction: nil, materials: materials) { [weak self] in
             guard let self = self else { return }
             self.view.isUserInteractionEnabled = true
             self.pop(animated: true)

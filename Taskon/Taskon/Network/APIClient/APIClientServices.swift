@@ -83,10 +83,10 @@ extension APIClient {
         return resolve(response: responseFuture)
     }
     
-    static func syncData(materials: [TaskUsedMaterial]) -> Future<EmptyCodable> {
+    static func syncData(taskAction: TaskAction?, materials: [TaskUsedMaterial]) -> Future<EmptyCodable> {
         let userId = TOUserDefaults.user.get()?.id ?? -1
         let gpsLogs = TOUserDefaults.gpsLogs.get()
-        let router = TaskRouter.sync(userId: userId, gpsLogs: gpsLogs, materials: materials)
+        let router = TaskRouter.sync(userId: userId, gpsLogs: gpsLogs, materials: materials, taskAction: taskAction)
         let responseFuture: Future<ServiceResponse<EmptyCodable>> = performRequest(router: router)
         return resolve(response: responseFuture)
     }

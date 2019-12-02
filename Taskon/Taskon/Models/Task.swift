@@ -16,7 +16,7 @@ struct Task: Codable {
     let id: Int
     let title: String
     let nr: String
-    let status: TaskStatus
+    var status: TaskStatus
     let locationID: Int
     let taskTypeID: Int
     let questionnaireID: Int

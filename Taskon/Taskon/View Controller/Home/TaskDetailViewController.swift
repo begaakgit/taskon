@@ -47,10 +47,12 @@ class TaskDetailViewController: AppViewController {
     @IBOutlet private weak var tableView: UITableView!
     public var appTask: AppTask!
     public var location: Location!
+    public var reloadBlock: VoidCompletion? = nil
     private var state: TaskDetailState = .registered
     private var photosManager: PhotosManager!
     private var images: [TaskImage] = []
     private var showFirstSection: Bool = false
+    private var taskAction: TaskAction? = nil
     
     
     // MARK: - View Controller Life Cycle
@@ -138,7 +140,14 @@ extension TaskDetailViewController {
         switch row {
         case .status:
             guard let cell = tableView.getCell(type: StatusCell.self) else { return UITableViewCell() }
-            cell.configure(task: appTask.task)
+            var task = appTask.task
+            switch state {
+            case .inProgress: task.status = .inProgress
+            case .approved: task.status = .approved
+            case .registered: task.status = .registered
+            case .notFinished: task.status = .notFinished
+            }
+            cell.configure(task: task)
             return cell
             
         case .photo:
@@ -199,18 +208,61 @@ extension TaskDetailViewController {
     }
     
     private func startNewTask() {
+        showFirstSection = false
         state = .approved
         tableView.reloadData()
+        taskAction = TaskAction(id: 0,
+                                taskId: appTask.task.id,
+                                locationId: location.id,
+                                accept: 1,
+                                pause: 0,
+                                stop: 0,
+                                startTime: Date(),
+                                stopTime: nil)
+        syncData(taskAction: taskAction, materials: []) { [weak self] in
+            guard let self = self else { return }
+            self.view.isUserInteractionEnabled = true
+            self.reloadBlock?()
+        }
     }
     
     private func startPauseTask() {
+        showFirstSection = true
         state = .inProgress
         tableView.reloadData()
+        taskAction = TaskAction(id: 0,
+                                taskId: appTask.task.id,
+                                locationId: location.id,
+                                accept: 0,
+                                pause: 0,
+                                stop: 0,
+                                startTime: Date(),
+                                stopTime: nil)
+        view.isUserInteractionEnabled = true
+        syncData(taskAction: taskAction, materials: []) { [weak self] in
+            guard let self = self else { return }
+            self.view.isUserInteractionEnabled = true
+            self.reloadBlock?()
+        }
     }
     
     private func pauseTask() {
+        showFirstSection = false
         state = .notFinished
         tableView.reloadData()
+        taskAction = TaskAction(id: 0,
+                                taskId: appTask.task.id,
+                                locationId: location.id,
+                                accept: 0,
+                                pause: 1,
+                                stop: 0,
+                                startTime: nil,
+                                stopTime: Date())
+        syncData(taskAction: taskAction, materials: []) { [weak self] in
+            guard let self = self else { return }
+            self.view.isUserInteractionEnabled = true
+            self.reloadBlock?()
+        }
     }
     
     private func finishTask() {

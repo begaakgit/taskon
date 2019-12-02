@@ -214,6 +214,12 @@ extension HomeViewController {
         taskDetailVC.appTask = appTask
         
         taskDetailVC.location = location
+        
+        taskDetailVC.reloadBlock = { [weak self] in
+            guard let self = self else { return }
+            self.performCoreDataRequest()
+        }
+        
         push(viewController: taskDetailVC, animated: true)
     }
 }

@@ -71,6 +71,7 @@
 		D38D57B82376092500CF1DDB /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57B72376092500CF1DDB /* UserRouter.swift */; };
 		D38D57BA23760BF500CF1DDB /* APIClientServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57B923760BF500CF1DDB /* APIClientServices.swift */; };
 		D38D57BC23760F7600CF1DDB /* ServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D57BB23760F7600CF1DDB /* ServiceResponse.swift */; };
+		D390F6D623958A77008B405C /* TaskAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D390F6D523958A77008B405C /* TaskAction.swift */; };
 		D39BDBF723900F5800A6469C /* TaskFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39BDBF623900F5800A6469C /* TaskFinishedViewController.swift */; };
 		D39FFC302383F17300E1C879 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FFC2F2383F17300E1C879 /* CoreData.swift */; };
 		D3A8009923869C0800224D25 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A8009823869C0800224D25 /* CommentCell.swift */; };
@@ -182,6 +183,7 @@
 		D38D57B72376092500CF1DDB /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
 		D38D57B923760BF500CF1DDB /* APIClientServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientServices.swift; sourceTree = "<group>"; };
 		D38D57BB23760F7600CF1DDB /* ServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResponse.swift; sourceTree = "<group>"; };
+		D390F6D523958A77008B405C /* TaskAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAction.swift; sourceTree = "<group>"; };
 		D39BDBF623900F5800A6469C /* TaskFinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFinishedViewController.swift; sourceTree = "<group>"; };
 		D39FFC2F2383F17300E1C879 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		D3A8009823869C0800224D25 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 				D3BB79EA2390DCD0009FF66F /* TaskUsedMaterial.swift */,
 				D3BB79EC2390EB62009FF66F /* Job.swift */,
 				D32E9D472395253000DB364A /* GPSLog.swift */,
+				D390F6D523958A77008B405C /* TaskAction.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -741,6 +744,7 @@
 				D3A96DCD2376C6BE00291D24 /* NewTaskViewController.swift in Sources */,
 				D3D90D792388619F00DD0E9D /* AddTaskCell.swift in Sources */,
 				D38D57AD2375EEFF00CF1DDB /* TOError.swift in Sources */,
+				D390F6D623958A77008B405C /* TaskAction.swift in Sources */,
 				CF272B0023749F7E00A05A9A /* APIClient.swift in Sources */,
 				CF8462832372049A008C0314 /* AppViewController.swift in Sources */,
 				D3ADAE2C237ECC3D00FD7F70 /* LoadingButton.swift in Sources */,

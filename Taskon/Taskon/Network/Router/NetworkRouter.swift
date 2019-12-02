@@ -55,9 +55,8 @@ extension NetworkRouter {
             
             if path == "sync_data" {
                 let data = try? JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed)
-                if let data = data {
-                    let jsonString = String(data: data, encoding: .utf8)
-                    debugPrint(jsonString)
+                if let data = data,
+                    let jsonString = String(data: data, encoding: .utf8) {
                     let params: [String : Any] = ["data" : jsonString]
                     parameters.removeAll()
                     parameters = params

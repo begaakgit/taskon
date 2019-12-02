@@ -17,7 +17,7 @@ enum TaskRouter: NetworkRouter {
     case comments(userId: Int, taskId: Int)
     case comment(userId: Int, taskId: Int, comment: String)
     case staticData(userId: Int)
-    case sync(userId: Int, gpsLogs: [GPSLog]?, materials: [TaskUsedMaterial]?)
+    case sync(userId: Int, gpsLogs: [GPSLog]?, materials: [TaskUsedMaterial]?, taskAction: TaskAction?)
     
     
     // Path
@@ -96,17 +96,23 @@ enum TaskRouter: NetworkRouter {
         case .staticData(let userId):
             return ["user_id" : userId]
             
-        case .sync(let userId, let gpsLogs, let materials):
+        case .sync(let userId, let gpsLogs, let materials, let taskAction):
             var params: Parameters = ["user_id" : userId]
             
-            if let gpsLogs = gpsLogs {
+            if let gpsLogs = gpsLogs, !gpsLogs.isEmpty {
                 let array = gpsLogs.compactMap { $0.dictionary() }
                 params["gps_log"] = array
             }
             
-            if let materials = materials {
+            if let materials = materials, !materials.isEmpty {
                 let array = materials.compactMap { $0.dictionary() }
                 params["task_used_materials"] = array
+            }
+            
+            if let taskAction = taskAction {
+                if let dictionary = taskAction.dictionary() {
+                    params["task_actions"] = [dictionary]
+                }
             }
             return params
         }
