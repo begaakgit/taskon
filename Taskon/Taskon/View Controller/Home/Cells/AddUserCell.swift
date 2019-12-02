@@ -43,10 +43,10 @@ class AddUserCell: UITableViewCell, Registerable {
     
     // MARK: - Public Methods
     
-    public func configure(user: StaticUser, for index: Int, removeAction: VoidCompletion?) {
+    public func configure(user: TaskUsedMaterial, for index: Int, removeAction: VoidCompletion?) {
         deleteAction = removeAction
         indexLabel.text = "[\(index)] User"
-        nameLabel.text = user.name + user .surname
+        nameLabel.text = user.title
     }
 
 }

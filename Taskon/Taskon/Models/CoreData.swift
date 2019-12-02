@@ -43,6 +43,14 @@ struct CoreData: Codable {
     // MARK: - Public Methods
     
     public func getMaterials(for task: Task) -> [TaskUsedMaterial] {
-        return taskUsedMaterials.filter { $0.taskId == task.id }
+        return taskUsedMaterials.filter { $0.taskId == task.id && $0.type == 0 }
+    }
+    
+    public func getJobs(for task: Task) -> [TaskUsedMaterial] {
+        return taskUsedMaterials.filter { $0.taskId == task.id && $0.type == 1 }
+    }
+    
+    public func getUsers(for task: Task) -> [TaskUsedMaterial] {
+        return taskUsedMaterials.filter { $0.taskId == task.id && $0.type == 2 }
     }
 }

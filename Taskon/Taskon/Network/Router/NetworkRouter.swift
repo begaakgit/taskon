@@ -54,9 +54,14 @@ extension NetworkRouter {
             }
             
             if path == "sync_data" {
-                let params: [String : Any] = ["data" : parameters]
-                parameters.removeAll()
-                parameters = params
+                let data = try? JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed)
+                if let data = data {
+                    let jsonString = String(data: data, encoding: .utf8)
+                    debugPrint(jsonString)
+                    let params: [String : Any] = ["data" : jsonString]
+                    parameters.removeAll()
+                    parameters = params
+                }
             }
             
             do {

@@ -209,6 +209,8 @@ extension HomeViewController {
         
         var appTask = AppTask(task: task)
         appTask.materials = coreData?.getMaterials(for: task) ?? []
+        appTask.users = coreData?.getUsers(for: task) ?? []
+        appTask.jobs = coreData?.getJobs(for: task) ?? []
         taskDetailVC.appTask = appTask
         
         taskDetailVC.location = location

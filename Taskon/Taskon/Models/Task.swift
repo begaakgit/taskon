@@ -161,6 +161,8 @@ struct AppTask {
     
     var task: Task
     var materials: [TaskUsedMaterial] = []
+    var users: [TaskUsedMaterial] = []
+    var jobs: [TaskUsedMaterial] = []
     
     init(task: Task) {
         self.task = task

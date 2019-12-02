@@ -9,9 +9,9 @@
 import UIKit
 
 enum UpdateTaskMode {
-    case user
+    case user(users: [TaskUsedMaterial])
     case material(materials: [TaskUsedMaterial])
-    case job
+    case job(jobs: [TaskUsedMaterial])
     
     public func title() -> String {
         switch self {
@@ -29,11 +29,11 @@ class UpdateTaskViewController: AppViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var addButton: UIButton!
-    public var mode: UpdateTaskMode = .user
+    public var mode: UpdateTaskMode = .user(users: [])
     public var taskId: Int!
-    private var users: [StaticUser] = []
+    private var users: [TaskUsedMaterial] = []
     private var materials: [TaskUsedMaterial] = []
-    private var jobs: [Job] = []
+    private var jobs: [TaskUsedMaterial] = []
     
     
     // MARK: - View Controller Life Cycle
@@ -69,13 +69,23 @@ extension UpdateTaskViewController {
         var datasource: [Any] = []
         
         switch mode {
-        case .user: datasource = users
+        case .user(let users):
+            if self.users.isEmpty {
+                self.users = users
+            }
+            datasource = self.users
+            datasource = users
         case .material(let materils):
             if self.materials.isEmpty {
                 self.materials = materils
             }
             datasource = self.materials
-        case .job: datasource = jobs
+        case .job(let jobs):
+            if self.jobs.isEmpty {
+                self.jobs = jobs
+            }
+            datasource = self.jobs
+            datasource = jobs
         }
         
         tableView.reloadData()
@@ -91,6 +101,11 @@ extension UpdateTaskViewController {
         addUserVC.addBlock = { [weak self] user in
             guard let self = self else { return }
             self.dismiss(animated: true, completion: nil)
+            var user = TaskUsedMaterial(title: user.name + " " + user.surname,
+                                        quantity: nil,
+                                        price: nil,
+                                        taskId: self.taskId)
+            user.type = 2
             self.users.append(user)
             self.updateUi()
         }
@@ -99,7 +114,10 @@ extension UpdateTaskViewController {
     }
     
     private func addMaterial() {
-        let material = TaskUsedMaterial(title: "", quantity: "0", price: "0", taskId: taskId)
+        let material = TaskUsedMaterial(title: "",
+                                        quantity: "0",
+                                        price: "0",
+                                        taskId: taskId)
         materials.append(material)
         if materials.count > 1 {
             let indexPath = IndexPath(row: materials.count - 1, section: 0)
@@ -110,7 +128,8 @@ extension UpdateTaskViewController {
     }
     
     private func addJob() {
-        let job = Job(description: "")
+        var job = TaskUsedMaterial(title: "", quantity: nil, price: nil, taskId: self.taskId)
+        job.type = 1
         jobs.append(job)
         if jobs.count > 1 {
             let indexPath = IndexPath(row: jobs.count - 1, section: 0)
@@ -181,7 +200,7 @@ extension UpdateTaskViewController {
             guard let self = self else { return }
             self.tableView.beginUpdates()
             self.tableView.endUpdates()
-            job.description = text
+            job.title = text
             self.jobs.remove(at: indexPath.row)
             self.jobs.insert(job, at: indexPath.row)
         }

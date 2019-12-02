@@ -333,9 +333,9 @@ extension TaskDetailViewController: UITableViewDataSource, UITableViewDelegate {
             case .additional:
                 if let row = AdditionalRows(rawValue: indexPath.row) {
                     switch row {
-                    case .users: openUpdateTask(mode: .user)
+                    case .users: openUpdateTask(mode: .user(users: appTask?.users ?? []))
                     case .materials: openUpdateTask(mode: .material(materials: appTask?.materials ?? []))
-                    case .jobs: openUpdateTask(mode: .job)
+                    case .jobs: openUpdateTask(mode: .job(jobs: appTask?.jobs ?? []))
                     }
                 }
                 

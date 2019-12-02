@@ -47,7 +47,7 @@ class AddTaskCell: UITableViewCell, Registerable {
     
     // MARK: - Public Methods
     
-    public func configure(job: Job,
+    public func configure(job: TaskUsedMaterial,
                           for index: Int,
                           didChange action: @escaping TextCompletion,
                           deleteAction: @escaping VoidCompletion) {
@@ -55,7 +55,7 @@ class AddTaskCell: UITableViewCell, Registerable {
         self.deleteAction = deleteAction
         
         titleLabel.text = "[\(index)] Job"
-        textview.text = job.description
+        textview.text = job.title
     }
 
 }

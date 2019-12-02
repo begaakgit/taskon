@@ -37,8 +37,8 @@ struct TaskUsedMaterial: Codable {
     
     // MARK: - Initialization Methods
     
-    init(title: String, quantity: String, price: String, taskId: Int) {
-        self.title = title.isEmpty ? "s" : title
+    init(title: String, quantity: String?, price: String?, taskId: Int) {
+        self.title = title.isEmpty ? "" : title
         self.quantity = quantity
         self.price = price
         self.taskId = taskId
