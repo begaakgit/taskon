@@ -10,7 +10,7 @@ import UIKit
 
 enum UpdateTaskMode {
     case user
-    case material
+    case material(materials: [TaskUsedMaterial])
     case job
     
     public func title() -> String {
@@ -30,8 +30,9 @@ class UpdateTaskViewController: AppViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var addButton: UIButton!
     public var mode: UpdateTaskMode = .user
+    public var taskId: Int!
     private var users: [StaticUser] = []
-    private var materials: [Material] = []
+    private var materials: [TaskUsedMaterial] = []
     private var jobs: [Job] = []
     
     
@@ -69,7 +70,11 @@ extension UpdateTaskViewController {
         
         switch mode {
         case .user: datasource = users
-        case .material: datasource = materials
+        case .material(let materils):
+            if self.materials.isEmpty {
+                self.materials = materils
+            }
+            datasource = self.materials
         case .job: datasource = jobs
         }
         
@@ -94,7 +99,7 @@ extension UpdateTaskViewController {
     }
     
     private func addMaterial() {
-        let material = Material(description: "", quantity: 0, price: 0)
+        let material = TaskUsedMaterial(title: "", quantity: "0", price: "0", taskId: taskId)
         materials.append(material)
         if materials.count > 1 {
             let indexPath = IndexPath(row: materials.count - 1, section: 0)
@@ -134,21 +139,21 @@ extension UpdateTaskViewController {
             guard let self = self else { return }
             self.tableView.beginUpdates()
             self.tableView.endUpdates()
-            material.description = text
+            material.title = text
             self.materials.remove(at: indexPath.row)
             self.materials.insert(material, at: indexPath.row)
         }
         
         let quantityChange: TextCompletion = { [weak self] quantity in
             guard let self = self else { return }
-            material.quantity = Int(quantity) ?? 0
+            material.quantity = quantity
             self.materials.remove(at: indexPath.row)
             self.materials.insert(material, at: indexPath.row)
         }
         
         let priceChange: TextCompletion = { [weak self] price in
             guard let self = self else { return }
-            material.price = Int(price) ?? 0
+            material.price = price
             self.materials.remove(at: indexPath.row)
             self.materials.insert(material, at: indexPath.row)
         }
@@ -201,7 +206,12 @@ extension UpdateTaskViewController {
 extension UpdateTaskViewController {
     
     @objc private func saveButtonTapped(_ sender: UIBarButtonItem) {
-        pop(animated: true)
+        view.isUserInteractionEnabled = false
+        syncData(materials: materials) { [weak self] in
+            guard let self = self else { return }
+            self.view.isUserInteractionEnabled = true
+            self.pop(animated: true)
+        }
     }
     
     @IBAction private func addBUttonTapped(_ sender: UIButton) {

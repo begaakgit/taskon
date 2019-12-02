@@ -17,6 +17,7 @@ struct CoreData: Codable {
     let taskTypes: [TaskType]
     let taskPauseTypes: [TaskPauseType]
     let taskStopTypes: [TaskPauseType]
+    let taskUsedMaterials: [TaskUsedMaterial]
     let tasks: [Task]
     let questionnaires: [Questionnaires]
     let questions: [Question]
@@ -31,9 +32,17 @@ struct CoreData: Codable {
         case taskTypes = "task_types"
         case taskPauseTypes = "task_pause_types"
         case taskStopTypes = "task_stop_types"
+        case taskUsedMaterials = "task_used_materials"
         case tasks = "tasks"
         case questionnaires = "questionnaires"
         case questions = "questions"
         case answers = "answers"
+    }
+    
+    
+    // MARK: - Public Methods
+    
+    public func getMaterials(for task: Task) -> [TaskUsedMaterial] {
+        return taskUsedMaterials.filter { $0.taskId == task.id }
     }
 }

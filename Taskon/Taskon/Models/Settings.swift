@@ -38,7 +38,7 @@ struct Settings: Codable {
         let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1.0"
         appInfo = version + " / " + build
         size = .hd
-        locationCheckInterval = 300
+        locationCheckInterval = 3
         locationAccuracy = 50
         autoSyncInterval = 5
         autoSync = true

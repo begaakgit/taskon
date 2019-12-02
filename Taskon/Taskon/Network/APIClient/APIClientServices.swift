@@ -55,6 +55,7 @@ extension APIClient {
     }
     
     static func coreData() -> Future<CoreData> {
+        debugPrint(TOUserDefaults.user.get()?.token)
         let userId = TOUserDefaults.user.get()?.id ?? -1
         let router = TaskRouter.coreData(userId: userId)
         let responseFuture: Future<ServiceResponse<CoreData>> = performRequest(router: router)
@@ -79,6 +80,14 @@ extension APIClient {
         let userId = TOUserDefaults.user.get()?.id ?? -1
         let router = TaskRouter.staticData(userId: userId)
         let responseFuture: Future<ServiceResponse<StaticData>> = performRequest(router: router)
+        return resolve(response: responseFuture)
+    }
+    
+    static func syncData(materials: [TaskUsedMaterial]) -> Future<EmptyCodable> {
+        let userId = TOUserDefaults.user.get()?.id ?? -1
+        let gpsLogs = TOUserDefaults.gpsLogs.get()
+        let router = TaskRouter.sync(userId: userId, gpsLogs: gpsLogs, materials: materials)
+        let responseFuture: Future<ServiceResponse<EmptyCodable>> = performRequest(router: router)
         return resolve(response: responseFuture)
     }
     

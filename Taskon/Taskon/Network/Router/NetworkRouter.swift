@@ -53,6 +53,12 @@ extension NetworkRouter {
                 parameters["api_key"] = apiKey
             }
             
+            if path == "sync_data" {
+                let params: [String : Any] = ["data" : parameters]
+                parameters.removeAll()
+                parameters = params
+            }
+            
             do {
                 request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed)
             } catch {

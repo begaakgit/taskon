@@ -55,7 +55,7 @@ class AddMaterialCell: UITableViewCell, Registerable {
     
     // MARK: - Public Methods
     
-    public func configure(material: Material,
+    public func configure(material: TaskUsedMaterial,
                           for index: Int,
                           didChange action: @escaping TextCompletion,
                           quantity: @escaping TextCompletion,
@@ -67,9 +67,9 @@ class AddMaterialCell: UITableViewCell, Registerable {
         self.deleteAction = deleteAction
         
         titleLabel.text = "[\(index)] Material"
-        materialTextView.text = material.description
-        quantityField.text = "\(material.quantity)"
-        priceField.text = "\(material.price)"
+        materialTextView.text = material.title
+        quantityField.text = material.quantity
+        priceField.text = material.price
     }
 
 }

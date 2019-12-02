@@ -17,6 +17,7 @@ enum TaskRouter: NetworkRouter {
     case comments(userId: Int, taskId: Int)
     case comment(userId: Int, taskId: Int, comment: String)
     case staticData(userId: Int)
+    case sync(userId: Int, gpsLogs: [GPSLog]?, materials: [TaskUsedMaterial]?)
     
     
     // Path
@@ -36,27 +37,28 @@ enum TaskRouter: NetworkRouter {
         case .comments: return "get_comments_data"
         case .comment: return "sync_comments_data"
         case .staticData: return "get_static_data"
+        case .sync: return "sync_data"
         }
     }
     
     // Method
     var method: HTTPMethod {
         switch self {
-        case .customers, .new, .coreData, .comments, .comment, .staticData: return .post
+        case .customers, .new, .coreData, .comments, .comment, .staticData, .sync: return .post
         }
     }
     
     // Token
     var token: Bool {
         switch self {
-        case .customers, .new, .coreData, .comments, .comment, .staticData: return true
+        case .customers, .new, .coreData, .comments, .comment, .staticData, .sync: return true
         }
     }
     
     // API Key
     var apiKey: Bool {
         switch self {
-        case .customers, .new, .coreData, .comments, .comment, .staticData: return true
+        case .customers, .new, .coreData, .comments, .comment, .staticData, .sync: return true
         }
     }
     
@@ -94,6 +96,19 @@ enum TaskRouter: NetworkRouter {
         case .staticData(let userId):
             return ["user_id" : userId]
             
+        case .sync(let userId, let gpsLogs, let materials):
+            var params: Parameters = ["user_id" : userId]
+            
+            if let gpsLogs = gpsLogs {
+                let array = gpsLogs.compactMap { $0.dictionary() }
+                params["gps_log"] = array
+            }
+            
+            if let materials = materials {
+                let array = materials.compactMap { $0.dictionary() }
+                params["task_used_materials"] = array
+            }
+            return params
         }
     }
 }

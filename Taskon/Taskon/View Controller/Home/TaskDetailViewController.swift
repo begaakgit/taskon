@@ -45,7 +45,7 @@ class TaskDetailViewController: AppViewController {
     // MARK: - Class Properties
     
     @IBOutlet private weak var tableView: UITableView!
-    public var task: Task!
+    public var appTask: AppTask!
     public var location: Location!
     private var state: TaskDetailState = .registered
     private var photosManager: PhotosManager!
@@ -83,16 +83,17 @@ class TaskDetailViewController: AppViewController {
 extension TaskDetailViewController {
     
     private func setupNavigationBar() {
-        navigationItem.title = task.nr
+        navigationItem.title = appTask.task.nr
         navigationItem.largeTitleDisplayMode = .never
     }
     
     private func setupViewController() {
         
-        switch task.status {
+        switch appTask.task.status {
         case .inProgress:
             state = .inProgress
             showFirstSection = true
+            LocationManager.default.startLogging(with: appTask.task.id, locationId: appTask.task.locationID)
         case .approved:
             state = .approved
             showFirstSection = false
@@ -106,7 +107,7 @@ extension TaskDetailViewController {
         
         tableView.tableFooterView = UIView(frame: .zero)
         if let taskImages = TOUserDefaults.taskImages.get() {
-            images = taskImages.filter { $0.taskId == task.id }
+            images = taskImages.filter { $0.taskId == appTask.task.id }
             updateImageCache()
         }
         tableView.reloadData()
@@ -137,7 +138,7 @@ extension TaskDetailViewController {
         switch row {
         case .status:
             guard let cell = tableView.getCell(type: StatusCell.self) else { return UITableViewCell() }
-            cell.configure(task: task)
+            cell.configure(task: appTask.task)
             return cell
             
         case .photo:
@@ -148,12 +149,12 @@ extension TaskDetailViewController {
             
         case .title:
             guard let cell = tableView.getCell(type: NormalCell.self) else { return UITableViewCell() }
-            cell.configure(title: task.title)
+            cell.configure(title: appTask.task.title)
             return cell
             
         case .description:
             guard let cell = tableView.getCell(type: NormalCell.self) else { return UITableViewCell() }
-            cell.configure(description: task.description)
+            cell.configure(description: appTask.task.description)
             return cell
             
         case .comments:
@@ -163,12 +164,12 @@ extension TaskDetailViewController {
             
         case .address:
             guard let cell = tableView.getCell(type: NormalCell.self) else { return UITableViewCell() }
-            cell.configure(address: task.customerNamePrint + " (" + location.title + ")")
+            cell.configure(address: appTask.task.customerNamePrint + " (" + location.title + ")")
             return cell
             
         case .contacts:
             guard let cell = tableView.getCell(type: ContactCell.self) else { return UITableViewCell() }
-            if let contacts = task.contacts, let contact = contacts.first {
+            if let contacts = appTask.task.contacts, let contact = contacts.first {
                 cell.configure(contact: contact)
             }
             return cell
@@ -183,7 +184,7 @@ extension TaskDetailViewController {
                     guard let self = self else { return }
                     if let imageString = image.base64String() {
                         let imageAddress = "\(address?.name ?? ""), \(address?.locality ?? ""), \(address?.country ?? "")"
-                        let taskImage = TaskImage(image: imageString, address: imageAddress, taskId: self.task.id)
+                        let taskImage = TaskImage(image: imageString, address: imageAddress, taskId: self.appTask.task.id)
                         self.images.append(taskImage)
                         self.tableView.reloadData()
                     }
@@ -227,7 +228,7 @@ extension TaskDetailViewController {
     
     private func openComments() {
         let commentsVC: CommentsViewController = instanceFromStoryboard(storyboard: Storyboard.home)
-        commentsVC.taskId = task.id
+        commentsVC.taskId = appTask.task.id
         push(viewController: commentsVC, animated: true)
     }
     
@@ -238,7 +239,7 @@ extension TaskDetailViewController {
     }
     
     private func openContacts() {
-        if let contacts = task.contacts,
+        if let contacts = appTask.task.contacts,
             !contacts.isEmpty {
             let contactsVC: ContactsViewController = instanceFromStoryboard(storyboard: Storyboard.home)
             contactsVC.contacts = contacts
@@ -258,6 +259,7 @@ extension TaskDetailViewController {
     private func openUpdateTask(mode: UpdateTaskMode) {
         let updateTaskVC: UpdateTaskViewController = instanceFromStoryboard(storyboard: Storyboard.home)
         updateTaskVC.mode = mode
+        updateTaskVC.taskId = appTask.task.id
         push(viewController: updateTaskVC, animated: true)
     }
     
@@ -289,7 +291,7 @@ extension TaskDetailViewController: UITableViewDataSource, UITableViewDelegate {
                 }
 
             case .info:
-                if let contacts = task.contacts, !contacts.isEmpty {
+                if let contacts = appTask.task.contacts, !contacts.isEmpty {
                     rows = InfoRows.allCases.count
                 } else {
                     rows = InfoRows.allCases.count - 1
@@ -332,7 +334,7 @@ extension TaskDetailViewController: UITableViewDataSource, UITableViewDelegate {
                 if let row = AdditionalRows(rawValue: indexPath.row) {
                     switch row {
                     case .users: openUpdateTask(mode: .user)
-                    case .materials: openUpdateTask(mode: .material)
+                    case .materials: openUpdateTask(mode: .material(materials: appTask?.materials ?? []))
                     case .jobs: openUpdateTask(mode: .job)
                     }
                 }

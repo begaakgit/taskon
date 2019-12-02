@@ -11,6 +11,8 @@ import UIKit
 class AppViewController: UIViewController {
 
     
+    public var sync: VoidCompletion? = nil
+    
     // MARK: - View Controller Life - Cycle
     
     override func viewDidLoad() {
@@ -65,6 +67,34 @@ extension AppViewController {
         }
     }
     
+    public func syncData(materials: [TaskUsedMaterial], completion: VoidCompletion? = nil) {
+        performSyncDataRequest(materials: materials, completion: completion)
+    }
+    
+}
+
+
+// MARK: - API Request
+
+extension AppViewController {
+    
+    private func performSyncDataRequest(materials: [TaskUsedMaterial], completion: VoidCompletion? = nil) {
+        let request = APIClient.syncData(materials: materials)
+        
+        let success: ServiceSuccess<EmptyCodable> = { [weak self] emptyCodable in
+            guard let self = self else { return }
+            TOUserDefaults.gpsLogs.clear()
+            self.sync?()
+            completion?()
+        }
+        
+        let failure: ServiceFailure = { [weak self] _ in
+            guard let _ = self else { return }
+            completion?()
+        }
+        
+        request.execute(errorHandler: errorHandler, onFailure: failure, onSuccess: success)
+    }
 }
 
 

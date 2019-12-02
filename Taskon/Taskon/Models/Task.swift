@@ -153,3 +153,16 @@ struct TaskImage: Codable {
     var taskId: Int
     
 }
+
+
+// MARK: - App Task
+
+struct AppTask {
+    
+    var task: Task
+    var materials: [TaskUsedMaterial] = []
+    
+    init(task: Task) {
+        self.task = task
+    }
+}

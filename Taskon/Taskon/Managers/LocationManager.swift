@@ -16,6 +16,7 @@ class LocationManager: NSObject {
     
     static let `default`: LocationManager = LocationManager()
     private var manager: CLLocationManager!
+    private weak var logTimer: Timer? = nil
     var location: CLLocation? = nil
     
     
@@ -72,6 +73,28 @@ class LocationManager: NSObject {
                 // An error occurred during geocoding.
                 completion(nil)
             }
+        }
+    }
+    
+    public func startLogging(with taskId: Int, locationId: Int) {
+        let settings = TOUserDefaults.settings.get() ?? Settings()
+        if logTimer == nil {
+            logTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(settings.locationCheckInterval), repeats: true) { [weak self] timer in
+                guard let self = self else { return }
+                
+                var logs = TOUserDefaults.gpsLogs.get() ?? []
+                let timestamp = Date().getString(of: .timestamp)
+                let log = GPSLog(id: 0,
+                                 timestamp: timestamp,
+                                 longitude: self.location?.coordinate.longitude ?? 0.0,
+                                 latitude: self.location?.coordinate.latitude ?? 0.0,
+                                 precision: Double(settings.locationAccuracy),
+                                 taskId: taskId, locationId: 0,
+                                 coordinateTypeId: 0)
+                logs.append(log)
+                TOUserDefaults.gpsLogs.set(value: logs)
+            }
+            RunLoop.main.add(logTimer!, forMode: .default)
         }
     }
     

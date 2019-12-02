@@ -55,6 +55,11 @@ class HomeViewController: AppViewController {
         tableView.tableFooterView = UIView(frame: .zero)
         performCoreDataRequest()
         performStaticDataRequest()
+        
+        sync = { [weak self] in
+            guard let self = self else { return }
+            self.performCoreDataRequest()
+        }
     }
     
     private func updateUi() {
@@ -201,7 +206,11 @@ extension HomeViewController {
     private func openDetails(for task: Task) {
         guard let location = locations.first(where: { $0.id == task.locationID }) else { return }
         let taskDetailVC: TaskDetailViewController = instanceFromStoryboard(storyboard: Storyboard.home)
-        taskDetailVC.task = task
+        
+        var appTask = AppTask(task: task)
+        appTask.materials = coreData?.getMaterials(for: task) ?? []
+        taskDetailVC.appTask = appTask
+        
         taskDetailVC.location = location
         push(viewController: taskDetailVC, animated: true)
     }
@@ -263,7 +272,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         var rows = tasks.count
         
         if animate {
-            rows = rows > 0 ? rows : 3
+            rows = rows > 0 ? rows : 10
         }
         
         return rows

@@ -15,6 +15,7 @@ struct TOUserDefaults {
     static var settings = UserDefaultObject<Settings>(key: "Settings")
     static var taskImages = UserDefaultObject<[TaskImage]>(key: "TaskImages")
     static var staticData = UserDefaultObject<StaticData>(key: "StaticData")
+    static var gpsLogs = UserDefaultObject<[GPSLog]>(key: "GPSLogs")
     
     static func clearDefaults() {
         client.clear()
